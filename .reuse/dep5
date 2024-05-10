@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: problem-statements
+Upstream-Contact: Alexandre Jesus <me@adbjesus.com>
+Source: https://github.com/roar-net/problem-statements
+
+Files: templates/problem/data/**/*.txt
+Copyright: 2024 Alexandre Jesus <me@adbjesus.com>
+License: CC0-1.0
