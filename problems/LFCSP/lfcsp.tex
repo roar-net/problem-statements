@@ -1,0 +1,99 @@
+\documentclass[]{article}
+\usepackage{verbatim}
+\usepackage{amsmath}
+%opening
+\title{\textbf{Problem statement: The longest filled common sequence problem} }
+\author{Marko Djukanović}
+
+\begin{document}
+
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+
+\section{The longest filled common sequence problem}
+
+\subsection{Introduction}
+
+The Longest Common Subsequence (LCS) problem is an important optimization problem that measures the structural similarity between two or more biological sequences.
+It has applications in computational biology, data compression, text editing, etc. Notable examples include the \texttt{diff} tool in Unix systems or integration in various plagiarism detection systems. 
+
+In computational biology, the reconstruction of genomic data plays an important role in analyzing genomes, thus yielding to development of various LCS variants. Among them, recently introduced \textit{the longest filled common sequence} (LFCS) problem is one of such kind. 
+
+%Provide a brief introduction of the problem, possibly including its motivation and context. This should be a short (2 or 3 paragraphs) high-level description.
+
+\subsection{Task}
+
+In the LFCS problem, given is an arbitrary set of genes $\mathcal{M}$ provided by biologists that are found important or sensible after gene sequencing, and two biological sequences. The task is to find an appropriate set of gene imputations in one of these sequences so that the structural similarity of the affected sequence and the second sequence is the highest possible. In that way, more is told about how likely is that these two molecules share the same origin and thus more likely to possess similar functional behavior.  The LFCS is inspired by the particulars of the known \textit{Scaffold Filling} problem in genome reconstruction. 
+
+
+
+%Describe the high-level optimization task in one or two sentences.
+
+\subsection{Problem statement}
+
+Given are two strings $s_1$ and $s_2$ over a finite alphabet $\Sigma$ and a multiset $\mathcal{M}$ of symbols from $\Sigma$. We say that $s_2^*$ is \textit{filled} by $s_2$ if it is obtained from $s_2$ by implanting a subset of allowed symbols from $\mathcal{M}$.  \\
+The objective is to find a filled sequence $s_2^*$\ \ so that it maximizes the LCS between $s_1$ and (filled) $s_2^*$. 
+
+A feasible \textit{solution} $s_2^*$ is any filled sequence obtained by implanting an arbitrary subset of characters from (multiset) $\mathcal{M}$ in $s_2$. 
+
+\textit{The objective value} of a filled (feasible) solution $s_2^*$ is the length of the LCS  between $s_1$ and $s_2^*$. 
+
+It is formally proven that the LFCS problem is $\mathcal{APX}$-hard, thus also $\mathcal{NP}$-hard. 
+
+%Provide a detailed description of the problem in this section. This should detail what parameters characterize a problem instance, what characterizes a solution, how a solution is evaluated (e.g. an
+%objective function), and solution feasibility constraints.
+
+\subsection{Instance data file}
+
+
+Each \textit{problem instance} is characterized by two (input) sequences of length $m=|s_1|$ and $n=|s_2|$ that may be written in the first two lines of the file.  The third line is designed to store the characters of the multiset $\mathcal{M}$, where $k$ represents the size of $\mathcal{M}$. Therefore, each instance is represented by a triple $(s_1, s_2, \mathcal{M})$. 
+
+The extension of the file can be .\textit{txt}, .\textit{csv}, or some other similar (textual) format.
+
+\subsection{Solution file}
+
+A solution can be stored in a textual-type file.  In the first line is a sequence of characters (a string datatype representation) representing the resulting filled sequence $s_2^*$. Hereby, the objective value can be stored in the second line.
+
+\subsection{Example}
+For the shake of clarity, given is an example in the subsequent section. 
+
+\subsubsection{Instance}
+
+Input file: 
+\begin{verbatim}
+ abcdbcda
+ cabbdda
+ abd
+\end{verbatim}
+
+According to the notation provide with the problem definition, $s_1=\texttt{abcdbcda}$, $s_2=\texttt{cabbdda}$, and $\mathcal{M}=\{\texttt{a}, \texttt{b}, \texttt{d}\}$, where $\Sigma=\{\texttt{a}, \texttt{b}, \texttt{c}, \texttt{d} \}$ \\
+
+\subsubsection{Solution}
+
+An optimal solution to the problem problem instance given below is: $s_2^*=\texttt{abcdabbdda}$ with the resulting optimal value of $7= |\textrm{LCS}(s_1, s_2^*)|$. 
+
+
+%Provide a feasible solution to the example instance in the described format (including its evaluation measure).
+
+\subsubsection{Explanation}
+
+There are possibly $ 3 \cdot 8  + 3 \cdot 8 \cdot 7 + 8 \cdot 7 \cdot 6 + 1= 24 + 168 +336+1 =529$ different feasible solutions for the above problem instance, which actually correspond to any possibility that each subset of three letters to be implanted  at any of 8 possible places (at index 0 -- before the leading $\texttt{c}$, at position 1 -- between the leading \texttt{a} and \texttt{b}, $\ldots$, at position 8 -- after the last \texttt{a}). For each of these 529 solutions, one should determine the LCS between them and $s_1$ (e.g. by a dynamic programming), yielding the conclusion that  \texttt{abcdabbdda} is an optimal solution along with two others, \texttt{abcadbbdda}, \texttt{abcabdbdda}. 
+
+
+%Optionally, provide a descriptive and/or visual explanation of the solution (and its evaluation measure value) for the instance.
+
+\bibliography{plain}
+
+
+\begin{thebibliography}{9}
+	\bibitem{castelli_2017}
+		Castelli, M., Dondi, R., Mauri, G., \& Zoppis, I. (2017). The longest filled common subsequence problem. In 28th Annual Symposium on Combinatorial Pattern Matching (CPM 2017). Schloss Dagstuhl-Leibniz-Zentrum fuer Informatik.
+	
+	\bibitem{mincu_2018}
+	    Mincu, R. S., \& Popa, A. (2018, September). Heuristic algorithms for the longest filled common subsequence problem. In 2018 20th International Symposium on Symbolic and Numeric Algorithms for Scientific Computing (SYNASC) (pp. 449-453). IEEE.
+\end{thebibliography}
+
+\end{document}
