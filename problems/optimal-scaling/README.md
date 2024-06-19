@@ -92,7 +92,7 @@ Here is an example of a problem solution file (possibly not the optimal global s
 
 ### Explanation
 
-The solution of this example instance indicates that the optimal configuration for the system is to have one replica of the front-end service and one replica of the catalogue service. The overall availability of the system is around 98.71%, and the total cost is around 0.0346 $/hour. The solution meets all constraints.
+The solution of this example instance indicates that the optimal configuration for the system is to have one replica of the front-end service and one replica of the catalogue service. The value of the objective function is around 0.9871, with around 95.25% for the overall availability of the system, and the total cost is around 0.0346 $/hour. The solution meets all constraints.
 
 ### References
 
