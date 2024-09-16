@@ -83,7 +83,7 @@ In addition, __CYCLE__ can be mentionned to specify that initial and final hybri
 
 ## Solution file
 
-The solution file is a CSV file made of headers [$\eta_i, \pi_i, \left\{ C_{v, \eta} | v \in V, \eta \in \mathbb{S} \right\}, \eta_f, \pi_f, fit$] with $h_i = (\eta_i, \pi_i)$, $h_f = (\eta_f, \pi_f)$ and $fit$ being the evaluation performance (fitness score), and the decision(s) vector(s) found, following [this section](#decision-vector).
+The solution file is a CSV file made of headers [ $\eta_i, \pi_i, \left( C_{v, \eta} | v \in V, \eta \in \mathbb{S} \right), \eta_f, \pi_f, fit$ ] with $h_i = (\eta_i, \pi_i)$, $h_f = (\eta_f, \pi_f)$ and $fit$ being the evaluation performance (fitness score), and the decision(s) vector(s) found, following [this section](#decision-vector).
 
 ## Example
 
