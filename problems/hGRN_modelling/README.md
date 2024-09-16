@@ -16,9 +16,9 @@ Denis PALLEZ, Université Côte d'Azur, France
 Jean-Paul COMET, Université Côte d'Azur, France  
 
 
-Copyright 2024 ... place copyright holders here.
+Copyright 2024 Université Côte d'Azur, CNRS.
 
-This document is licensed under XXXX.
+This document is licensed under CC-BY-4.0.
 
 <!-- Complete the above accordingly. Copyright and licensing information must be
 consistent with the comment at the beggining of the markdown file -->
