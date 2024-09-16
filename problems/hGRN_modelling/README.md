@@ -103,8 +103,8 @@ Brief description of the following instance file:
 - __HYBRID HOARE__ provides:
    1. an initial level of concentration (PRE), $h_i = \left( \begin{pmatrix} \eta_{v_1}\\ \eta_{v_2} \end{pmatrix}, \begin{pmatrix} \pi_{v_1}\\ \pi_{v_2} \end{pmatrix} \right) = \left(\begin{pmatrix} 0\\ 0 \end{pmatrix}, \begin{pmatrix} 0.0\\ 1.0 \end{pmatrix}\right)$ and,
    2. multiple triples of constraints:
-      1. the time spent by the trajectory inside the discrete state $\eta = (0, 0)$ is approximately 5 hours ($\Delta t = 5.0$). Within this state, the celerity should move towards the next discrete state of $v_1$ ($v_1+$) so as to increase the concentration level of gene $v_1$ until it reaches the right border without touching either the top or the bottom border ($noslide(v_2)$) and then jump into the neighbour state $\eta = (1,0)$.
-      2. In this new discrete state, the trajectory evolves for 7 hours ($\Delta t = 7.0$) in the direction of $\eta_{v_2}=1$ ($v_2+$) but, this time, the trajectory reaches the right border, which corresponds to the maximum admissible concentration of $v_1$ ($slide^+(v_1)$).
+      1. the time spent by the trajectory inside the discrete state $\eta = (0, 0)$ is approximately 5 hours ($\Delta t = 5.0$). Within this state, the celerity should move towards the next discrete state of $v_1$ ($v_1+$) so as to increase the concentration level of gene $v_1$ until it reaches the right border without touching either the top or the bottom border ( $noslide(v_2)$ ) and then jump into the neighbour state $\eta = (1,0)$.
+      2. In this new discrete state, the trajectory evolves for 7 hours ($\Delta t = 7.0$) in the direction of $\eta_{v_2}=1$ ($v_2+$) but, this time, the trajectory reaches the right border, which corresponds to the maximum admissible concentration of $v_1$ ( $slide^+(v_1)$ ).
       3. In (1,1) the celerities must generate trajectory that spends 8 hours, does not slide and goes in the direction of $v1+$ leading to the state $(0,1)$.
       4. Finally the trajectory spends 4 hours, slides on bottom of v1 and goes in the directio of $v2-$.
 
