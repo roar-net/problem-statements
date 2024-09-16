@@ -1,0 +1,4 @@
+This instance corresponds to a hGRN containing 3 genes.
+The hGRN is defined in GRN_3G.txt in the REG section while the biological knowledge is in HYBRID HOARE section. 
+
+One possible solution is defined in solution_3G.csv which corresponds to a vector of all celerities in all discrete states. 

@@ -1,0 +1,19 @@
+VAR
+
+v1 = 0 .. 1;
+v2 = 0 .. 1;
+
+REG
+
+m1 [!(v2>=1)] => v1;
+m2 [v1>=1] => v2;
+
+HYBRID HOARE
+
+    PRE : {eta(v1)=0,eta(v2)=0;pi(v1)=0.0,pi(v2)=1.0}
+    TRACE : (5.0,noslide(v2),v1+);(7.0,slide+(v1),v2+);(8.0,noslide(v2),v1-);(4.0,slide-(v1),v2-);
+    POST : {}
+
+CYCLIC
+
+END
