@@ -58,7 +58,7 @@ it must (i) start from an initial hybrid state $h_i$, (ii) verify a triplet of p
 ### Decision vector
 
 The decision vector to be optimised consists of finding the initial hybrid state $h_i$ (if it is unknown), all celerity values of all discrete states, and the final hybrid state (if the hGRN is not a cycle):
-$$h_i , \left{ C_{v, \eta} | v \in V, \eta \in \mathbb{S} \right}, h_f$$
+$$h_i , \left( C_{v, \eta} | v \in V, \eta \in \mathbb{S} \right), h_f$$
 
 ### Objective function
 
