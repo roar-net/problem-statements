@@ -32,8 +32,8 @@ where $x_{er}$ is a 1 if request $r$ traverses edge $e$, 0 otherwise. $y_{irs}$ 
 
 The first constraints aim to ensure that the offloaded services do not exceed the total CPU and RAM. The equations are as follows:
 
-$\sum_{r \in R} \sum_{s \in S_r} y_{irs} cpu_{rs} \leq C_i, ~~~~~\forall i \in N$
-$\sum_{r \in R} \sum_{s \in S_r} y_{irs} ram_{rs} \leq M_i, ~~\forall i \in N$
+$$\sum_{r \in R} \sum_{s \in S_r} y_{irs} cpu_{rs} \leq C_i, ~~~~~\forall i \in N$$
+$$\sum_{r \in R} \sum_{s \in S_r} y_{irs} ram_{rs} \leq M_i, ~~\forall i \in N$$
 
 where $cpu_{rs}$ and $ram_{rs}$ correspond to the requested CPU and RAM, respectively. $C_i$ and $M_i$ correspond to the total CPU and RAM of each node.
 
