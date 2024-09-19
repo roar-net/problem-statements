@@ -8,7 +8,7 @@ SPDX-License-Identifier: CC-BY-4.0
 
 Noé Godinho, University of Coimbra, Centre for Informatics and Systems of the University of Coimbra, Department of Informatics Engineering.
 
-Copyright 2024 ... Noé Godinho.
+Copyright 2024 Noé Godinho.
 
 This document is licensed under CC-BY-4.0.
 
