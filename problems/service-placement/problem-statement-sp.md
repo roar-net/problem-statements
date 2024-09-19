@@ -24,7 +24,7 @@ Given a graph, a set of requests and their services to be offloaded, minimise th
 
 ## Detailed description
 
-Given **N** nodes, **E** edges, **R** requests and **S$_r$** services for each request $r$, the following objective function aims to minimise latency and processing time:
+Given $N$ nodes, $E$ edges, $R$ requests and $S_r$ services for each request $r$, the following objective function aims to minimise latency and processing time:
 
 $\min \sum_{r \in R} \left(\sum_{(u,v) \in E} x_{uvr}l_{uv} + \sum_{i \in N} \sum_{s \in S_r} y_{irs}p_i \right)$
 
