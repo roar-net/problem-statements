@@ -20,32 +20,32 @@ The service placement problem was proposed to tackle these issues. The goal is t
 
 ## Task
 
-Given a graph, a set of requests and their services to be offloaded, minimise the overall latency and processing time of all requests and services, taking resource constraints into account.
+Given a fully connected graph, a set of requests and their services to be offloaded, minimise the overall latency and processing time of all requests and services, taking resource constraints into account.
 
 ## Detailed description
 
-Given $N$ nodes, $E$ edges, $R$ requests and $S_r$ services for each request $r$, the following objective function aims to minimise latency and processing time:
+Given $N$ nodes, $R$ requests and $S_r$ services for each request $r$, the following objective function aims to minimise latency and processing time:
 
-$$\min \sum_{r \in R} \left(\sum_{(u,v) \in E} x_{uvr}l_{uv} + \sum_{i \in N} \sum_{s \in S_r} y_{irs}p_i \right)$$
+$$\min \sum_{r=1}^R \left(\sum_{u=1}^N \sum_{v=1}^N x_{uvr}l_{uv} + \sum_{i=1}^N \sum_{s=1}^{S_r} y_{irs}p_i \right)$$
 
 where $x_{er}$ is a 1 if request $r$ traverses edge $e$, 0 otherwise. $y_{irs}$ is 1 if service $s$ from request $r$ is offloaded to node $i$, 0 otherwise. $l_e$ and $p_i$ are the latency of edge $e$ and processing time of node $i$, respectively.
 
 The first constraints aim to ensure that the offloaded services do not exceed the total CPU and RAM. The equations are as follows:
 
-$$\sum_{r \in R} \sum_{s \in S_r} y_{irs} cpu_{rs} \leq C_i, ~~~~~\forall i \in N$$
-$$\sum_{r \in R} \sum_{s \in S_r} y_{irs} ram_{rs} \leq M_i, ~~\forall i \in N$$
+$$\sum_{r=1}^R \sum_{s=1}^{S_r} y_{irs} C_{rs} \leq \gamma_i, ~~~~~\forall i=1,\ldots,N$$
+$$\sum_{r=1}^R \sum_{s=1}^{S_r} y_{irs} M_{rs} \leq \mu_1 ~~\forall i=1,\ldots,N$$
 
-where $cpu_{rs}$ and $ram_{rs}$ correspond to the requested CPU and RAM, respectively. $C_i$ and $M_i$ correspond to the total CPU and RAM of each node.
+where $C_{rs}$ and $M_{rs}$ correspond to the requested CPU and RAM, respectively. $\gamma_i$ and $\mu_i$ correspond to the total CPU and RAM of each node.
 
 It is also necessary to ensure that the total bandwidth of each link is not exceeded. The constraint is as follows:
 
-$$\sum_{r \in R} x_{uvr} b_{uv} \leq BW_i, ~~\forall (u,v) \in E$$
+$$\sum_{r=1}^R x_{uvr} B_{uv} \leq \lambda_i, ~~\forall u,v=1,\ldots,N$$
 
-where $b_{uv}$ corresponds to the requested bandwidth and $BW_i$ corresponds to the total bandwidth of an edge $(u, v)$.
+where $B_{uv}$ corresponds to the requested bandwidth and $\lambda_i$ corresponds to the total bandwidth of an edge $(u, v)$.
 
 Finally, it is necessary to ensure that a path exists. The equation is as follows:
 
-$$\sum_{j \in N} x_{ijr} - \sum_{j \in N} x_{jir} = U_{ir}, ~~\forall i \in N, r \in R$$
+$$\sum_{j=1}^N x_{ijr} - \sum_{j=1}^N x_{jir} = U_{ir}, ~~\forall i=1,\ldots,N, r=1,\ldots,R$$
 
 where $U_{ir}$ is 1 if node $i$ corresponds to a source node, -1 if $i$ corresponds to a target node and 0 otherwise.
 
@@ -54,28 +54,28 @@ where $U_{ir}$ is 1 if node $i$ corresponds to a source node, -1 if $i$ correspo
 Each instance file contains a graph, the requests, and their services requirements.
 
 The first line contains an integer denoting the number of nodes $N$.
-Each of the following $N$ lines gives the information for a node. In particular, for each node there are 4 comma separated numbers (the first 3 are integers, the last is a floating point number), denoting the id of the node, the total CPU (in MIPS), the total RAM (in Mb), the energy consumption of the processing (in Watt), and the processing time (in s), respectively. 
+Each of the following $N$ lines gives the information for a node. In particular, for each node there are 4 comma separated numbers (the first 3 are integers, the last is a floating point number), denoting the ID of the node, the total CPU (in MIPS), the total RAM (in Mb), and the processing time (in s), respectively. 
 
-After the nodes, there is a line with a single integer $E$ denoting the number of edges.
-Each edge contains the connected nodes, the bandwidth (in Mbps), the energy consumption of the communication (in Watt), and the latency (in s).
+After the nodes, there is a line with a single integer denoting the number of edges.
+Each edge contains the connected nodes, the bandwidth (in Mbps), and the latency (in s).
 
 Then, the requests start.
-The first line contains **R** number of requests.
+The first line contains $R$ number of requests.
 Each request contains the source node, the destination node, and the requested bandwidth.
 
 Afterwards, the services for each request are described.
-The first line contains **S$_r$** number of services for each given request.
+The first line contains $S_r$ number of services for each given request.
 Each service contains the requested CPU (in MIPS) and RAM (in Mb).
 
-Constraints:
-    - $N \geq 2$
-    - $E \geq N-1$
-    - $R \geq 1$
+Constraints:\
+    - $N \geq 2$\
+    - $E \geq N-1$\
+    - $R \geq 1$\
     - $S_r \geq 1$
 
 ## Solution file
 
-The solution file starts with the path for the first request, followed by the node where each service of the request is placed.
+The solution file starts with the path for the first request, followed by the node where each service of the request is placed. The nodes in the first line must be comma separated and, afterwards, there should be one line per service after the path.
 
 The number of requests and services for each request in the solution file must match the values of the instance file, as well as the source and destination nodes for each request.
 
