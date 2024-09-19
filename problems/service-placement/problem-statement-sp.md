@@ -54,7 +54,7 @@ where $U_{ir}$ is 1 if node $i$ corresponds to a source node, -1 if $i$ correspo
 Each instance file contains a graph, the requests, and their services requirements.
 
 The first line contains an integer denoting the number of nodes $N$.
-Each node contains its number, the total CPU (in MIPS), the total RAM (in Mb), the energy consumption of the processing (in Watt), and the processing time (in s).
+Each of the following $N$ lines gives the information for a node. In particular, for each node there are 4 comma separated numbers (the first 3 are integers, the last is a floating point number), denoting the id of the node, the total CPU (in MIPS), the total RAM (in Mb), the energy consumption of the processing (in Watt), and the processing time (in s), respectively. 
 
 After the nodes, the first line contains **E** number of edges.
 Each edge contains the connected nodes, the bandwidth (in Mbps), the energy consumption of the communication (in Watt), and the latency (in s).
