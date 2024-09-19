@@ -139,7 +139,7 @@ This problem statement is based upon work from COST Action Randomised Optimisati
 
 ## References
 
-X. Huang, S. Ganapathy, and T. Wolf, ‘Evaluating Algorithms for Composable Service Placement in Computer Networks’, in 2009 IEEE International Conference on Communications, Dresden, Germany: IEEE, Jun. 2009, pp. 1–6. doi: 10.1109/ICC.2009.5199007.
+X. Huang, S. Ganapathy, and T. Wolf, ‘Evaluating Algorithms for Composable Service Placement in Computer Networks’, in 2009 IEEE International Conference on Communications, Dresden, Germany: IEEE, Jun. 2009, pp. 1–6. doi: [10.1109/ICC.2009.5199007](https://doi.org/10.1109/ICC.2009.5199007).
 
 N. Kumari, A. Yadav, and P. K. Jana, ‘Task offloading in fog computing: A survey of algorithms and optimization techniques’, Computer Networks, vol. 214, p. 109137, Sep. 2022, doi: 10.1016/j.comnet.2022.109137.
 
