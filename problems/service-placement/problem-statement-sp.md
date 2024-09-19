@@ -53,7 +53,7 @@ where $U_{ir}$ is 1 if node $i$ corresponds to a source node, -1 if $i$ correspo
 
 Each instance file contains a graph, the requests, and their services requirements.
 
-The first line contains **N** number of nodes.
+The first line contains an integer denoting the number of nodes $N$.
 Each node contains its number, the total CPU (in MIPS), the total RAM (in Mb), the energy consumption of the processing (in Watt), and the processing time (in s).
 
 After the nodes, the first line contains **E** number of edges.
