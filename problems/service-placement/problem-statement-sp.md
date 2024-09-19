@@ -119,7 +119,7 @@ The number of requests and services for each request in the solution file must m
 0
 ```
 
-Evaluation: 1.1s
+Objective function value: 1.1s
 
 ### Explanation
 

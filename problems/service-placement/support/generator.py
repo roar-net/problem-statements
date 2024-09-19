@@ -13,7 +13,6 @@ import random
 def visualise_graph(G):
     pos = {0: [0, 0.25], 1: [1, 0.5], 2: [1, 0], 3: [2, 0.5], 4: [2, 0], 5: [3, 0.25]}
     nx.draw(G, pos=pos, with_labels=True)
-    #nx.draw(G, pos, with_labels=True)
 
     plt.show()
 
