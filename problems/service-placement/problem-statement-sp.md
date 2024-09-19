@@ -45,7 +45,7 @@ where $b_e$ corresponds to the requested bandwidth and $BW_i$ corresponds to the
 
 Finally, it is necessary to ensure that a path exists. The equation is as follows:
 
-$\sum_{j \in N} x_{ijr} - \sum_{j \in N} x_{jir} = U_{ir}, ~~\forall i \in N, r \in R$
+$$\sum_{j \in N} x_{ijr} - \sum_{j \in N} x_{jir} = U_{ir}, ~~\forall i \in N, r \in R$$
 
 where $U_{ir}$ is 1 if node $i$ corresponds to a source node, -1 if $i$ corresponds to a target node and 0 otherwise.
 
