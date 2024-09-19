@@ -1,8 +1,12 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: problem-statements
-Upstream-Contact: Noé Godinho <noe@dei.uc.pt>
+Upstream-Contact: Alexandre Jesus <me@adbjesus.com>
 Source: https://github.com/roar-net/problem-statements
+
+Files: templates/problem/data/**/*.txt
+Copyright: 2024 Alexandre Jesus <me@adbjesus.com>
+License: CC0-1.0
 
 Files: problems/service-placement/data/*.txt
 Copyright: 2024 Noé Godinho <noe@dei.uc.pt>
-License: CC-BY-4.0
+License: CC0-1.0
