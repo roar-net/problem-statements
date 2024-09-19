@@ -1,7 +1,7 @@
 """
 SPDX-FileCopyrightText: 2024 Noé Godinho <noe@dei.uc.pt>
 
-SPDX-License-Identifier: CC-BY-4.0
+SPDX-License-Identifier: Apache-2.0
 """
 
 
