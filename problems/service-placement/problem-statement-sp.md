@@ -39,7 +39,7 @@ where $cpu_{rs}$ and $ram_{rs}$ correspond to the requested CPU and RAM, respect
 
 It is also necessary to ensure that the total bandwidth of each link is not exceeded. The constraint is as follows:
 
-$\sum_{r \in R} x_{uvr} b_{uv} \leq BW_i, ~~\forall (u,v) \in E$
+$$\sum_{r \in R} x_{uvr} b_{uv} \leq BW_i, ~~\forall (u,v) \in E$$
 
 where $b_e$ corresponds to the requested bandwidth and $BW_i$ corresponds to the total bandwidth of an edge.
 
