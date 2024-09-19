@@ -41,7 +41,7 @@ It is also necessary to ensure that the total bandwidth of each link is not exce
 
 $$\sum_{r \in R} x_{uvr} b_{uv} \leq BW_i, ~~\forall (u,v) \in E$$
 
-where $b_e$ corresponds to the requested bandwidth and $BW_i$ corresponds to the total bandwidth of an edge.
+where $b_{uv}$ corresponds to the requested bandwidth and $BW_i$ corresponds to the total bandwidth of an edge $(u, v)$.
 
 Finally, it is necessary to ensure that a path exists. The equation is as follows:
 
