@@ -83,6 +83,7 @@ The number of requests and services for each request in the solution file must m
 
 ### Instance
 
+```
 6
 0,1000,512,0.1
 1,1000,512,0.1
@@ -106,6 +107,7 @@ The number of requests and services for each request in the solution file must m
 2
 100,100
 100,100
+```
 
 ### Solution
 
