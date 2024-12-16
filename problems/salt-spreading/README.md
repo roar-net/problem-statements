@@ -87,23 +87,23 @@ vheicles. For example, U-turns in some parts of the networks are not allowed.
 
 ## Detailed description
 
+<!--
 Provide a detailed description of the problem in this section. This should
 detail what parameters characterise a problem instance, what characterises a
 solution, how a solution is evaluated (e.g. an objective function), and solution
 feasibility constraints.
+-->
 
-A number of
-vehicles depart from their respective dwelling place nodes and have to salt given
-set of roads. The load of salt that the vehicles can carry is in general
-insufficient to cover all roads, therefore routes might include reloading
-at opportune depots. After having salted the requested roads, the
-vehicles visit a depot where they are reloaded with fuell and salt
-before heading dwelling place, ready for the next day. There is a maximum time of
-3 hours and a half for completing the task. It is assumed that the
+A number of vehicles depart from their respective dwelling place nodes and have
+to salt given set of roads. The load of salt that the vehicles can carry is in
+general insufficient to cover all roads, therefore routes might include
+reloading at opportune depots. After having salted the last requested road, the
+vehicles always visit a depot where they are reloaded with fuell and salt before
+heading to a dwelling place, ready for the next time. It is assumed that the
 vehicles are "off duty" after the final reload, hence the path from the
-depot to dwelling place does not count in the duration and in the cost
-calculation. Further, due to the size of the vehicles, U-turns at some
-intersections are not allowed.
+refilling depot to their dwelling place does not count in the time duration and
+in the cost calculation.  Further, due to the size of the vehicles and the
+movements they have to make, U-turns at some intersections are not allowed.
 
 <!--
 The problem is a generalization of the Capacited Arcs Routing
@@ -113,18 +113,23 @@ U-turn avoidance.
 
 In the following we specify the problem more formally.
 
-We denote by $Z$, indexed by $z$, the set of vehicles, by $K$, indexed by $k$,
+We represent the road network by a _mixed graph_ $\hat{G}=(V, E \cup \hat{A})$.
+The set of nodes $V$ includes the set of road intersections, the set of
+refilling depots $D$ and the set of dwelling places to the vehicles $H$. Each
+vehicle has a single location $h$ from $H$ from which it departs and returns.
+The set $E$ is the set of edges that can be traversed in both directions and it
+includes the set $E_R$ of edges that are required to be salted.  The set of arcs
+$A$ represents links that can be traversed only in one direction and it includes
+the set $A_R$ of arcs required to be salted.
+
+We call a \emph{trip} the sequence of arcs and edges visited by a vehicle
+that depart from home or from a depot and arrive at home or at a
+depot. A \emph{tour} is a sequence of trips that depart from home and
+arrive at home.
+
+We can denote by $Z$, indexed by $z$, the set of vehicles, by $K$, indexed by $k$,
 the set of all trips and by $K^z \subseteq K$ the set of trips composing the route of the
 vehicle $z \in Z$.
-
-We represent the road network by a _mixed graph_ $\hat{G}=(V, E \cup \hat{A})$. The set of nodes $V$ includes the set of road
-intersections, the set of refilling depots $D$ and the set of dwelling places to the vehicles
-$H$. Each vehicle has a single location $h$ from $H$ from which it
-departs and returns. The
-set $E$ is the set of edges that can be traversed in both directions and
-it includes the set $E_R$ of edges that are required to be salted.
-The set of arcs $A$ represents links that can be traversed only in one direction
-and it includes the set $A_R$ of arcs required to be salted.
 
 <!--
 The mixed graph $\hat{G}$ can be transformed in a directed graph $G=(V,A)$ by substituting
@@ -155,6 +160,9 @@ The task is finding a set of routes of minimal total length such that:
 - the required edges and required arcs are visited by at least one vehicle's route.
 - the difference between the departure and the arrival time of each route is not greater than a given time limit $T$.
 - At any point in the route the residual capacity is non-negative.
+
+
+![gualandi](images/gualandi.pdf)
 
 ## Instance data file
 

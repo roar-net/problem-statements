@@ -1,6 +1,16 @@
+\documentclass[crop,tikz]{standalone}
+
+% https://tex.stackexchange.com/questions/32127/standalone-tikz-pictures
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,arrows.meta}
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
 
 
-\begin{figure}
+\begin{document}
+
 \tikzstyle{vertex}=[draw,circle,minimum size=20pt,inner sep=0pt]
 \tikzstyle{selected vertex} = [vertex, fill=red!24]
 \tikzstyle{edge} = [draw,thick,-]
@@ -27,6 +37,5 @@
       \path[selected edge] (\source.center) -- node[weight] {$\weight$} (\dest.center);
     \end{pgfonlayer}
 \end{tikzpicture}
-\caption{\label{gualandi} Gualandi's example.}
-\end{figure}
 
+\end{document}
