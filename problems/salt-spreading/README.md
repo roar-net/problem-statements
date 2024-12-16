@@ -175,7 +175,7 @@ The task is finding a set of routes of minimal total length such that:
 block; margin: 0 auto; text-align: center" }
 -->
 
-<img src="images/gualandi.png" alt="Gualandi instance" class="center">>
+<img src="images/gualandi.png" alt="Gualandi instance" class="center">
 
 ## Instance data file
 
