@@ -94,16 +94,18 @@ solution, how a solution is evaluated (e.g. an objective function), and solution
 feasibility constraints.
 -->
 
-A number of vehicles depart from their respective dwelling place nodes and have
-to salt given set of roads. The load of salt that the vehicles can carry is in
-general insufficient to cover all roads, therefore routes might include
-reloading at opportune depots. After having salted the last requested road, the
-vehicles always visit a depot where they are reloaded with fuell and salt before
-heading to a dwelling place, ready for the next time. It is assumed that the
-vehicles are "off duty" after the final reload, hence the path from the
-refilling depot to their dwelling place does not count in the time duration and
-in the cost calculation.  Further, due to the size of the vehicles and the
-movements they have to make, U-turns at some intersections are not allowed.
+We are given a network of roads that can be traversed, among which some roads
+must be salted. A number of vehicles depart from their respective dwelling place
+nodes and have to salt the roads requesting it. The load of salt that the
+vehicles can carry is in general insufficient to cover all roads, therefore
+routes might include reloading at opportune depots. After having salted the last
+requested road, the vehicles always visit a depot where they are reloaded with
+fuell and salt before heading to a dwelling place, ready for the next time. It
+is assumed that the vehicles are "off duty" after the final reload, hence the
+path from the refilling depot to their dwelling place does not count in the time
+duration and in the cost calculation.  Further, due to the size of the vehicles
+and the movements they have to make, U-turns at some intersections are not
+allowed.
 
 <!--
 The problem is a generalization of the Capacited Arcs Routing
@@ -113,53 +115,49 @@ U-turn avoidance.
 
 In the following we specify the problem more formally.
 
-We represent the road network by a _mixed graph_ $\hat{G}=(V, E \cup \hat{A})$.
+We represent the road network by a _mixed graph_ ${G}=(V, E \cup {A})$.
 The set of nodes $V$ includes the set of road intersections, the set of
-refilling depots $D$ and the set of dwelling places to the vehicles $H$. Each
-vehicle has a single location $h$ from $H$ from which it departs and returns.
-The set $E$ is the set of edges that can be traversed in both directions and it
-includes the set $E_R$ of edges that are required to be salted.  The set of arcs
-$A$ represents links that can be traversed only in one direction and it includes
-the set $A_R$ of arcs required to be salted.
+refilling depots, $D$, and the set of dwelling places to the vehicles, $H$.  The
+set $E$ is the set of edges that can be traversed in both directions and it
+includes the set $E_R$ of edges that must be salted.  The set of arcs $A$
+represents links that can be traversed only in one direction and it includes the
+set $A_R$ of arcs required to be salted.
 
-We call a \emph{trip} the sequence of arcs and edges visited by a vehicle
-that depart from home or from a depot and arrive at home or at a
-depot. A \emph{tour} is a sequence of trips that depart from home and
-arrive at home.
-
-We can denote by $Z$, indexed by $z$, the set of vehicles, by $K$, indexed by $k$,
-the set of all trips and by $K^z \subseteq K$ the set of trips composing the route of the
-vehicle $z \in Z$.
-
-<!--
-The mixed graph $\hat{G}$ can be transformed in a directed graph $G=(V,A)$ by substituting
-every edge $(i,j) \in E$ by two antiparallel arcs $(i,j)$ and $(j,i)$
-and keeping the required arcs, thus getting the sets ${A} =
-A\cup\{(i,j),(j,i) : (i,j) \in E\}$ and $R = A_R\cup\{(i,j),(j,i): (i,j)
-\in E_R\} \subseteq \hat{A}$.
-
-Given a subset $S\subseteq V$, the cut set $\delta(S)$ denotes the set
-of edges with exatly one endpoint in $S$; $\delta^+(S)$ is the set of
-outgoing arcs and $\delta^-(S)$ the set of ingoing arcs.
-
-Let $x^k_{ij}$ be a binary variable that indicates whether the link
-$(i,j) \in E_R \cup A_R$ is served and let $y^k_{ij}\in \mathbb{Z}^+_0$ be
-an integer variable representing the number of times a link $(i,j) \in
-A$ is deadheaded.  Let $\alpha_{vk}$ and $\beta_{vk}$ for $v\in
-D\cup H$ and $k\in K$ be auxiliary
-binary variables that indicate whether a node is visited.
--->
-
-We call a _trip_ the sequence of arcs and edges visited by a vehicle
-that departs from a dwelling place or from a depot and arrives at a dwelling place or at a
-depot. A _route_ is a sequence of trips that depart from a dwelling place and
+We call _trip_ the sequence of edges and arcs visited by a vehicle that departs
+from a dwelling place or from a depot and arrives at a dwelling place or at a
+depot. A _route_ is a sequence of trips that departs from a dwelling place and
 arrives at a dwelling place.
+
+We denote by $Z$, indexed by $z$, the set of vehicles, by $K$, indexed by $k$,
+the set of all trips and by $K_z \subseteq K$ the set of trips composing the
+route of the vehicle $z \in Z$.  Each vehicle $z$ has a single dwelling location
+$h_z$ from $H$ from which it departs and returns.
 
 The task is finding a set of routes of minimal total length such that:
 
-- the required edges and required arcs are visited by at least one vehicle's route.
-- the difference between the departure and the arrival time of each route is not greater than a given time limit $T$.
-- At any point in the route the residual capacity is non-negative.
+- edges in $E_R$ and arcs in $A_R$ are salted by at least one vehicle's route;
+- the difference between the departure and the arrival time of each route is not greater than a given time limit $T$;
+- at any point in the route the residual capacity of the vehicle is non-negative;
+- 
+
+
+## Instance data file
+
+Describe the format of a problem instance file.
+
+We provide two examples and two real-life instances. The real-life instances are
+provided by the company Aiban and relate to the two Danish municipalities of
+Kerteminde and Middelfart. We make available the original spreadsheet as well as the
+post processed json format. The data in the spreadsheet does not include the
+coordinates of the road intersection, thus the reconstruction in a map is not
+possible. In the json format we provide the coordinates reconstructed by means
+of multidimensional scaling to facilitate drawing.
+
+
+### Example instance
+
+The Data are . It is in the form of a
+spread sheet as seen in Figure~\ref{data}.
 
 <!--
 ![gualandi](images/gualandi.png){ width="515" height="385" style="display:
@@ -170,34 +168,25 @@ block; margin: 0 auto; text-align: center" }
 <img src="images/gualandi.png" alt="Gualandi instance">
 </div>
 
-## Instance data file
+### Real-Life instances
 
-Describe the format of a problem instance file.
+### The Spreadsheets
 
-The Data are provided by the company Aiban. It is in the form of a
-spread sheet as seen in Figure~\ref{data}.
-
-\begin{figure}
-
-\centering
-
-\includegraphics[width=\textwidth]{figs/data_excerpt}
-\caption{}
-\end{figure}
-
-Each node ("Knude punkt") represents a road intersection and at each
-node it is given a set of edges (roads) departing from that node. The
-column ``status'' indicates whether an edge needs to be salted and in
-which direction. A status of 1 indicates that the edges need to be
+Each node (column `Knude punkt`) represents a road intersection and at each
+node it is given a set of edges (roads) departing from that node (the adjacency
+list representation of $G$). The
+column `status` indicates whether an edge needs to be salted and in
+which direction. A status of 1 indicates that the corresponding edge needs to be
 salted but the direction is free. A status of 2 indicates that the edge
 must be salted in a predefined direction. A status of 3 indicates that
 the edge does not need to be salted. We assume that all edges listed can
-be traversed in both directions. {\mc{I need to ask to the company if
-this is true.}
+be traversed in both directions.
+<!-- {\mc{I need to ask to the company if this is true.} -->
 
-Each edge has a column indicating the length of the road ("l{\ae}ngde")
-and a column indicating the breadth of the road ("salt m"), both
-represented in meters. The vehicles are identical. They have a salt
+Each edge has a column indicating the length of the road (`længde`)
+and a column indicating the breadth of the road (`salt m`), both
+represented in meters and calculated with one decimal.
+The vehicles are identical. They have a salt
 capacity of $12.3 \mathrm{m}^3$ and they spread $30\textrm{ml}$ of salt
 per $\mathrm{m}^2$ of road. Since, $1\textrm{ml} = 1
 \mathrm{cm}^3=10^{-6}\mathrm{m^3}$, on each road segment of length $\ell$
