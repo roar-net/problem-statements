@@ -161,21 +161,14 @@ The task is finding a set of routes of minimal total length such that:
 - the difference between the departure and the arrival time of each route is not greater than a given time limit $T$.
 - At any point in the route the residual capacity is non-negative.
 
-
-![gualandi](images/gualandi.pdf)
-
-<object data="images/gualandi.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="images/gualandi.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="http://yoursite.com/the.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
-
 <!--
 ![gualandi](images/gualandi.png){ width="515" height="385" style="display:
 block; margin: 0 auto; text-align: center" }
 -->
 
-<img src="images/gualandi.png" alt="Gualandi instance" class="center">
+<div style="text-align: center;">
+<img src="images/gualandi.png" alt="Gualandi instance">
+</div>
 
 ## Instance data file
 
