@@ -145,28 +145,11 @@ The task is finding a set of routes of minimal total length such that:
 
 Describe the format of a problem instance file.
 
-We provide two examples and two real-life instances. The real-life instances are
+We provide two real-life instances and two examples. The real-life instances are
 provided by the company Aiban and relate to the two Danish municipalities of
 Kerteminde and Middelfart. We make available the original spreadsheet as well as the
-post processed json format. The data in the spreadsheet does not include the
-coordinates of the road intersection, thus the reconstruction in a map is not
-possible. In the json format we provide the coordinates reconstructed by means
-of multidimensional scaling to facilitate drawing.
+post processed json format. 
 
-
-### Example instance
-
-The Data are . It is in the form of a
-spread sheet as seen in Figure~\ref{data}.
-
-<!--
-![gualandi](images/gualandi.png){ width="515" height="385" style="display:
-block; margin: 0 auto; text-align: center" }
--->
-
-<div style="text-align: center;">
-<img src="images/gualandi.png" alt="Gualandi instance">
-</div>
 
 ### Real-Life instances
 
@@ -194,11 +177,26 @@ and width $w$ (expressed in $\mathrm{m}$ they use $30\cdot 10^{-6} \cdot
 \ell \cdot w\mathrm{m}^3$ of salt. The depots are in node 1 and in node 179
 and the two drivers start and end at their dwelling places at node 2 and 130,
 respectively. The salting of the roads has to be completed within 3.5
-hours and the overall objective is to minimise the total travelled
-distance. The drivers visit a depot before returning dwelling place with their
+hours and the overall objective is to minimise the total traveled
+distance. 
+
+<!-- The drivers visit a depot before returning to their dwelling place with their
 vehicles, therefore they start with a full cargo hold of salt and fuel
 tanks. The path from the depot to dwelling place does not count in the traveling
-time and distance.
+time and distance. -->
+
+The data in the spreadsheet does not include the coordinates of the road
+intersections, thus the precise map reconstruction is not possible. For the
+Kerteminde instance we provide a series of [maps](data/kerteminde/maps) that
+indicate the position of the points. However, in the `.json` format that we
+provide the coordinates are an approximate reconstruction achieved with
+multidimensional scaling on the basis of the road lengths. Those coordinates
+have no geographical correspondence.
+
+### The `.json` format
+
+
+
 
 ## Solution file
 
@@ -208,7 +206,22 @@ Describe the format of a solution file.
 
 ### Instance
 
-Provide a small example instance in the described format.
+<!-- Provide a small example instance in the described format. -->
+
+The Data are . It is in the form of a
+spread sheet as seen in Figure~\ref{data}.
+
+<!--
+![gualandi](images/gualandi.png){ width="515" height="385" style="display:
+block; margin: 0 auto; text-align: center" }
+-->
+
+<div style="text-align: center;">
+<img src="images/gualandi.png" alt="Gualandi instance">
+</div>
+
+
+
 
 ### Solution
 
