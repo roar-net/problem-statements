@@ -18,7 +18,6 @@ not licensed under CC-BY-4.0 -->
 
 # Problem template
 
-
 This folder provides a template for problem statements.
 
 Replace the problem statement below according to the instructions within that
@@ -42,7 +41,6 @@ Template follows below.
 
 Marco Chiarandini, University of Southern Denmark, Denmark
 
-
 <!-- Put two empty spaces at the end of each author line except the last for
 proper formatting -->
 
@@ -55,28 +53,37 @@ consistent with the comment at the beggining of the markdown file -->
 
 ## Introduction
 
+<!--
 In this section provide a brief introduction of the problem, possibly including
 its motivation and context. This should be a short (2 or 3 paragraphs)
 high-level description.
+-->
 
+In the winter season, when forecasts announce temperatures below the freezing
+point, municipalities are faced with the task of spreading salt in their road
+networks.
 
-In the winter season, when forecasts announce temperatures below the freezing point, municipalities are faced with the task of spreading salt in their road networks. 
-The case discussed here has been presented by the company Aiban that has been
-contracted by local authorities of the Danish municipalities of Kerteminde and Middelfart. 
-
-
+The case discussed here has been presented by the company Aiban that was
+contracted to carry out the salt spreading task by the local authorities of the
+Danish municipalities of Kerteminde and Middelfart.
 
 
 ## Task
 
-
+<!--
 Describe the high-level optimisation task in one or two sentences.
+-->
 
-Given a road network made of roads that need to be salted, roads that can be transited and directions of transit, given a fleet of salt vehicles with a salt capacity, 
-We want to find the set of routes that satisfy specific requirements and minimizes to the total travelled distance. Minimizing the travelled distance is correlated with achiving the task in the fastest way and with the minimal environmental impact (CO2 imprint). 
-In order to be usable in practice the routes must take into account that to when spreading salt there must be residual  capacity in the vehicle. Hence, the visit to salt depots to refill the load must be considered. Further, U-turns in some parts of the networks are not allowed.
-
-
+Given a road network made of roads that need to be salted, roads that can be
+transited and directions of transit, given a fleet of salt vehicles with a salt
+capacity, ...  We want to find the set of routes that satisfy specific salting
+requirements and minimizes to the total traveled distance. Minimizing the
+traveled distance is correlated with achieving the task in the fastest way and
+with the minimal environmental impact (CO2 imprint). In order to be usable in
+practice the routes must take into account the capacity of the vehicle. If the
+salt load is not enough the vehicle must visit a refill depot. Further, there
+might be constraints on the shape of the routes to allow easy movements of the
+vheicles. For example, U-turns in some parts of the networks are not allowed.
 
 ## Detailed description
 
@@ -84,7 +91,6 @@ Provide a detailed description of the problem in this section. This should
 detail what parameters characterise a problem instance, what characterises a
 solution, how a solution is evaluated (e.g. an objective function), and solution
 feasibility constraints.
-
 
 A number of
 vehicles depart from their respective dwelling place nodes and have to salt given
@@ -97,7 +103,7 @@ before heading dwelling place, ready for the next day. There is a maximum time o
 vehicles are "off duty" after the final reload, hence the path from the
 depot to dwelling place does not count in the duration and in the cost
 calculation. Further, due to the size of the vehicles, U-turns at some
-intersections are not allowed. 
+intersections are not allowed.
 
 <!--
 The problem is a generalization of the Capacited Arcs Routing
@@ -107,21 +113,18 @@ U-turn avoidance.
 
 In the following we specify the problem more formally.
 
-
-We denote by $Z$, indexed by $z$, the set of vehicles, by $K$, indexed by $k$, 
+We denote by $Z$, indexed by $z$, the set of vehicles, by $K$, indexed by $k$,
 the set of all trips and by $K^z \subseteq K$ the set of trips composing the route of the
-vehicle $z \in Z$. 
+vehicle $z \in Z$.
 
-We represent the road network by a *mixed graph* $\hat{G}=(V, E \cup \hat{A})$. The set of nodes $V$ includes the set of road
+We represent the road network by a _mixed graph_ $\hat{G}=(V, E \cup \hat{A})$. The set of nodes $V$ includes the set of road
 intersections, the set of refilling depots $D$ and the set of dwelling places to the vehicles
 $H$. Each vehicle has a single location $h$ from $H$ from which it
-departs and returns.  The
+departs and returns. The
 set $E$ is the set of edges that can be traversed in both directions and
 it includes the set $E_R$ of edges that are required to be salted.
-The set of arcs $A$ represents links that can be traversed only in one direction 
+The set of arcs $A$ represents links that can be traversed only in one direction
 and it includes the set $A_R$ of arcs required to be salted.
-
-
 
 <!--
 The mixed graph $\hat{G}$ can be transformed in a directed graph $G=(V,A)$ by substituting
@@ -129,7 +132,6 @@ every edge $(i,j) \in E$ by two antiparallel arcs $(i,j)$ and $(j,i)$
 and keeping the required arcs, thus getting the sets ${A} =
 A\cup\{(i,j),(j,i) : (i,j) \in E\}$ and $R = A_R\cup\{(i,j),(j,i): (i,j)
 \in E_R\} \subseteq \hat{A}$.
-
 
 Given a subset $S\subseteq V$, the cut set $\delta(S)$ denotes the set
 of edges with exatly one endpoint in $S$; $\delta^+(S)$ is the set of
@@ -143,24 +145,20 @@ D\cup H$ and $k\in K$ be auxiliary
 binary variables that indicate whether a node is visited.
 -->
 
-
-We call a *trip* the sequence of arcs and edges visited by a vehicle
+We call a _trip_ the sequence of arcs and edges visited by a vehicle
 that departs from a dwelling place or from a depot and arrives at a dwelling place or at a
-depot. A *route* is a sequence of trips that depart from a dwelling place and
+depot. A _route_ is a sequence of trips that depart from a dwelling place and
 arrives at a dwelling place.
 
+The task is finding a set of routes of minimal total length such that:
 
-The task is finding a set of routes of minimal total length such that: 
 - the required edges and required arcs are visited by at least one vehicle's route.
 - the difference between the departure and the arrival time of each route is not greater than a given time limit $T$.
-- At any point in the route the residual capacity is non-negative. 
-
-
+- At any point in the route the residual capacity is non-negative.
 
 ## Instance data file
 
 Describe the format of a problem instance file.
-
 
 The Data are provided by the company Aiban. It is in the form of a
 spread sheet as seen in Figure~\ref{data}.
@@ -173,8 +171,6 @@ spread sheet as seen in Figure~\ref{data}.
 \caption{}
 \end{figure}
 
-
-
 Each node ("Knude punkt") represents a road intersection and at each
 node it is given a set of edges (roads) departing from that node. The
 column ``status'' indicates whether an edge needs to be salted and in
@@ -183,7 +179,7 @@ salted but the direction is free. A status of 2 indicates that the edge
 must be salted in a predefined direction. A status of 3 indicates that
 the edge does not need to be salted. We assume that all edges listed can
 be traversed in both directions. {\mc{I need to ask to the company if
-    this is true.}
+this is true.}
 
 Each edge has a column indicating the length of the road ("l{\ae}ngde")
 and a column indicating the breadth of the road ("salt m"), both
@@ -200,8 +196,6 @@ distance. The drivers visit a depot before returning dwelling place with their
 vehicles, therefore they start with a full cargo hold of salt and fuel
 tanks. The path from the depot to dwelling place does not count in the traveling
 time and distance.
-
-
 
 ## Solution file
 
