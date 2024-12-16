@@ -170,10 +170,12 @@ The task is finding a set of routes of minimal total length such that:
     </embed>
 </object>
 
+<!--
 ![gualandi](images/gualandi.png){ width="515" height="385" style="display:
 block; margin: 0 auto; text-align: center" }
+-->
 
-<p style="display:block; margin: 0 auto; text-align: center">
+<p class="center">
 <img src="images/gualandi.png">
 </p>
 
