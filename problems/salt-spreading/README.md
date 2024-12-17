@@ -133,13 +133,14 @@ the set of all trips and by $K_z \subseteq K$ the set of trips composing the
 route of the vehicle $z \in Z$.  Each vehicle $z$ has a single dwelling location
 $h_z$ from $H$ from which it departs and returns.
 
-The task is finding a set of routes of minimal total length such that:
+The task is finding a set of routes such that:
 
 - edges in $E_R$ and arcs in $A_R$ are salted by at least one vehicle's route;
 - the difference between the departure and the arrival time of each route is not greater than a given time limit $T$;
 - at any point in the route the residual capacity of the vehicle is non-negative;
-- 
+- there are no U-turns at nodes where they are not allowed;
 
+and such that it minimizes the total length.
 
 ## Instance data file
 
@@ -148,8 +149,7 @@ Describe the format of a problem instance file.
 We provide two real-life instances and two examples. The real-life instances are
 provided by the company Aiban and relate to the two Danish municipalities of
 Kerteminde and Middelfart. We make available the original spreadsheet as well as the
-post processed json format. 
-
+post processed json format.
 
 ### Real-Life instances
 
@@ -166,19 +166,18 @@ the edge does not need to be salted. We assume that all edges listed can
 be traversed in both directions.
 <!-- {\mc{I need to ask to the company if this is true.} -->
 
-Each edge has a column indicating the length of the road (`længde`)
-and a column indicating the breadth of the road (`salt m`), both
-represented in meters and calculated with one decimal.
-The vehicles are identical. They have a salt
-capacity of $12.3 \mathrm{m}^3$ and they spread $30\textrm{ml}$ of salt
-per $\mathrm{m}^2$ of road. Since, $1\textrm{ml} = 1
-\mathrm{cm}^3=10^{-6}\mathrm{m^3}$, on each road segment of length $\ell$
-and width $w$ (expressed in $\mathrm{m}$ they use $30\cdot 10^{-6} \cdot
-\ell \cdot w\mathrm{m}^3$ of salt. The depots are in node 1 and in node 179
-and the two drivers start and end at their dwelling places at node 2 and 130,
-respectively. The salting of the roads has to be completed within 3.5
-hours and the overall objective is to minimise the total traveled
-distance. 
+Each edge has a column indicating the length of the road (`længde`) and a column
+indicating the breadth of the road (`salt m`), both represented in meters and
+calculated with one decimal.  The vehicles are identical. They have a salt
+capacity of $12.3 \mathrm{m}^3$ and they spread $30\textrm{ml}$ of salt per
+$\mathrm{m}^2$ of road. Since, $1\textrm{ml} = 1
+\mathrm{cm}^3=10^{-6}\mathrm{m^3}$, on each road segment of length $\ell$ and
+width $w$ (expressed in $\mathrm{m}$ they use $30\cdot 10^{-6} \cdot \ell \cdot
+w\mathrm{m}^3$ of salt). The depots are in node 1 and in node 179 and the two
+drivers start and end at their dwelling places at node 2 and 130, respectively.
+The vehicles have speed 65 km/h both when salting and when deadheading. The
+salting of the roads has to be completed within 3.5 hours and the overall
+objective is to minimise the total traveled distance. 
 
 <!-- The drivers visit a depot before returning to their dwelling place with their
 vehicles, therefore they start with a full cargo hold of salt and fuel
@@ -192,6 +191,16 @@ indicate the position of the points. However, in the `.json` format that we
 provide the coordinates are an approximate reconstruction achieved with
 multidimensional scaling on the basis of the road lengths. Those coordinates
 have no geographical correspondence.
+
+Statistics:
+
+- $|V|$=193, $|A|$=10 $|A_R|$=33, $|E_R|$= 233
+- 265.602 total sum of lengths of the arcs and edges to salt
+- 21.450 total sum of lengths of the dedhead arcs available
+- 1.018.806 total required demand
+- 820.000 total capacity
+
+
 
 ### The `.json` format
 
