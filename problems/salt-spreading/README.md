@@ -254,21 +254,30 @@ spread sheet as seen in Figure~\ref{data}.
 block; margin: 0 auto; text-align: center" }
 -->
 
+
 <div style="text-align: center;">
-<img src="images/gualandi.png" alt="Gualandi instance">
+<img src="data/belben/map.png" alt="Belenguer Benavent instance">
+</div>
+
+<div style="text-align: center;">
+<img src="data/gualandi/map.png" alt="Gualandi instance">
 </div>
 
 
-
-
 ### Solution
-
+<!--
 Provide a feasible solution to the example instance in the described format
 (including its evaluation measure).
+-->
+
+To be added
+
 
 ### Explanation
 
-Optionally, provide a descriptive and/or visual explanation of the solution (and
+<!-- Optionally, provide a --> 
+
+Descriptive and/or visual explanation of the solution (and
 its evaluation measure value) for the instance.
 
 ## Acknowledgements
@@ -282,4 +291,10 @@ relevant. -->
 
 ## References
 
-Put any relevant references here.
+- Jens Kristian Fonnesbach, "[Spar Millioner paa
+  Vintertjeneste](https://historia.dk/shop/13-business/90-fonnesbech-spar-millioner-paa-vintertjeneste-2017/)",
+  2017, Historia. 
+
+- Belenguer, José M.; Benavent, Enrique "A cutting plane algorithm for the
+  capacitated arc routing problem" Computers & operations research , 04/2003,
+  Volume 30, Issue 5
