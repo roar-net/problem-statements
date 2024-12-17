@@ -113,9 +113,9 @@ requested road, the vehicles always visit a depot where they are reloaded with
 fuell and salt before heading to a dwelling place, ready for the next time. It
 is assumed that the vehicles are "off duty" after the final reload, hence the
 path from the refilling depot to their dwelling place does not count in the time
-duration and in the cost calculation.  Further, due to the size of the vehicles
-and the movements they have to make, U-turns at some intersections are not
-allowed.
+duration and in the travling distance calculation.  Further, due to the size of
+the vehicles and the movements they have to make, U-turns at some intersections
+are not allowed.
 
 <!--
 The problem is a generalization of the Capacited Arcs Routing
@@ -125,13 +125,13 @@ U-turn avoidance.
 
 In the following we specify the problem more formally.
 
-We represent the road network by a _mixed graph_ ${G}=(V, E \cup {A})$.
-The set of nodes $V$ includes the set of road intersections, the set of
-refilling depots, $D$, and the set of dwelling places to the vehicles, $H$.  The
-set $E$ is the set of edges that can be traversed in both directions and it
-includes the set $E_R$ of edges that must be salted.  The set of arcs $A$
-represents links that can be traversed only in one direction and it includes the
-set $A_R$ of arcs required to be salted.
+We represent the road network by a _mixed graph_ ${G}=(V, E \cup {A})$.  The set
+of nodes $V$ includes the set of road intersections, the set of refilling
+depots, $D$, and the set of dwelling places to the vehicles, $H$.  The set $E$
+is the set of edges that can be traversed in both directions and it includes the
+set $E_R$ of edges that must be salted (it is sufficient to salt them in only
+one direction). The set of arcs $A$ represents links that can be traversed only
+in one direction and it includes the set $A_R$ of arcs required to be salted.
 
 We call _trip_ the sequence of edges and arcs visited by a vehicle that departs
 from a dwelling place or from a depot and arrives at a dwelling place or at a
