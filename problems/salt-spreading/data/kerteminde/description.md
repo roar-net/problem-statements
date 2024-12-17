@@ -56,17 +56,17 @@ have no geographical correspondence. They give rise to the following plot:
 ### Solutions
 
 <div style="text-align:center;">
-<img src="v1t1.jpeg" alt="Vehicle 1 trip 1" style="max-width:70%;height:auto;">
+<img src="./v1t1.png" alt="Vehicle 1 trip 1" style="max-width:70%;height:auto;">
 </div>
 
 
 <div style="text-align:center;">
-<img src="v2t1.jpeg" alt="Vehicle 2 trip 1" style="max-width:70%;height:auto;">
+<img src="./v2t1.png" alt="Vehicle 2 trip 1" style="max-width:70%;height:auto;">
 </div>
 
 
 <div style="text-align:center;">
-<img src="v2t2.jpeg" alt="Vehicle 2 trip 1" style="max-width:70%;height:auto;">
+<img src="./v2t2.png" alt="Vehicle 2 trip 1" style="max-width:70%;height:auto;">
 </div>
 
 
