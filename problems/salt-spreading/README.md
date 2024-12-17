@@ -72,8 +72,8 @@ Vintertjeneste](https://historia.dk/shop/13-business/90-fonnesbech-spar-millione
 which Aiban was contracted by local authorities of the Danish municipalities of
 Kerteminde and Middelfart.
 
-<div style="text-align: center;max-width: 70%;">
-<img src="images/fonnesbech_cover.jpeg" alt="Book cover">
+<div style="text-align:center;">
+<img src="images/fonnesbech_cover.jpeg" alt="Book cover" style="max-width:70%;height:auto;">
 </div>
 
 
@@ -85,14 +85,15 @@ Describe the high-level optimisation task in one or two sentences.
 
 Given a road network made of roads that need to be salted, roads that can be
 transited and directions of transit, given a fleet of salt vehicles with a salt
-capacity, ...  We want to find the set of routes that satisfy specific salting
-requirements and minimizes to the total traveled distance. Minimizing the
-traveled distance is correlated with achieving the task in the fastest way and
-with the minimal environmental impact (CO2 imprint). In order to be usable in
-practice the routes must take into account the capacity of the vehicle. If the
-salt load is not enough the vehicle must visit a refill depot. Further, there
-might be constraints on the shape of the routes to allow easy movements of the
-vheicles. For example, U-turns in some parts of the networks are not allowed.
+capacity and refilling depots, we want to find the set of routes that satisfy
+salting requirements and minimizes to the total traveled distance.  Minimizing
+the traveled distance is correlated with accomplishing the salting task with the
+least fuel consumption and thus minimal environmental impact (CO2 imprint). In
+order to be usable in practice the routes must take into account the capacity of
+the vehicle. If the salt load is not enough the vehicle must visit a refill
+depot.  Further, there might be constraints on the shape of the routes to allow
+easy movements of the vheicles. For example, U-turns in some parts of the
+networks are not allowed.
 
 ## Detailed description
 
@@ -145,12 +146,9 @@ $h_z$ from $H$ from which it departs and returns.
 The task is finding a set of routes such that:
 
 - edges in $E_R$ and arcs in $A_R$ are salted by at least one vehicle's route;
-
 - the difference between the departure and the arrival time of each route is not
   greater than a given time limit $T$;
-
 - at any point in the route the residual capacity of the vehicle is non-negative;
-
 - there are no U-turns at nodes where they are not allowed;
 
 and such that it minimizes the total length.
