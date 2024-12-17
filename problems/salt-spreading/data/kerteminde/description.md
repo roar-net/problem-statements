@@ -37,6 +37,7 @@ Statistics:
 - 21.450 total sum of lengths of the deadhead arcs available
 - 1.018.806 total required demand
 - 820.000 total capacity
+- 33 U-turn-allowed nodes
 
 - unconfirmed lower bound: 271.511
 
