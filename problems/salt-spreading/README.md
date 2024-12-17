@@ -72,7 +72,7 @@ Vintertjeneste](https://historia.dk/shop/13-business/90-fonnesbech-spar-millione
 which Aiban was contracted by local authorities of the Danish municipalities of
 Kerteminde and Middelfart.
 
-<div style="text-align: center;">
+<div style="text-align: center;max-width: 70%;">
 <img src="images/fonnesbech_cover.jpeg" alt="Book cover">
 </div>
 
