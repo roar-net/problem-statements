@@ -155,92 +155,90 @@ and such that it minimizes the total length.
 
 ## Instance data file
 
+<!--
 Describe the format of a problem instance file.
+-->
 
 We provide two real-life instances and two examples. The real-life instances are
 provided by the company Aiban and relate to the two Danish municipalities of
-Kerteminde and Middelfart. We make available the original spreadsheet as well as the
-post processed json format.
+Kerteminde and Middelfart. We make available the original spreadsheet as well as
+the post processed `json` format. The instance data file is the `json` format.
 
-### Real-Life instances
+See a description and details:
 
-### The Spreadsheets
+- [Kerteminde](data/kerteminde/description.md)
+- [Middelfart](data/middelfart/description.md)
 
-Each node (column `Knude punkt`) represents a road intersection and at each
-node it is given a set of edges (roads) departing from that node (the adjacency
-list representation of $G$). The
-column `status` indicates whether an edge needs to be salted and in
-which direction. A status of 1 indicates that the corresponding edge needs to be
-salted but the direction is free. A status of 2 indicates that the edge
-must be salted in a predefined direction. A status of 3 indicates that
-the edge does not need to be salted. We assume that all edges listed can
-be traversed in both directions.
-<!-- {\mc{I need to ask to the company if this is true.} -->
+Schema for the `json` format:
 
-Each edge has a column indicating the length of the road (`længde`) and a column
-indicating the breadth of the road (`salt m`), both represented in meters and
-calculated with one decimal.  The vehicles are identical. They have a salt
-capacity of $12.3 \mathrm{m}^3$ and they spread $30\textrm{ml}$ of salt per
-$\mathrm{m}^2$ of road. Since, $1\textrm{ml} = 1
-\mathrm{cm}^3=10^{-6}\mathrm{m^3}$, on each road segment of length $\ell$ and
-width $w$ (expressed in $\mathrm{m}$ they use $30\cdot 10^{-6} \cdot \ell \cdot
-w\mathrm{m}^3$ of salt). The depots are in node 1 and in node 179 and the two
-drivers start and end at their dwelling places at node 2 and 130, respectively.
-The vehicles have speed 65 km/h both when salting and when deadheading. The
-salting of the roads has to be completed within 3.5 hours and the overall
-objective is to minimise the total traveled distance. 
-
-<!-- The drivers visit a depot before returning to their dwelling place with their
-vehicles, therefore they start with a full cargo hold of salt and fuel
-tanks. The path from the depot to dwelling place does not count in the traveling
-time and distance. -->
-
-Statistics:
-
-- $|V|$=193, $|A|$=10 $|A_R|$=33, $|E_R|$= 233
-- 265.602 total sum of lengths of the arcs and edges to salt
-- 21.450 total sum of lengths of the deadhead arcs available
-- 1.018.806 total required demand
-- 820.000 total capacity
-
-The data in the spreadsheet does not include the coordinates of the road
-intersections, thus the precise map reconstruction is not possible. For the
-Kerteminde instance we have available a series of [maps](data/kerteminde/maps) that
-indicate the position of the points. However, in the `.json` format that we
-provide the coordinates are an approximate reconstruction achieved with
-multidimensional scaling on the basis of the road lengths. Those coordinates
-have no geographical correspondence. They give rise to the following plot:
-
-<div style="text-align: center;">
-<img src="data/kerteminde/mds.png" alt="Kerteminde instance">
-</div>
-
-### Middelfart
-
-The instance bears the same characteristics as the Kerteminde instance. 
-
-Statistics:
-
-- $|V|$=784, $|A|$=56 $|A_R|$=62, $|E_R|$= 1004
-- 40.280 total sum of lengths of the deadhead arcs available
-- 544.198 total sum of lengths of the arcs and edges to salt
-- 1.929.260 total required demand
-- 1.230.000 total capacity
-
-<div style="text-align: center;">
-<img src="data/middelfart/mds.png" alt="Middelfart instance">
-</div>
-
-
-
-### The `.json` format
-
-
-
+```json
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "max_time": {
+      "type": "number"
+    },
+    "nodes": {
+      "type": "object",
+      "properties": {
+        "1": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        }
+      },
+    ...
+    }
+  }  
+ "required": [
+    "A",
+    "A_R",
+    "E_R",
+    "U",
+    "depots",
+    "max_time",
+    "name",
+    "nodes",
+    "vehicles"
+  ]
+}
+```
 
 ## Solution file
 
-Describe the format of a solution file.
+<!-- Describe the format of a solution file. -->
+
+In the solution file, routes beloning to different vehicles are written in
+different rows. Each row lists the sequence of nodes to be visited. The route
+starts at the dwelling node of the vehicle and ends at the last refilling depot.
+Trips can be recognised by the visit to a refilling depot.
+
+Example:
+
+```text
+2, 23, 24, 25, 24, 190, 23, 190, 189, 6, 7, 26, 79, 78, 82, 81, 80, 76, 74, 73, 71, 69, 68, 66, 58,
+46, 44, 42, 43, 42, 44, 47, 48, 47, 57, 45, 46, 58, 66, 65, 66, 68, 70, 68, 70, 72, 75, 20, 19, 5, 17,
+19, 17, 18, 16, 14, 12, 8, 10, 9, 10, 11, 13, 14, 13, 27, 28, 27, 29, 31, 101, 102, 101, 32, 33, 131,
+132, 134, 106, 105, 104, 103, 35, 36, 191, 37, 38, 39, 40, 41, 110, 112, 115, 114, 115, 116, 117,
+118, 125, 126, 128, 139, 140, 137, 138, 135, 136, 135, 132, 131, 133, 193, 103, 104, 38, 37, 36,
+35, 34, 30, 29, 30, 32, 101, 31, 99, 100, 294
+130, 128, 126, 124, 117, 116, 120, 122, 123, 122, 120, 119, 121, 119, 118, 125, 127, 129, 127,
+166, 164, 167, 170, 168, 170, 171, 169, 171, 173, 172, 173, 175, 174, 175, 177, 176, 177, 179,
+178, 179, 181, 182, 180, 182, 184, 183, 184, 186, 188, 187, 157, 142, 157, 156, 158, 159, 158,
+185, 187, 143, 144, 188, 186, 185, 158, 156, 194, 155, 194, 154, 160, 162, 160, 152, 153, 154,
+153, 148, 151, 149, 151, 152, 160, 161, 181, 161, 163, 164, 163, 150, 163, 164, 167, 164, 166,
+147, 130, 141, 146, 145, 146, 147, 146, 141, 140, 139, 134, 133, 193, 105, 106, 107, 39, 107,
+108, 124, 108, 109, 111, 112, 113, 112, 115, 111, 109, 41, 40, 45, 57, 59, 58, 59, 64, 61, 65, 67,
+62, 61, 64, 60, 54, 52, 53, 52, 51, 50, 192, 51, 50, 48, 49, 48, 47, 46, 44, 46, 47, 57, 55, 56, 55,
+54, 60, 62, 63, 62, 67, 69, 71, 74, 73, 72, 75, 20, 21, 22, 21, 4, 3, 2, 1, 1, 2, 3, 189, 6, 5, 4,
+5, 19, 20, 19, 16, 18, 15, 17, 15, 12, 11, 9, 8, 7, 26, 79, 85, 84, 82, 78, 77, 76, 77, 80, 81, 83, 89,
+92, 93, 92, 91, 89, 83, 88, 90, 94, 95, 87, 90, 94, 97, 96, 86, 85, 84, 87, 86, 96, 95, 94, 97, 98, 294
+```
 
 ## Example
 
