@@ -178,7 +178,10 @@ and width $w$ (expressed in $\mathrm{m}$ they use $30\cdot 10^{-6} \cdot
 and the two drivers start and end at their dwelling places at node 2 and 130,
 respectively. The salting of the roads has to be completed within 3.5
 hours and the overall objective is to minimise the total traveled
-distance. 
+distance. An additional requirement is that the vehicles
+must not perform U-turns in intersections where they could be avoided, since it
+is time consuming and sometimes impossible for the vehicles to perform a U-turn.
+The only intersections at which U-turn are allowed are at dead-end roads.
 
 <!-- The drivers visit a depot before returning to their dwelling place with their
 vehicles, therefore they start with a full cargo hold of salt and fuel
