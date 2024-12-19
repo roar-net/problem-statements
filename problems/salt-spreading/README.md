@@ -141,7 +141,11 @@ arrives at a dwelling place.
 We denote by $Z$, indexed by $z$, the set of vehicles, by $K$, indexed by $k$,
 the set of all trips and by $K_z \subseteq K$ the set of trips composing the
 route of the vehicle $z \in Z$.  Each vehicle $z$ has a single dwelling location
-$h_z$ from $H$ from which it departs and returns.
+$h_z$ from $H$ from which it departs and returns. Every depot has associated a
+maximum refill load. After a vehicle has visited a depot we assume its load of
+salt to be equal to the smallest between the capacity of the vehicle and the sum
+of the maximum refill load of the depot with and of the residual load before the
+visit.  
 
 The task is finding a set of routes such that:
 
@@ -219,6 +223,10 @@ The `json` format contains an object for each of the following entities:
   ]
 ```
 
+Note that the instance does not contain an object for the edge set $E$ as every
+edge in this set can be replaced by two arcs in opposite direction in the set
+$A$.
+
 The full [schema](support/schema.json) for validation of the `json` instances is
 available in the `support` folder. See also a small example for the instance
 [gualandi](data/gualandi/gualandi.json) described below.
@@ -260,8 +268,7 @@ Example:
 
 <!-- Provide a small example instance in the described format. -->
 
-The Data are . It is in the form of a
-spread sheet as seen in Figure~\ref{data}.
+There are two small instances that can be used as examples.
 
 <!--
 ![gualandi](images/gualandi.png){ width="515" height="385" style="display:
