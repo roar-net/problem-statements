@@ -162,52 +162,66 @@ Describe the format of a problem instance file.
 We provide two real-life instances and two examples. The real-life instances are
 provided by the company Aiban and relate to the two Danish municipalities of
 Kerteminde and Middelfart. We make available the original spreadsheet as well as
-the post processed `json` format. The instance data file is the `json` format.
+the post processed `json` format, which is going to be the standard format of
+this problem statement.
 
 See a description and details:
 
 - [Kerteminde](data/kerteminde/description.md)
 - [Middelfart](data/middelfart/description.md)
 
-Schema for the `json` format:
+The `json` format contains an object for each of the following entities:
 
-```json
-{
-  "$schema": "http://json-schema.org/schema#",
-  "type": "object",
-  "properties": {
-    "name": {
-      "type": "string"
-    },
-    "max_time": {
-      "type": "number"
-    },
-    "nodes": {
-      "type": "object",
-      "properties": {
-        "1": {
-          "type": "array",
-          "items": {
-            "type": "number"
-          }
-        }
-      },
-    ...
-    }
-  }  
- "required": [
-    "A",
-    "A_R",
-    "E_R",
-    "U",
-    "depots",
-    "max_time",
+```json 
+"required": [
     "name",
+    "max_time",
     "nodes",
+    "required": [
+          "label",
+          "position"
+        ]
     "vehicles"
+    "required": [
+          "capacity",
+          "home",
+          "id"
+        ]
+    "depots",
+    "required": [
+          "label",
+          "refill"
+        ]
+    "A",
+     "required": [
+          "arc",
+          "len",
+          "time"
+        ]
+    "A_R",
+     "required": [
+          "dem",
+          "edge",
+          "len",
+          "time"
+        ]
+    "E_R",
+     "required": [
+          "dem",
+          "edge",
+          "len",
+          "time"
+        ]
+    "U",
+    "required": [
+          "label"
+        ]
   ]
-}
 ```
+
+The full [schema](support/schema.json) for validation of the `json` instances is
+available in the `support` folder. See also a small example for the instance
+[gualandi](data/gualandi/gualandi.json) described below.
 
 ## Solution file
 
