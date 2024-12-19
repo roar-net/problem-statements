@@ -307,6 +307,10 @@ This problem statement is based upon work from COST Action Randomised
 Optimisation Algorithms Research Network (ROAR-NET), CA22137, is supported by
 COST (European Cooperation in Science and Technology).
 
+The problem statement was originally presented by Jens Kristian Fonnesbach. One
+small unpublished example is due to Stefano Gualandi from the University of
+Pavia. The other example is due to Belenguer and Benavent, see reference below.
+
 <!-- Please keep the above acknowledgement. Add any other acknowledgements as
 relevant. -->
 
