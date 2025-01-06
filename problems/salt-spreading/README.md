@@ -316,8 +316,8 @@ relevant. -->
 
 ## References
 
-- Jens Kristian Fonnesbach, "[Spar Millioner paa
-  Vintertjeneste](https://historia.dk/shop/13-business/90-fonnesbech-spar-millioner-paa-vintertjeneste-2017/)",
+- Jens Kristian Fonnesbach, "[Spar Millioner på
+  Vintertjeneste. Håndbog for Saltning af Veje med Fast Belægning](https://historia.dk/shop/13-business/90-fonnesbech-spar-millioner-paa-vintertjeneste-2017/)",
   2017, Historia. 
 
 - Belenguer, José M.; Benavent, Enrique "A cutting plane algorithm for the
