@@ -40,12 +40,13 @@ Template follows below.
 
 # Salt Spreading
 
-Marco Chiarandini, University of Southern Denmark, Denmark
+Jens Kristian Fonnesbach and Marco Chiarandini, University of Southern Denmark, Denmark
+
 
 <!-- Put two empty spaces at the end of each author line except the last for
 proper formatting -->
 
-Copyright 2024 Marco Chiarandini
+Copyright 2025 Marco Chiarandini
 
 This document is licensed under CC-BY-SA-4.0.
 
