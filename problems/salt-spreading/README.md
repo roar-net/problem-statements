@@ -66,7 +66,7 @@ networks.
 
 The problem described here was presented by Jens Kristian Fonnesbach owner of
 the company [Aiban](https://aiban.dk/) and author of the book "[Spar Millioner
-paa
+på
 Vintertjeneste](https://historia.dk/shop/13-business/90-fonnesbech-spar-millioner-paa-vintertjeneste-2017/)",
 2017, Historia.  The data we will describe relate to salt spreading task for
 which Aiban was contracted by local authorities of the Danish municipalities of
@@ -110,12 +110,13 @@ nodes and have to salt the roads requesting it. The load of salt that the
 vehicles can carry is in general insufficient to cover all roads, therefore
 routes might include reloading at opportune depots. After having salted the last
 requested road, the vehicles always visit a depot where they are reloaded with
-fuell and salt before heading to a dwelling place, ready for the next time. It
-is assumed that the vehicles are "off duty" after the final reload, hence the
+fuel and salt before heading to their dwelling place, ready for the next time.
+It is assumed that the vehicles are "off duty" after the final reload, hence the
 path from the refilling depot to their dwelling place does not count in the time
-duration and in the travling distance calculation.  Further, due to the size of
-the vehicles and the movements they have to make, U-turns at some intersections
-are not allowed.
+duration and in the travelling distance calculation. The total travelling
+distance must not exceed a given amount. Further, due to the size of the
+vehicles and the movements they have to make, U-turns at some intersections are
+not allowed.
 
 <!--
 The problem is a generalization of the Capacited Arcs Routing
