@@ -87,13 +87,13 @@ Describe the high-level optimisation task in one or two sentences.
 Given a road network made of roads that need to be salted, roads that can be
 transited and directions of transit, given a fleet of salt vehicles with a salt
 capacity and refilling depots, we want to find the set of routes that satisfy
-salting requirements and minimizes to the total traveled distance.  Minimizing
-the traveled distance is correlated with accomplishing the salting task with the
+salting requirements and minimizes to the total travelled distance.  Minimizing
+the travelled distance is correlated with accomplishing the salting task with the
 least fuel consumption and thus minimal environmental impact (CO2 imprint). In
 order to be usable in practice the routes must take into account the capacity of
 the vehicle. If the salt load is not enough the vehicle must visit a refill
 depot.  Further, there might be constraints on the shape of the routes to allow
-easy movements of the vheicles. For example, U-turns in some parts of the
+easy movements of the vehicles. For example, U-turns in some parts of the
 networks are not allowed.
 
 ## Detailed description
@@ -237,7 +237,7 @@ available in the `support` folder. See also a small example for the instance
 
 <!-- Describe the format of a solution file. -->
 
-In the solution file, routes beloning to different vehicles are written in
+In the solution file, routes belonging to different vehicles are written in
 different rows. Each row lists the sequence of nodes to be visited. The route
 starts at the dwelling node of the vehicle and ends at the last refilling depot.
 Trips can be recognised by the visit to a refilling depot.
