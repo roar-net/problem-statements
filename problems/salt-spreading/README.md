@@ -107,7 +107,7 @@ feasibility constraints.
 
 We are given a network of roads that can be traversed, among which some roads
 must be salted. A number of vehicles depart from their respective dwelling place
-nodes and have to salt the roads requesting it. The load of salt that the
+and have to salt the roads requesting it. The load of salt that the
 vehicles can carry is in general insufficient to cover all roads, therefore
 routes might include reloading at opportune depots. After having salted the last
 requested road, the vehicles always visit a depot where they are reloaded with
