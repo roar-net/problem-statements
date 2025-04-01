@@ -40,12 +40,13 @@ Template follows below.
 
 # Salt Spreading
 
-Marco Chiarandini, University of Southern Denmark, Denmark
+Jens Kristian Fonnesbach, Aiban, Denmark, and Marco Chiarandini, University of Southern Denmark, Denmark
+
 
 <!-- Put two empty spaces at the end of each author line except the last for
 proper formatting -->
 
-Copyright 2024 Marco Chiarandini
+Copyright 2025 Marco Chiarandini
 
 This document is licensed under CC-BY-SA-4.0.
 
@@ -73,7 +74,7 @@ which Aiban was contracted by local authorities of the Danish municipalities of
 Kerteminde and Middelfart.
 
 <div style="text-align:center;">
-<img src="images/fonnesbech_cover.jpeg" alt="Book cover" style="max-width:70%;height:auto;">
+<img src="images/frontpage_historia.jpg" alt="Book cover" style="max-width:70%;height:auto;">
 </div>
 
 
