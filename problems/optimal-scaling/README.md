@@ -1,11 +1,10 @@
 # Optimal Scaling of Cloud Services
 
-<!--
-Authors: 
-1. André Bento (apbento@dei.uc.pt)
-2. Filipe Araújo (filipius@dei.uc.pt)
-3. Raul Barbosa (rbarbosa@dei.uc.pt)
--->
+André Bento, University of Coimbra, Centre for Informatics and Systems of the University of Coimbra, Department of Informatics Engineering.
+
+Copyright 2024 André Bento.
+
+This document is licensed under CC-BY-4.0.
 
 ## Introduction
 
