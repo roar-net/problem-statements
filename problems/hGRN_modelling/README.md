@@ -1,4 +1,5 @@
 
+
 SPDX-FileCopyrightText: 2024 Denis PALLEZ <denis.pallez@univ-cotedazur.fr>
 
 SPDX-License-Identifier: CC-BY-4.0
@@ -64,12 +65,12 @@ $$h_i , \left( C_{v, \eta} | v \in V, \eta \in \mathbb{S} \right), h_f$$
 
 The fitness function is defined as the sum of three distances, each corresponding to one of the criteria associated to the biological knowledge:
 
-$$f(x) = \sum\nolimits_\eta d_{\Delta t}(tr, BK) + d_b(tr, BK) + d_e(tr, BK)$$
+$$f(h_i , \left( C_{v, \eta} | v \in V, \eta \in \mathbb{S} \right), h_f) = \sum_{v \in V, \eta \in \mathbb{S}} d_{\Delta t}(C_{v, \eta}, BK) + \sum_{v \in V, \eta \in \mathbb{S}} d_b(C_{v, \eta}, BK) + \sum_{v \in V, \eta \in \mathbb{S}} d_e(C_{v, \eta}, BK)$$
 
-where $d_{\Delta t}(tr, BK)$ is the distance between the expected time given by BK ($\Delta t$) and the time spent in the current state by the considered trajectory; $d_b(tr, BK)$ represents the distance between the trajectory behaviour inside the discrete state and the property of BK; and  $d_e(tr, BK)$ compares the expected next discrete state according to BK with the discrete state into which the considered trajectory enters.
+where $d_{\Delta t}(C_{v, \eta}, BK)$ is the distance between the expected time given by BK ($\Delta t$) and the time spent in the current state $\eta$ by the considered trajectory; $d_b(C_{v, \eta}, BK)$ represents the distance between the trajectory behaviour inside the discrete state and the property of BK; and  $d_e(C_{v, \eta}, BK)$ compares the expected next discrete state according to BK with the discrete state into which the considered trajectory enters.
 The function domain is
 $\left(\prod_{v \in V}[0,b_{v}] \right)\times [0,1]^n \times \mathbb{R}^{|C|}$ where $n$ is the number of genes and $|C|$ is the total number of celerities to identify, i.e. the length of the decision vector. The codomain is $\mathbb{R}^+$.
-__Minimising__ these three criteria led to the identification of admissible celerity values
+__Minimising__ $f$ led to the identification of admissible celerity values that satisfy BK.
 
 ## Instance data file
 
@@ -101,7 +102,7 @@ Brief description of the following instance file:
 - __VAR__ encompasses the variables v1 and v2 where their discrete level of concentration are set between 0 and 1.
 - __REG__ details the two regulations $m1$ and $m2$.
 - __HYBRID HOARE__ provides:
-   1. an initial level of concentration (PRE), $$ h_i = \left( (\eta_{v_1},\eta_{v_2})^T, ( \pi_{v_1}, \pi_{v_2} )^T \right) = \left( (0,0)^T, (0.0,1.0)^T \right) $$ and,
+   1. an initial level of concentration (PRE), $h_i = \left( (\eta_{v_1},\eta_{v_2})^T, ( \pi_{v_1}, \pi_{v_2} )^T \right) = \left( (0,0)^T, (0.0,1.0)^T \right)$ and,
    2. multiple triples of constraints:
       1. the time spent by the trajectory inside the discrete state $\eta = (0, 0)$ is approximately 5 hours ($\Delta t = 5.0$). Within this state, the celerity should move towards the next discrete state of $v_1$ ($v_1+$) so as to increase the concentration level of gene $v_1$ until it reaches the right border without touching either the top or the bottom border ( $noslide(v_2)$ ) and then jump into the neighbour state $\eta = (1,0)$.
       2. In this new discrete state, the trajectory evolves for 7 hours ($\Delta t = 7.0$) in the direction of $\eta_{v_2}=1$ ($v_2+$) but, this time, the trajectory reaches the right border, which corresponds to the maximum admissible concentration of $v_1$ ( $slide^+(v_1)$ ).
