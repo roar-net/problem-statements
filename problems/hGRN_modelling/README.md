@@ -54,7 +54,9 @@ The identification process requires some input data, which allows the modeller t
 ### Biological knowledge
 
 Knowledge extracted from biological experiments are detailed under the form of a Hoare triplet which corresponds to constraints on the global trajectory:
-it must (i) start from an initial hybrid state $h_i$, (ii) verify a triplet of properties in each successive discrete state $(\Delta t,b,e)$ where $\Delta t$ expresses the time spent; $b$ delineates the observed continuous behavior inside the discrete state ($\top$ means the absence of observed behaviors); $e$ specifies the next discrete state transition, and (iii) reach a final hybrid state $h_f$.
+it must (i) start from an initial hybrid state $h_i$, (ii) verify a triplet of properties in each successive discrete state $(\Delta t,b,e)$ where $\Delta t$ expresses the time spent; $b$ delineates the observed continuous behavior inside the discrete state ($slide^+ | slide^− | noslide | noslide^+ | noslide^− | \top$ ); $e$ specifies the next discrete state transition, and (iii) reach a final hybrid state $h_f$.
+
+_N.B._ : The term $slide^+(v)$ (resp. $slide^-(v)$) expresses the sliding of the gene $v$ on the upper (resp. lower) edge of the current discrete state meaning that the concentration level of gene $v$ reaches its maximum (resp. minimum). Conversely, $noslide^+(v)$ (resp. $noslide^-(v)$) express that there is no sliding observed in this discrete state. Finally, $slide(v)=slide^+(v) \vee slide^-(v)$,  $noslide(v)=noslide^+(v) \wedge noslide^-(v)$ and $\top$ means the absence of observed behaviors.
 
 ### Decision vector
 
@@ -105,8 +107,8 @@ Brief description of the following instance file:
    1. an initial level of concentration (PRE), $h_i = \left( (\eta_{v_1},\eta_{v_2})^T, ( \pi_{v_1}, \pi_{v_2} )^T \right) = \left( (0,0)^T, (0.0,1.0)^T \right)$ and,
    2. multiple triples of constraints:
       1. the time spent by the trajectory inside the discrete state $\eta = (0, 0)$ is approximately 5 hours ($\Delta t = 5.0$). Within this state, the celerity should move towards the next discrete state of $v_1$ ($v_1+$) so as to increase the concentration level of gene $v_1$ until it reaches the right border without touching either the top or the bottom border ( $noslide(v_2)$ ) and then jump into the neighbour state $\eta = (1,0)$.
-      2. In this new discrete state, the trajectory evolves for 7 hours ($\Delta t = 7.0$) in the direction of $\eta_{v_2}=1$ ($v_2+$) but, this time, the trajectory reaches the right border, which corresponds to the maximum admissible concentration of $v_1$ ( $slide^+(v_1)$ ).
-      3. In (1,1) the celerities must generate trajectory that spends 8 hours, does not slide and goes in the direction of $v1+$ leading to the state $(0,1)$.
+      2. In this new discrete state $\eta = (1, 0)$, the trajectory evolves for 7 hours ($\Delta t = 7.0$) in the direction of $\eta_{v_2}=1$ ($v_2+$) but, this time, the trajectory reaches the right border, which corresponds to the maximum admissible concentration of $v_1$ ( $slide^+(v_1)$ ).
+      3. In $\eta = (1, 1)$, the celerities must generate trajectory that spends 8 hours, does not slide and goes in the direction of $v1-$ leading to the state $(0,1)$.
       4. Finally the trajectory spends 4 hours, slides on bottom of v1 and goes in the directio of $v2-$.
 
    3. POST is empty since CYCLIC has been added before the END, meaning that PRE equals POST.
