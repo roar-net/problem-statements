@@ -34,10 +34,10 @@ In the LFCS problem, given is an arbitrary set of genes $\mathcal{M}$ provided b
 
 \subsection{Problem statement}
 
-Given are two strings $s_1$ and $s_2$ over a finite alphabet $\Sigma$ and a multiset $\mathcal{M}$ of symbols from $\Sigma$. We say that $s_2^*$ is \textit{filled} by $s_2$ if it is obtained from $s_2$ by implanting a subset of allowed symbols from $\mathcal{M}$.  \\
-The objective is to find a filled sequence $s_2^*$\ \ so that it maximizes the LCS between $s_1$ and (filled) $s_2^*$. 
+Given are two strings $s_1$ and $s_2$ over a finite alphabet $\Sigma$ and a multiset $\mathcal{M}$ of symbols from $\Sigma$. We say that $s_2^*$ is \textit{filled} by $s_2$ if it is obtained from $s_2$ by implanting a subset of allowed symbols from $\mathcal{M}$. For example, if $s_2=\texttt{AABC}$ and $\mathcal{M}=\{\texttt{D}, \texttt{C}\}$, $s_2^*= \texttt{AABDC}$ is a filled sequence obtained by inserting $\texttt{D}\in \mathcal{M}$ between $\texttt{B}$ and $\texttt{C}$ in $s_2$; another filled sequence would be $s_2^*=\texttt{CAABCD}$ obtained by inserting symbol $\texttt{C} \in \mathcal{M}$ at the first position and symbol $\texttt{D} \in \mathcal{M}$ at the last position of $s_2$. \\
+The objective here is to find a filled sequence $s_2^*$\ \ so that it maximizes the LCS between $s_1$ and the (filled) sequence $s_2^*$. 
 
-A feasible \textit{solution} $s_2^*$ is any filled sequence obtained by implanting an arbitrary subset of characters from (multiset) $\mathcal{M}$ in $s_2$. 
+A feasible \textit{solution} $s_2^*$ is any filled sequence obtained by inserting arbitrary characters from (multiset) $\mathcal{M}$ between characters of the sequence $s_2$. 
 
 \textit{The objective value} of a filled (feasible) solution $s_2^*$ is the length of the LCS  between $s_1$ and $s_2^*$. 
 
@@ -69,18 +69,21 @@ Input file:
  abd
 \end{verbatim}
 
-According to the notation provide with the problem definition, $s_1=\texttt{abcdbcda}$, $s_2=\texttt{cabbdda}$, and $\mathcal{M}=\{\texttt{a}, \texttt{b}, \texttt{d}\}$, where $\Sigma=\{\texttt{a}, \texttt{b}, \texttt{c}, \texttt{d} \}$ \\
+According to the notation provide with the problem definition, $s_1=\texttt{abcdbcda}$, $s_2=\texttt{cabbdda}$, and $\mathcal{M}=\texttt{abd}=\{\texttt{a}, \texttt{b}, \texttt{d}\}$, where $\Sigma=\{\texttt{a}, \texttt{b}, \texttt{c}, \texttt{d} \}$ \\
 
 \subsubsection{Solution}
 
-An optimal solution to the problem problem instance given below is: $s_2^*=\texttt{abcdabbdda}$ with the resulting optimal value of $7= |\textrm{LCS}(s_1, s_2^*)|$. 
+An optimal solution to the problem problem instance given below is: $s_2^*=\texttt{abcdabbdda}$. It is obtained by inserting symbols $\texttt{a}\in \mathcal{M}$ and $\texttt{b}\in \mathcal{M}$ right before the first symbol $\texttt{c}$ of $s_2$, and inserting  symbol $\texttt{d} \in \mathcal{M}$ between the first and second symbols (\texttt{c} and \texttt{a}) of $s_2$.
+ 
+The resulting optimal value is represented by the length of the longest common subsequence between $s_1$
+ and $s_2^*$  i.e., $|\textrm{LCS}(s_1, s_2^*)|=7$. This value can be determined in a polynomial time, e.g. by utilizing  a Dynamic programming approach. 
 
 
 %Provide a feasible solution to the example instance in the described format (including its evaluation measure).
 
 \subsubsection{Explanation}
 
-There are possibly $ 3 \cdot 8  + 3 \cdot 8 \cdot 7 + 8 \cdot 7 \cdot 6 + 1= 24 + 168 +336+1 =529$ different feasible solutions for the above problem instance, which actually correspond to any possibility that each subset of three letters to be implanted  at any of 8 possible places (at index 0 -- before the leading $\texttt{c}$, at position 1 -- between the leading \texttt{a} and \texttt{b}, $\ldots$, at position 8 -- after the last \texttt{a}). For each of these 529 solutions, one should determine the LCS between them and $s_1$ (e.g. by a dynamic programming), yielding the conclusion that  \texttt{abcdabbdda} is an optimal solution along with two others, \texttt{abcadbbdda}, \texttt{abcabdbdda}. 
+Below is explained a brute-force to solve the LFCS problem. There are possibly $ 3 \cdot 8  + 3 \cdot 8 \cdot 7 + 8 \cdot 7 \cdot 6 + 1= 24 + 168 +336+1 =529$ different feasible solutions (filled sequences) for the above mentioned problem instance, which actually corresponds to any possibility for a subset of three letters to be inserted  at any of 8 possible places (at index 0 -- before the leading $\texttt{c}$, at position 1 -- between the leading \texttt{a} and \texttt{b}, $\ldots$, at position 8 -- after the last \texttt{a}). For each of these 529 solutions, one should determine the LCS between them and $s_1$ (e.g. by a dynamic programming), yielding the conclusion that  \texttt{abcdabbdda} is an optimal solution along with two others, \texttt{abcadbbdda}, \texttt{abcabdbdda}. 
 
 
 %Optionally, provide a descriptive and/or visual explanation of the solution (and its evaluation measure value) for the instance.
