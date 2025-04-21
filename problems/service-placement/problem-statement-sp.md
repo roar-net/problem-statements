@@ -14,13 +14,14 @@ This document is licensed under CC-BY-4.0.
 
 ## Introduction
 
-One of the main problems in communications is the routing problem, where the goal is to find a path between two devices that minimises a given metric. Usually, that metric is latency or number of hops. However, that problem is too restrictive, due to bandwidth or device usage not being taken into account when solving the problem.
+One of the main problems in communications is the routing problem, where the goal is to find a path between two devices that minimises a given metric. Usually, that metric is latency or number of hops. 
+However, this problem is restrictive as it does not account for bandwidth or device usage constraints.
 
 The service placement problem was proposed to tackle these issues. The goal is to optimise a set of requests in a network, where each request is composed by source and destination, bandwidth requirements and a set of services to offload, with CPU and RAM requirements. This problem is NP-complete, making it hard to solve in realistic scenarios. Thus, efficient techniques to obtain (near-)optimal solutions are necessary. 
 
 ## Task
 
-Given a fully connected graph, a set of requests and their services to be offloaded, minimise the overall latency and processing time of all requests and services, taking resource constraints into account.
+Given a graph, a set of requests and their services to be offloaded, minimise the overall latency and processing time of all requests and services, taking resource constraints (CPU and RAM) into account.
 
 ## Detailed description
 
@@ -54,7 +55,7 @@ where $U_{ir}$ is 1 if node $i$ corresponds to a source node, -1 if $i$ correspo
 Each instance file contains a graph, the requests, and their services requirements.
 
 The first line contains an integer denoting the number of nodes $N$.
-Each of the following $N$ lines gives the information for a node. In particular, for each node there are 4 comma separated numbers (the first 3 are integers, the last is a floating point number), denoting the ID of the node, the total CPU (in MIPS), the total RAM (in Mb), and the processing time (in s), respectively. 
+Each of the following $N$ lines gives the information for a node. In particular, for each node there are 4 comma separated numbers (the first 3 are integers, the last is a floating point number), denoting the ID of the node, the total CPU (in MIPS), the total RAM (in Mb), and the service processing time (in s), respectively. 
 
 After the nodes, there is a line with a single integer denoting the number of edges.
 Each edge contains the connected nodes, the bandwidth (in Mbps), and the latency (in s).
@@ -143,8 +144,12 @@ This problem statement is based upon work from COST Action Randomised Optimisati
 
 ## References
 
+N. Godinho, H. Silva, M. Curado, and L. Paquete, ‘A reconfigurable resource management framework for fog environments’, Future Generation Computer Systems, vol. 133, pp. 124–140, 2022, doi: [10.1016/j.future.2022.03.015](https://doi.org/10.1016/j.future.2022.03.015).
+
+N. Godinho, M. Curado, and L. Paquete, ‘Optimization of Service Placement with Fairness’, in 2019 IEEE Symposium on Computers and Communications (ISCC), Jun. 2019, pp. 1–6. doi: [10.1109/ISCC47284.2019.8969652](https://doi.org/10.1109/ISCC47284.2019.8969652).
+
 X. Huang, S. Ganapathy, and T. Wolf, ‘Evaluating Algorithms for Composable Service Placement in Computer Networks’, in 2009 IEEE International Conference on Communications, Dresden, Germany: IEEE, Jun. 2009, pp. 1–6. doi: [10.1109/ICC.2009.5199007](https://doi.org/10.1109/ICC.2009.5199007).
 
-N. Kumari, A. Yadav, and P. K. Jana, ‘Task offloading in fog computing: A survey of algorithms and optimization techniques’, Computer Networks, vol. 214, p. 109137, Sep. 2022, doi: 10.1016/j.comnet.2022.109137.
+N. Kumari, A. Yadav, and P. K. Jana, ‘Task offloading in fog computing: A survey of algorithms and optimization techniques’, Computer Networks, vol. 214, p. 109137, Sep. 2022, doi: [10.1016/j.comnet.2022.109137](https://doi.org/10.1016/j.comnet.2022.109137).
 
-H. Lin, S. Zeadally, Z. Chen, H. Labiod, and L. Wang, ‘A survey on computation offloading modeling for edge computing’, Journal of Network and Computer Applications, vol. 169, p. 102781, Nov. 2020, doi: 10.1016/j.jnca.2020.102781.
+H. Lin, S. Zeadally, Z. Chen, H. Labiod, and L. Wang, ‘A survey on computation offloading modeling for edge computing’, Journal of Network and Computer Applications, vol. 169, p. 102781, Nov. 2020, doi: [10.1016/j.jnca.2020.102781](https://doi.org/10.1016/j.jnca.2020.102781).
