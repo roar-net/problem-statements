@@ -57,15 +57,14 @@ The problem instance file format can be structured in a plain text (txt) format.
 Here is a breakdown of each field:
 
 - ObjFuncVal: The value of the objective function of the solution ranging from 0 to 2.
-- Availability: The overall availability of the system.
-- Cost: The total cost of the solution.
-- Success: A flag indicating whether the solution meets all constraints.
-- [Replica1, Replica2, ...]: An array listing the replicas for each service, x, representing the optimal configuration of the system.
+- A: The overall availability of the system.
+- C: The total cost of the solution.
+- [RplSvc1, RplSvc2, ...]: An array listing the replicas for each service, $x$, representing the optimal configuration of the system.
 
 Here is an example of a problem solution file:
 ```txt
-ObjectiveFunctionValue, Availability, Cost, Success
-[Replica1, Replica2, ...]
+ObjFuncVal, A, C
+[RplSvc1, RplSvc2, ...]
 ```
 
 ## Example
@@ -76,8 +75,8 @@ Here is an example of a problem instance file:
 ```txt
 2
 0.9
-1, front-end, 1, 0.5, 1, 0.13447756374292408, 1.0286217700743516, 1.025725768730294, 0.9937672415588138, 0.00671433461475121, 0.0010703634023358406, 0.004259711742494379
-2, catalogue, 1, 0.2, 0.2, 0.37523562442499, 1.4211722425198932, 0.9688699107930816, 1.501401141904585e-08, 0.02265990255071186, 16.092457989374267, 4.7297917338942606
+1, 1, 0.5, 1
+2, 1, 0.2, 0.2
 0.0427,0.0039
 ```
 
@@ -85,7 +84,7 @@ Here is an example of a problem instance file:
 
 Here is an example of a problem solution file (possibly not the optimal global solution):
 ```txt
-0.9871061228716791, 0.9525361228716791, 0.034570000000000004, True
+0.9871061228716791, 0.9525361228716791, 0.034570000000000004
 [1, 1]
 ```
 
