@@ -93,6 +93,10 @@ Here is an example of a problem solution file (possibly not the optimal global s
 
 The solution of this example instance indicates that the optimal configuration for the system is to have one replica of the front-end service and one replica of the catalogue service. The value of the objective function is around 0.9871, with around 95.25% for the overall availability of the system, and the total cost is around 0.0346 $/hour. The solution meets all constraints.
 
+## Acknowledgements
+
+This problem statement is based upon work from COST Action Randomised Optimisation Algorithms Research Network (ROAR-NET), CA22137, is supported by COST (European Cooperation in Science and Technology), and is also funded in part by the Portuguese Foundation for Science and Technology (FCT) through Doctoral Grant No. BD.06012.2021.
+
 ### References
 
 Bento, A., Araujo, F., & Barbosa, R. (2023). Cost-Availability Aware Scaling: Towards Optimal Scaling of Cloud Services. Journal of Grid Computing, 21(4), 80.
