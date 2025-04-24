@@ -70,10 +70,10 @@ Each service contains the requested CPU (in MIPS) and RAM (in Mb).
 
 Constraints:\
 
-    - $N \geq 2$\
-    - $E \geq N-1$\
-    - $R \geq 1$\
-    - $S_r \geq 1$
+- $N \geq 2$\
+- $E \geq N-1$\
+- $R \geq 1$\
+- $S_r \geq 1$
 
 ## Solution file
 
