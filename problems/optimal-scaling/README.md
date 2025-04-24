@@ -46,7 +46,7 @@ Here is a breakdown of each field:
 
 Here is an example of a problem instance file:
 
-```txt
+```text
 NSvcs
 ASLO
 SvcId1, Load, CPUPerReplica, MemPerReplica
@@ -67,7 +67,7 @@ Here is a breakdown of each field:
 
 Here is an example of a problem solution file:
 
-```txt
+```text
 ObjFuncVal, A, C
 [RplSvc1, RplSvc2, ...]
 ```
@@ -78,7 +78,7 @@ ObjFuncVal, A, C
 
 Here is an example of a problem instance file:
 
-```txt
+```text
 2
 0.9
 1, 1, 0.5, 1
@@ -90,7 +90,7 @@ Here is an example of a problem instance file:
 
 Here is an example of a problem solution file (possibly not the optimal global solution):
 
-```txt
+```text
 0.9871061228716791, 0.9525361228716791, 0.034570000000000004
 [1, 1]
 ```
