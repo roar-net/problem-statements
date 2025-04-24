@@ -29,7 +29,7 @@ The replica configuration for the entire system is represented by variable $x$. 
 
 $A$ is computed by multiplying all the Availabilities of each service, $A = A_1 * A_2 * ... * A_n$.
 
-$C$ is computed by summing all the CPU and Memory requirements per replica, $C = \frac{\sum_{i=1}^{n}\sum_{j=1}^{r}{\left(c_c \times \textit{cpu}_{i} + c_m \times \textit{mem}_{i}\right) \times x_{ij}}}{C_{max}}$.
+$C$ is computed by summing all the CPU and Memory requirements per replica, $C = \frac{\sum_{i=1}^{n}\sum_{j=1}^{r}{\left(c_c \times \textit{cpu}\_{i} + c_m \times \textit{mem}\_{i}\right) \times x_{ij}}}{C_{max}}$.
 
 ## Instance data file
 
