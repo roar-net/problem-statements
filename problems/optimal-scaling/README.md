@@ -54,11 +54,10 @@ CPUCostCoeff,MemCostCoeff
 The problem instance file format can be structured in a plain text (txt) format.
 Here is a breakdown of each field:
 
-- ObjectiveFunctionValue: The value of the objective function of the solution.
-- Availability: The overall availability of the system.
-- Cost: The total cost of the solution.
-- Success: A flag indicating whether the solution meets all constraints.
-- [Replica1, Replica2, ...]: An array listing the replicas for each service, x, representing the optimal configuration of the system.
+- ObjFuncVal: The value of the objective function of the solution ranging from 0 to 2.
+- A: The overall availability of the system.
+- C: The total cost of the solution.
+- [RplSvc1, RplSvc2, ...]: An array listing the replicas for each service, $x$, representing the optimal configuration of the system.
 
 Here is an example of a problem solution file:
 ```txt
