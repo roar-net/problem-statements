@@ -40,6 +40,7 @@ Here is a breakdown of each field:
 - CPUCostCoeff, MemCostCoeff: These coefficients represent the cost associated with CPU and memory usage, respectively.
 
 Here is an example of a problem instance file:
+
 ```txt
 NSvcs
 ASLO
@@ -60,6 +61,7 @@ Here is a breakdown of each field:
 - [RplSvc1, RplSvc2, ...]: An array listing the replicas for each service, $x$, representing the optimal configuration of the system.
 
 Here is an example of a problem solution file:
+
 ```txt
 ObjFuncVal, A, C
 [RplSvc1, RplSvc2, ...]
@@ -70,6 +72,7 @@ ObjFuncVal, A, C
 ### Instance
 
 Here is an example of a problem instance file:
+
 ```txt
 2
 0.9
@@ -81,6 +84,7 @@ Here is an example of a problem instance file:
 ### Solution
 
 Here is an example of a problem solution file (possibly not the optimal global solution):
+
 ```txt
 0.9871061228716791, 0.9525361228716791, 0.034570000000000004
 [1, 1]
