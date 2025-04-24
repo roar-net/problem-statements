@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: 2024 André Bento <apbento@dei.uc.pt>
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 # Optimal Scaling of Cloud Services
 
 André Bento, University of Coimbra, Centre for Informatics and Systems of the University of Coimbra, Department of Informatics Engineering.
