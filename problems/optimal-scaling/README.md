@@ -56,7 +56,7 @@ CPUCostCoefficient,MemoryCostCoefficient
 The problem instance file format can be structured in a plain text (txt) format.
 Here is a breakdown of each field:
 
-- ObjectiveFunctionValue: The value of the objective function of the solution.
+- ObjFuncVal: The value of the objective function of the solution ranging from 0 to 2.
 - Availability: The overall availability of the system.
 - Cost: The total cost of the solution.
 - Success: A flag indicating whether the solution meets all constraints.
