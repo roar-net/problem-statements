@@ -1,0 +1,130 @@
+\documentclass[]{article}
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{url}
+%opening
+\title{\textbf{Problem statement: The 2D-LCS Problem}\footnote{A contribution to the Working group 1 of the Cost Action ROAR-NET }}
+\author{Marko Djukanović}
+
+\begin{document}
+
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+
+\section{The 2D-Longest Common Subsequence Problem}
+
+\subsection{Introduction}
+
+The Longest Common Subsequence (LCS) problem is a fundamental optimization problem arising in bioinformatics that rates the structural similarity between two or more biological sequences.
+It has applications in computational biology, data compression, text editing, etc.  
+
+The literature is known for many linear generalizations of the LCS problem. The first inherently multidimensional generalization of the LCS problem is provided in~\cite{2d_lcs_amir} by introducing the concept of \textit{multidimensional} \textit{sequences}, so-called 2D-sequences. Comparing such sequences is of practical interest in, for example, quantifying the similarity of two images represented by respective matrices of pixels. 
+
+%Provide a brief introduction of the problem, possibly including its motivation and context. This should be a short (2 or 3 paragraphs) high-level description.
+
+\subsection{Task}
+
+In the 2D-LCS problem, given are two two-dimensional matrices or multidimensional objects. The task is 
+to  rate the (structural) similarity
+between a pair of two-dimensional objects.
+To do so, one may seek identical symbols in both matrices, preserving their order. This will not always result in a sub-matrix, but rather the
+symbols common to both matrices, which preserve the order relation between them in both matrices.   
+
+
+
+%Describe the high-level optimization task in one or two sentences.
+
+\subsection{Problem statement}
+
+Given is matrix  $A$ of dimension $n\times n$ and  matrix $B$ of dimension $m \times m$ over a finite alphabet $\Sigma$.  \\
+The objective is to find a \textbf{maximum} domain size 1-1 mapping $f=(f_1, f_2) \colon [n] \times [n] \mapsto [m] \times [m] $ so that $A[i, j] = B[f((i, j))=(f_1(i), f_2(j))]$ for each $(i, j) \in Dom(f)$ and
+for each two elements $(i, j), (i',j') \in Dom(f)$, the following conditions hold:
+\begin{enumerate}  
+	\item $i < i'$ iff $f_1(i) < f_1(i')$  \label{constr-1}
+	\item $j < j'$ iff $f_2(j) < f_2(j')$
+	\item $i = i'$ iff $f_1(i) = f_1(i')$
+    \item $j = j'$ iff $f_2(j) = f_2(j')$	\label{constr-4}
+\end{enumerate}
+
+
+A feasible \textit{solution} is therefore any (1-1) mapping $f$ from $[n]^2$ to $[m]^2$ satisfying Conditions \ref{constr-1}--\ref{constr-4}. 
+
+\textit{The objective value} of a  solution $f$:  domain size of a feasible solution (mapping), i.e. the value $|Dom(f)|$. 
+
+It is proven that the 2D-LCS problem is indeed $\mathcal{NP}$-hard, see~\cite{2d_lcs_amir}. 
+
+  
+
+\subsection{Instance data file}
+
+
+Each \textit{problem instance} is represented by two matrices of characters of dimensions $n \times n$ and $m \times m$, respectively. These two numbers stating the dimensions may be written in the first line of the input file.  The subsequent $n$ lines are in charge for storing row elements of the. The last $m$ lines store the elements of the second matrix row-by-row.
+
+The extension of the file can be .\textit{txt}, .\textit{csv}, or some other similar (textual) format.
+
+\subsection{Solution file}
+
+A solution can be stored in a textual-type file where  in the first line elements of the domain are stored, given as a sequence of pairs.  The second line keeps respective co-domain values of the solution also as a sequence of pairs. 
+
+\subsection{Example}
+For the shake of clarity, given is an example in the subsequent section. 
+
+\subsubsection{Instance}
+
+Input file: 
+\begin{verbatim}
+3 3
+A C C
+B D A 
+A A C
+A A C
+D B C
+B D D
+\end{verbatim}
+Visually, the instance correspond to the matrices shown in Figure~\ref{fig:instance}. 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=150pt,height=60pt]{example\_2d\_lcs.png}
+	\caption{The symbols in bold denote a solution to the instance\protect\footnotemark }
+	\label{fig:instance}
+\end{figure}
+
+\footnotetext{The example borrowed from~[1]}
+
+  
+
+\subsubsection{Solution}
+
+An optimal solution to the problem problem instance given above is a function $f:X \rightarrow Y$ with 
+$$X=\{ (1, 1), (1, 2), (2, 1), (2, 2)   \}, Y=\{ (1, 1), (1, 3), (3, 1), (3, 3) \}.$$
+So, the objective value of $f$ is equal to 4.  The output file  looks as follows.
+
+\begin{verbatim}
+ (1, 1), (1, 2), (2, 1), (2, 2)
+ (1, 1), (1, 3), (3, 1), (3, 3)
+ Size: 4
+\end{verbatim}
+
+%Provide a feasible solution to the example instance in the described format (including its evaluation measure).
+
+\subsubsection{Explanation}
+ One can easily verify that the solution is feasible (after directly checking Conditions 1-4). It can be verified that one cannot choose all symbols of a row (or a column) to be elements of any feasible function $f$.  Thus, an upper bound of the optimal solution must be less or equal to 4. 
+
+%Optionally, provide a descriptive and/or visual explanation of the solution (and its evaluation measure value) for the instance.
+
+\bibliography{plain}
+
+
+\begin{thebibliography}{9}
+	\bibitem{2d_lcs_amir}
+	Amir, A., Hartman, T., Kapah, O., Shalom, B. R., \& Tsur, D. (2007, October). Generalized {LCS}. In International Symposium on String Processing and Information Retrieval (pp. 50-61). Berlin, Heidelberg: Springer Berlin Heidelberg (doi:  \url{https://doi.org/10.1007/978-3-540-75530-2_5})
+	
+ 
+\end{thebibliography}
+
+\end{document}
