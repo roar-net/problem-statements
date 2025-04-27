@@ -1,0 +1,31 @@
+VAR
+
+SK = 0 .. 2;
+A = 0 .. 1;
+B = 0 .. 1;
+En = 0 .. 1;
+EP = 0 .. 1;
+
+REG
+
+m1 [!(A>=1)] => SK;
+m2 [SK>=1] => SK;
+m3 [SK>=2] => A;
+m4 [!(A>=1)] => En;
+m5 [!(En>=1)] => A;
+m6 [A>=1] => B;
+m7 [!(B>=1)] => A;
+m8 [B>=1] => EP;
+m9 [EP>=1] => En;
+m10 [!(En>=1 | (EP>=1 & En>=1))] => B;
+m11 [!(SK>=1)] => En;
+
+HYBRID HOARE
+
+    PRE : {eta(SK)=0,eta(A)=0,eta(B)=0,eta(En)=1,eta(EP)=0;pi(SK)=0.4375,pi(A)=0.0,pi(B)=0.0,pi(En)=1.0,pi(EP)=1.0}
+    TRACE : (3.33,slide-(EP),SK+);(3.33,True,SK+);(3.33,slide+(SK),En-);(2.0,slide-(En),A+);(2.0,True,SK-);(2.0,slide+(A),SK-);(2.0,slide-(SK),B+);(2.0,True,A-);(2.0,slide+(B),EP+);(0.17,slide+(EP),En+);(0.17,slide-(A) and slide+(En),B-);(0.17,slide-(B),EP-);
+    POST : {}
+
+CYCLIC
+
+END
