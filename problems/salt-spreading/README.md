@@ -62,16 +62,14 @@ high-level description.
 -->
 
 In the winter season, when forecasts announce temperatures below the freezing
-point, municipalities are faced with the task of spreading salt in their road
-networks.
+point, municipalities are faced with the task of spreading salt in their road.
 
-The problem described here was presented by Jens Kristian Fonnesbach owner of
-the company [Aiban](https://aiban.dk/) and author of the book "[Spar Millioner
-på
+The problem and the data described below were provided by Jens Kristian
+Fonnesbach, owner of the company [Aiban](https://aiban.dk/) and author of the
+book "[Spar Millioner på
 Vintertjeneste](https://historia.dk/shop/13-business/90-fonnesbech-spar-millioner-paa-vintertjeneste-2017/)",
-2017, Historia.  The data we will describe relate to salt spreading task for
-which Aiban was contracted by local authorities of the Danish municipalities of
-Kerteminde and Middelfart.
+2017, Historia.  They are focused on the salt spreading task for the
+Danish municipalities of Kerteminde and Middelfart.
 
 <div style="text-align:center;">
 <img src="images/frontpage_historia.jpg" alt="Book cover" style="max-width:70%;height:auto;">
@@ -84,17 +82,17 @@ Kerteminde and Middelfart.
 Describe the high-level optimisation task in one or two sentences.
 -->
 
-Given a road network made of roads that need to be salted, roads that can be
+Given a road network made of roads that must be salted, roads that can be
 transited and directions of transit, given a fleet of salt vehicles with a salt
 capacity and refilling depots, we want to find the set of routes that satisfy
-salting requirements and minimizes to the total travelled distance.  Minimizing
-the travelled distance is correlated with accomplishing the salting task with the
-least fuel consumption and thus minimal environmental impact (CO2 imprint). In
-order to be usable in practice the routes must take into account the capacity of
-the vehicle. If the salt load is not enough the vehicle must visit a refill
-depot.  Further, there might be constraints on the shape of the routes to allow
-easy movements of the vehicles. For example, U-turns in some parts of the
-networks are not allowed.
+salting requirements and minimizes the total travelled distance.  Minimizing the
+travelled distance is correlated with accomplishing the salting task with the
+least fuel consumption and thus minimal environmental impact (carbon footprint).
+In order to be usable in practice the routes must take into account the capacity
+of the vehicle. If the salt load is not enough to salt the next road, the
+vehicle must visit a refill depot.  Further, there might be constraints on the
+shape of the routes to allow easy movements of the vehicles. For example,
+U-turns in some parts of the networks are not allowed.
 
 ## Detailed description
 
@@ -105,19 +103,20 @@ solution, how a solution is evaluated (e.g. an objective function), and solution
 feasibility constraints.
 -->
 
-We are given a network of roads that can be traversed, among which some roads
-must be salted. A number of vehicles depart from their respective dwelling place
-and have to salt the roads requesting it. The load of salt that the
-vehicles can carry is in general insufficient to cover all roads, therefore
-routes might include reloading at opportune depots. After having salted the last
-requested road, the vehicles always visit a depot where they are reloaded with
+We are given a *network* of roads that can be traversed, among which some roads
+must be salted. *Vehicles* depart from their respective dwelling place and have
+to salt the roads requesting it. The load of salt that the vehicles can carry is
+in general insufficient to cover all roads, therefore routes might include
+reloading at opportune depots. After having salted the last requested road in
+their routes, the vehicles always visit a depot where they are reloaded with
 fuel and salt before heading to their dwelling place, ready for the next time.
-It is assumed that the vehicles are "off duty" after the final reload, hence the
-path from the refilling depot to their dwelling place does not count in the time
-duration and in the travelling distance calculation. The total travelling
-distance must not exceed a given amount. Further, due to the size of the
-vehicles and the movements they have to make, U-turns at some intersections are
-not allowed.
+Further, due to the size of the vehicles and the movements they have to make,
+U-turns at some intersections are not allowed.  The total *travelling duration*
+for salting the requested roads and finish each route must not exceed a given
+amount while the total *travelling distance* of all routes must be minimized. It
+is assumed that the vehicles are "off duty" after the final reload.  hence, the
+path from the last refilling depot to their dwelling place does not count in the time
+duration and in the travelling distance calculation. 
 
 <!--
 The problem is a generalization of the Capacited Arcs Routing
@@ -176,60 +175,25 @@ See a description and details:
 - [Kerteminde](data/kerteminde/description.md)
 - [Middelfart](data/middelfart/description.md)
 
-The `json` format contains an object for each of the following entities:
+Using a simplified syntaxm, the `json` files contain data organized as follows:
 
 ```json 
-"required": [
     "name",
     "max_time",
-    "nodes",
-    "required": [
-          "label",
-          "position"
-        ]
-    "vehicles"
-    "required": [
-          "capacity",
-          "home",
-          "id"
-        ]
-    "depots",
-    "required": [
-          "label",
-          "refill"
-        ]
-    "A",
-     "required": [
-          "arc",
-          "len",
-          "time"
-        ]
-    "A_R",
-     "required": [
-          "dem",
-          "edge",
-          "len",
-          "time"
-        ]
-    "E_R",
-     "required": [
-          "dem",
-          "edge",
-          "len",
-          "time"
-        ]
-    "U",
-    "required": [
-          "label"
-        ]
-  ]
+    "nodes": [{"label", "position": ["x", "y"]}]
+    "vehicles": [{"id", "capacity", "home"}],
+    "depots": [{"label", "refill"}],
+    "A": [{"arc": ["from", "to"], "len", "time"}],
+    "A_R": [{"arc": ["from", "to"], "dem", "len", "time"}],
+    "E_R": [{"edge": ["from", "to"], "dem", "len", "time"}],
+    "U": [{"label"}]
 ```
 
 Note that the instance does not contain an object for the edge set $E$ as every
 edge in this set can be replaced by two arcs in opposite direction in the set
 $A$.
 
-The full [schema](support/schema.json) for validation of the `json` instances is
+The formal [schema](support/schema.json) for validation of the `json` instances is
 available in the `support` folder. See also a small example for the instance
 [gualandi](data/gualandi/gualandi.json) described below.
 
