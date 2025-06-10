@@ -136,17 +136,17 @@ in one direction and it includes the set $A_R$ of arcs required to be salted.
 
 We call _trip_ the sequence of edges and arcs visited by a vehicle that departs
 from a dwelling place or from a depot and arrives at a dwelling place or at a
-depot. A _route_ is a sequence of trips that departs from a dwelling place and
-arrives at a dwelling place. A U-turn occurs at a node $v$ when a vehicle visits
-a node $u$ immediately before and immediately after $v$, i.e., the vehicle
-traverses an arc in the opposite direction of the one it has just traversed.  We
-denote by $T$ the maximum allowed time duration for a route.  The _load_ of a
-vehicle is the amount of salt it carries, which is initially equal to its
-_capacity_.  The _residual load_ is the amount of salt that the vehicle has
-after having salted required roads.  The _refill load_ is the amount of salt that a
-depot can provide to a vehicle when it visits it.  The _residual capacity_ of a
-vehicle is the difference between its capacity and its residual load.  The
-_residual capacity_ must be non-negative at any point in the route.
+depot. A _route_ is a sequence of trips that departs from a dwelling place. A
+U-turn occurs at a node $v$ when a vehicle visits a node $u$ immediately before
+and immediately after $v$, i.e., the vehicle traverses an arc in the opposite
+direction of the one it has just traversed.  We denote by $T$ the maximum
+allowed time duration for a route.  The _load_ of a vehicle is the amount of
+salt it carries, which is initially equal to its _capacity_.  The _residual
+load_ is the amount of salt that the vehicle has after having salted required
+roads.  The _refill load_ is the amount of salt that a depot can provide to a
+vehicle when it visits it.  The _residual capacity_ of a vehicle is the
+difference between its capacity and its residual load.  The _residual capacity_
+must be non-negative at any point in the route.
 
 We denote by $Z$, indexed by $z$, the set of vehicles, by $K$, indexed by $k$,
 the set of all trips and by $K_z \subseteq K$ the set of trips composing the
@@ -159,9 +159,13 @@ visit.
 
 The task is finding a set of routes such that:
 
-- edges in $E_R$ and arcs in $A_R$ are salted by at least one vehicle's route;
-- the difference between the departure and the arrival time of each route is not
-  greater than the given maximum time duration $T$;
+- routes are composed of trips;
+- each trip is a sequence of edges and arcs in $E \cup A$;
+- each trip starts at a dwelling place or a depot and ends at a depot (note that
+  a version of the problem in which the last trip of a route ends just after the last
+  salted road, rather than at a refilling depot, is also interesting in practice);
+- edges in $E_R$ and arcs in $A_R$ are salted by one vehicle's route;
+- the duration of each route is not greater than the given maximum time $T$;
 - at any point in the route the residual capacity of the vehicle is non-negative;
 - there are no U-turns at nodes where they are not allowed;
 
