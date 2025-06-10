@@ -1,21 +1,10 @@
 # hybrid Gene Regulatory Network modelling
 
-SPDX-FileCopyrightText: 2024 Denis PALLEZ <denis.pallez@univ-cotedazur.fr>
+Romain MICHELUCCI, Denis PALLEZ, Jean-Paul COMET, Université Côte d'Azur, CNRS, I3S, France
 
-SPDX-License-Identifier: CC-BY-4.0
-
-Romain MICHELUCCI, Université Côte d'Azur, France  
-
-Denis PALLEZ, Université Côte d'Azur, France  
-
-Jean-Paul COMET, Université Côte d'Azur, France  
-
-Copyright 2024 Université Côte d'Azur, CNRS.
+Copyright 2024 Denis Pallez.
 
 This document is licensed under CC-BY-4.0.
-
-<!-- Complete the above accordingly. Copyright and licensing information must be
-consistent with the comment at the beggining of the markdown file -->
 
 ## Introduction
 
