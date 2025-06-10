@@ -64,7 +64,7 @@
             "capacity": 25.0
         }
     ],
-    "depots": [],
+    "depots": [{"label": "1", "refill": 25.0}],
     "A": [
         {
             "arc": [

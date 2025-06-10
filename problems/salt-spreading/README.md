@@ -137,7 +137,16 @@ in one direction and it includes the set $A_R$ of arcs required to be salted.
 We call _trip_ the sequence of edges and arcs visited by a vehicle that departs
 from a dwelling place or from a depot and arrives at a dwelling place or at a
 depot. A _route_ is a sequence of trips that departs from a dwelling place and
-arrives at a dwelling place.
+arrives at a dwelling place. A U-turn occurs at a node $v$ when a vehicle visits
+a node $u$ immediately before and immediately after $v$, i.e., the vehicle
+traverses an arc in the opposite direction of the one it has just traversed.  We
+denote by $T$ the maximum allowed time duration for a route.  The _load_ of a
+vehicle is the amount of salt it carries, which is initially equal to its
+_capacity_.  The _residual load_ is the amount of salt that the vehicle has
+after having salted required roads.  The _refill load_ is the amount of salt that a
+depot can provide to a vehicle when it visits it.  The _residual capacity_ of a
+vehicle is the difference between its capacity and its residual load.  The
+_residual capacity_ must be non-negative at any point in the route.
 
 We denote by $Z$, indexed by $z$, the set of vehicles, by $K$, indexed by $k$,
 the set of all trips and by $K_z \subseteq K$ the set of trips composing the
@@ -145,14 +154,14 @@ route of the vehicle $z \in Z$.  Each vehicle $z$ has a single dwelling location
 $h_z$ from $H$ from which it departs and returns. Every depot has associated a
 maximum refill load. After a vehicle has visited a depot we assume its load of
 salt to be equal to the smallest between the capacity of the vehicle and the sum
-of the maximum refill load of the depot with and of the residual load before the
+of the maximum refill load of the depot and the residual load before the
 visit.  
 
 The task is finding a set of routes such that:
 
 - edges in $E_R$ and arcs in $A_R$ are salted by at least one vehicle's route;
 - the difference between the departure and the arrival time of each route is not
-  greater than a given time limit $T$;
+  greater than the given maximum time duration $T$;
 - at any point in the route the residual capacity of the vehicle is non-negative;
 - there are no U-turns at nodes where they are not allowed;
 
@@ -201,31 +210,49 @@ available in the `support` folder. See also a small example for the instance
 
 <!-- Describe the format of a solution file. -->
 
-In the solution file, routes belonging to different vehicles are written in
-different rows. Each row lists the sequence of nodes to be visited. The route
-starts at the dwelling node of the vehicle and ends at the last refilling depot.
-Trips can be recognised by the visit to a refilling depot.
-
-Example:
+The solution file is also in json format. It contains an array of elements
+corresponding to routes. Each element is a dictionary containing the identifier
+of the vehicle and the route expressed as the sequence of visited nodes. The
+schema is:
 
 ```text
-2, 23, 24, 25, 24, 190, 23, 190, 189, 6, 7, 26, 79, 78, 82, 81, 80, 76, 74, 73, 71, 69, 68, 66, 58,
-46, 44, 42, 43, 42, 44, 47, 48, 47, 57, 45, 46, 58, 66, 65, 66, 68, 70, 68, 70, 72, 75, 20, 19, 5, 17,
-19, 17, 18, 16, 14, 12, 8, 10, 9, 10, 11, 13, 14, 13, 27, 28, 27, 29, 31, 101, 102, 101, 32, 33, 131,
-132, 134, 106, 105, 104, 103, 35, 36, 191, 37, 38, 39, 40, 41, 110, 112, 115, 114, 115, 116, 117,
-118, 125, 126, 128, 139, 140, 137, 138, 135, 136, 135, 132, 131, 133, 193, 103, 104, 38, 37, 36,
-35, 34, 30, 29, 30, 32, 101, 31, 99, 100, 294
-130, 128, 126, 124, 117, 116, 120, 122, 123, 122, 120, 119, 121, 119, 118, 125, 127, 129, 127,
-166, 164, 167, 170, 168, 170, 171, 169, 171, 173, 172, 173, 175, 174, 175, 177, 176, 177, 179,
-178, 179, 181, 182, 180, 182, 184, 183, 184, 186, 188, 187, 157, 142, 157, 156, 158, 159, 158,
-185, 187, 143, 144, 188, 186, 185, 158, 156, 194, 155, 194, 154, 160, 162, 160, 152, 153, 154,
-153, 148, 151, 149, 151, 152, 160, 161, 181, 161, 163, 164, 163, 150, 163, 164, 167, 164, 166,
-147, 130, 141, 146, 145, 146, 147, 146, 141, 140, 139, 134, 133, 193, 105, 106, 107, 39, 107,
-108, 124, 108, 109, 111, 112, 113, 112, 115, 111, 109, 41, 40, 45, 57, 59, 58, 59, 64, 61, 65, 67,
-62, 61, 64, 60, 54, 52, 53, 52, 51, 50, 192, 51, 50, 48, 49, 48, 47, 46, 44, 46, 47, 57, 55, 56, 55,
-54, 60, 62, 63, 62, 67, 69, 71, 74, 73, 72, 75, 20, 21, 22, 21, 4, 3, 2, 1, 1, 2, 3, 189, 6, 5, 4,
-5, 19, 20, 19, 16, 18, 15, 17, 15, 12, 11, 9, 8, 7, 26, 79, 85, 84, 82, 78, 77, 76, 77, 80, 81, 83, 89,
-92, 93, 92, 91, 89, 83, 88, 90, 94, 95, 87, 90, 94, 97, 96, 86, 85, 84, 87, 86, 96, 95, 94, 97, 98, 294
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "string"
+            },
+            "route": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        },
+        "required": [
+            "id",
+            "route"
+        ]
+    }
+}
+```
+
+while an example is:
+
+```json
+[
+    {
+        "id": "1",
+        "route": ["1", "2", "3", "4", "5"]
+    },
+    {
+        "id": "2",
+        "route": ["6", "7", "8", "9"]
+    }
+]
 ```
 
 ## Example
