@@ -201,5 +201,5 @@ This problem statement is based upon work from COST Action Randomised Optimisati
 
 ## References
 
-The problem formulation and constraints are inspired by practical scenarios faced by automotive logistics companies. The specific instances are illustrative and do not represent real-world data. The problem has been adapted from the work of Tommaso Urli and Manuel López-Ibáñez, with contributions from Luca Di Gaspero.
+The problem formulation and constraints are inspired by practical scenarios faced by automotive logistics companies. The specific instances are illustrative and do not represent real-world data. The problem has been adapted from the work of Tommaso Urli (Satalia) and Manuel López-Ibáñez (University of Manchester), with contributions from Luca Di Gaspero.
 
