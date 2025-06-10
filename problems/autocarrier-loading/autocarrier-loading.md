@@ -49,9 +49,9 @@ A solution specifies the deck assignment for each vehicle in the problem instanc
 
 ### Constraints
 
-1. **Total Capacity Constraint**: The sum of the dimensions of all vehicles on the transporter must not exceed the total capacity at any point during the route
-2. **Deck Capacity Constraint**: The sum of the dimensions of vehicles on each deck must not exceed that deck's capacity at any point during the route  
-3. **Accessibility Constraint**: Vehicles can only be loaded onto or unloaded from a deck if at least one pathway to that deck is clear (i.e., all intermediate decks in the pathway are empty)
+1) **Total Capacity Constraint**: The sum of the dimensions of all vehicles on the transporter must not exceed the total capacity at any point during the route
+2) **Deck Capacity Constraint**: The sum of the dimensions of vehicles on each deck must not exceed that deck's capacity at any point during the route  
+3) **Accessibility Constraint**: Vehicles can only be loaded onto or unloaded from a deck if at least one pathway to that deck is clear (i.e., all intermediate decks in the pathway are empty)
 
 Constraints 1 and 2 are hard constraints that must be satisfied for feasibility. Constraint 3 can be modelled as either hard or soft, depending on the problem variant.
 
@@ -97,8 +97,8 @@ The instance format is a JSON object with three main components:
 - **transporter**: Object defining the carrier configuration:
   - **total_capacity**: Maximum total capacity across all decks
   - **decks**: Object mapping deck IDs to their properties:
-    + **capacity**: Maximum capacity for this specific deck
-    + **access_via**: Array of alternative access paths. Each path is an array of deck IDs that must be traversed (and empty) to reach this deck. If omitted, the deck is directly accessible.
+    - **capacity**: Maximum capacity for this specific deck
+    - **access_via**: Array of alternative access paths. Each path is an array of deck IDs that must be traversed (and empty) to reach this deck. If omitted, the deck is directly accessible.
 
 ## Solution file
 
@@ -190,7 +190,7 @@ This solution assigns (in vehicle order v1, v2, ..., v8):
 
 All deck capacity constraints are satisfied throughout the route. Accessibility is maintained since vehicles assigned to d1 and d2 can be reached when their respective access paths (d2→d3 for d1, d3 for d2) are clear.
 
-**For the hard constraint variant**, the traversal cost would be:
+For the **hard constraint variant**, the traversal cost would be:
 
 - Vehicles on d1 (v1,v4,v6): 3 × 2 = 6 traversals (via d2,d3)
 - Vehicles on d2 (v2,v7): 2 × 1 = 2 traversals (via d3)  
