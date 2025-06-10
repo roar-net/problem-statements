@@ -14,7 +14,7 @@ Copyright 2025 Tommaso Urli, Manuel López-Ibáñez, Luca Di Gaspero.
 
 This document is licensed under CC-BY-4.0.
 
-![Auto Carrier](images/auto-carrier.png)
+![Auto Carrier](images/auto-carrier.jpg)
 
 ## Introduction
 
