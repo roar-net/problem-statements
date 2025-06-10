@@ -36,12 +36,12 @@ Given a fixed route with specified vehicles to load and unload at each stop, det
 
 A problem instance is characterised by:
 
-- **Vehicles**: A set of vehicles, each with a single dimension value representing its size/length
-- **Transporter**: A multi-deck carrier with:
+* **Vehicles**: A set of vehicles, each with a single dimension value representing its size/length
+* **Transporter**: A multi-deck carrier with:
   - Total capacity constraint
   - Individual deck capacities  
   - Deck accessibility relationships (some decks accessible only via specific other decks)
-- **Route**: A fixed sequence of stops, each specifying which vehicles to load and/or unload
+* **Route**: A fixed sequence of stops, each specifying which vehicles to load and/or unload
 
 ### Solution Representation
 
@@ -89,16 +89,16 @@ The instance format is a JSON object with three main components:
 }
 ```
 
-- **route**: Array of route stops in execution order. Each stop can contain:
+* **route**: Array of route stops in execution order. Each stop can contain:
   - **load**: Array of vehicle IDs to be loaded at this stop (optional)
   - **unload**: Array of vehicle IDs to be unloaded at this stop (optional)
-- **vehicles**: Object mapping vehicle IDs to their properties:
+* **vehicles**: Object mapping vehicle IDs to their properties:
   - **dimension**: Numeric value representing the vehicle's size/length
-- **transporter**: Object defining the carrier configuration:
+* **transporter**: Object defining the carrier configuration:
   - **total_capacity**: Maximum total capacity across all decks
   - **decks**: Object mapping deck IDs to their properties:
-    - **capacity**: Maximum capacity for this specific deck
-    - **access_via**: Array of alternative access paths. Each path is an array of deck IDs that must be traversed (and empty) to reach this deck. If omitted, the deck is directly accessible.
+    + **capacity**: Maximum capacity for this specific deck
+    + **access_via**: Array of alternative access paths. Each path is an array of deck IDs that must be traversed (and empty) to reach this deck. If omitted, the deck is directly accessible.
 
 ## Solution file
 
@@ -108,9 +108,9 @@ The solution format is a JSON array of integers representing deck assignments:
 [deck_number1, deck_number2, deck_number3, ...]
 ```
 
-- The i-th element (0-indexed) represents the deck assignment for the i-th vehicle when vehicles are ordered by their keys in lexicographic order
-- Deck numbers are integers starting from 1, corresponding to deck IDs "d1", "d2", "d3", etc.
-- Example: if vehicles are {v1, v2, v3} and decks are {d1, d2, d3}, then [2, 1, 3] means v1→d2, v2→d1, v3→d3
+* The i-th element (0-indexed) represents the deck assignment for the i-th vehicle when vehicles are ordered by their keys in lexicographic order
+* Deck numbers are integers starting from 1, corresponding to deck IDs "d1", "d2", "d3", etc.
+* Example: if vehicles are {v1, v2, v3} and decks are {d1, d2, d3}, then [2, 1, 3] means v1→d2, v2→d1, v3→d3
 
 ## Example
 
@@ -169,14 +169,14 @@ The solution format is a JSON array of integers representing deck assignments:
 ```
 
 This solution assigns (in vehicle order v1, v2, ..., v8):
-- v1(1650) → deck 1 (d1)
-- v2(900) → deck 2 (d2)
-- v3(1700) → deck 3 (d3)
-- v4(1100) → deck 1 (d1)
-- v5(1450) → deck 3 (d3)
-- v6(1250) → deck 1 (d1)
-- v7(800) → deck 2 (d2)
-- v8(1300) → deck 3 (d3)
+* v1(1650) → deck 1 (d1)
+* v2(900) → deck 2 (d2)
+* v3(1700) → deck 3 (d3)
+* v4(1100) → deck 1 (d1)
+* v5(1450) → deck 3 (d3)
+* v6(1250) → deck 1 (d1)
+* v7(800) → deck 2 (d2)
+* v8(1300) → deck 3 (d3)
 
 ### Explanation
 
@@ -190,10 +190,10 @@ This solution assigns (in vehicle order v1, v2, ..., v8):
 All deck capacity constraints are satisfied throughout the route. Accessibility is maintained since vehicles assigned to d1 and d2 can be reached when their respective access paths (d2→d3 for d1, d3 for d2) are clear.
 
 **For the hard constraint variant**, the traversal cost would be:
-- Vehicles on d1 (v1,v4,v6): 3 × 2 = 6 traversals (via d2,d3)
-- Vehicles on d2 (v2,v7): 2 × 1 = 2 traversals (via d3)  
-- Vehicles on d3 (v3,v5,v8): 3 × 0 = 0 traversals (direct access)
-- **Total cost: 8 traversals**
+* Vehicles on d1 (v1,v4,v6): 3 × 2 = 6 traversals (via d2,d3)
+* Vehicles on d2 (v2,v7): 2 × 1 = 2 traversals (via d3)  
+* Vehicles on d3 (v3,v5,v8): 3 × 0 = 0 traversals (direct access)
+* **Total cost: 8 traversals**
 
 ## Acknowledgements
 
@@ -201,5 +201,5 @@ This problem statement is based upon work from COST Action Randomised Optimisati
 
 ## References
 
-The problem formulation and constraints are inspired by practical scenarios faced by automotive logistics companies. The specific instances are illustrative and do not represent real-world data. The problem has been adapted from the work of Tommaso Urli (Satalia) and Manuel López-Ibáñez (University of Manchester), with contributions from Luca Di Gaspero.
+The problem formulation and constraints are inspired by practical scenarios faced by automotive logistics companies. The specific instances are illustrative and do not represent real-world data. The problem has been adapted from the work of Tommaso Urli (Satalia) and Manuel López-Ibáñez (University of Manchester), with contributions from Luca Di Gaspero (Università degli Studi di Udine).
 
