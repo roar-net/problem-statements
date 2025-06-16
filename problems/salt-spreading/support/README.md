@@ -1,7 +1,7 @@
 <!--
 SPDX-FileCopyrightText: 2024 Marco Chiarandini <marco@imada.sdu.dk>
 
-SPDX-License-Identifier: CC-BY-SA-4.0
+SPDX-License-Identifier: CC-BY-4.0
 -->
 
 # Tools

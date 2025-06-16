@@ -1,7 +1,7 @@
 <!--
 SPDX-FileCopyrightText: 2024 Marco Chiarandini <marco@imada.sdu.dk>
 
-SPDX-License-Identifier: CC-BY-SA-4.0
+SPDX-License-Identifier: CC-BY-4.0
 -->
 
 # Kerteminde Instance
@@ -40,10 +40,15 @@ time and distance. -->
 ## Instance Statistics
 
 - $|V|$=193, $|A|$=10, $|A_R|$=33, $|E_R|$= 233
+
 - 265.602 total sum of lengths of the arcs and edges to salt
+
 - 21.450 total sum of lengths of the deadhead arcs available
+
 - 1.018.806 total required demand
+
 - 820.000 total capacity
+
 - 33 U-turn-allowed nodes
 
 - unconfirmed lower bound: 271.511
