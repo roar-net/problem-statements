@@ -47,6 +47,8 @@ A problem instance is characterised by:
 
 A solution specifies the deck assignment for each vehicle in the problem instance. This is represented as an array where the $i$-th element indicates the deck number assigned to the $i$-th vehicle.
 
+In an extension of the problem, the solution will also include a sequence of operations performed at each stop, detailing which vehicles are loaded or unloaded and the possible new assignments to decks of the vehicles that are moved.
+
 ### Constraints
 
 1) **Total Capacity Constraint**: The sum of the dimensions of all vehicles on the transporter must not exceed the total capacity at any point during the route
@@ -59,6 +61,7 @@ Constraints 1 and 2 are hard constraints that must be satisfied for feasibility.
 
 - Minimise the number of deck traversals required to load and unload all vehicles. Each vehicle incurs a cost equal to the number of decks traversed to reach its assigned deck.
 - Minimise the total number of vehicle handling operations required. When a vehicle must be unloaded but its pathway is blocked, blocking vehicles must be temporarily moved, incurring a cost of 1 per moved vehicle. The objective is the sum of such costs across all stops.
+- Minimise the repositionings, which is the total number of vehicles that change their deck assignment during the route. 
 
 ## Instance data file
 
@@ -102,7 +105,7 @@ The instance format is a JSON object with three main components:
 
 ## Solution file
 
-The solution format is a JSON array of integers representing deck assignments:
+The solution format for the basic version of the problem is a JSON array of integers representing deck assignments:
 
 ```json
 [deck_number1, deck_number2, deck_number3, ...]
@@ -111,6 +114,28 @@ The solution format is a JSON array of integers representing deck assignments:
 - The i-th element (0-indexed) represents the deck assignment for the i-th vehicle when vehicles are ordered by their keys in lexicographic order
 - Deck numbers are integers starting from 1, corresponding to deck IDs "d1", "d2", "d3", etc.
 - Example: if vehicles are {v1, v2, v3} and decks are {d1, d2, d3}, then [2, 1, 3] means v1→d2, v2→d1, v3→d3
+
+For the extended version of the problem, the solution file will contain an array of objects, each representing a stop in the route with the following structure:
+
+```json
+[
+    {
+        "operations": [
+            {
+                "vehicle_id": "v1",
+                "action": "load",
+                "deck": 1
+            },
+            {
+                "vehicle_id": "v2",
+                "action": "unload",
+                "deck": 2
+            }
+        ]
+    },
+    ...
+]
+```
 
 ## Example
 
@@ -196,6 +221,8 @@ For the **hard constraint variant**, the traversal cost would be:
 - Vehicles on d2 (v2,v7): 2 × 1 = 2 traversals (via d3)  
 - Vehicles on d3 (v3,v5,v8): 3 × 0 = 0 traversals (direct access)
 - **Total cost: 8 traversals**
+
+
 
 ## Acknowledgements
 
