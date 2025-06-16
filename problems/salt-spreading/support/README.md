@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2024 Marco Chiarandini <marco@imada.sdu.dk>
+
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+
 # Tools
 
 ## Instance `json` schema
@@ -9,3 +15,13 @@ file. For example, using
 ```bash
 check-jsonschema --schemafile provaschema.json prova.json -v  
 ```
+
+## Validator
+
+Usage example:
+
+```bash
+python3 src/main.py data/gualandi/gualandi.json -s data/gualandi/gualandi_ransol.json 
+```
+
+See `-h` for more.

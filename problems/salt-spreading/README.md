@@ -42,7 +42,6 @@ Template follows below.
 
 Jens Kristian Fonnesbach, Aiban, Denmark, and Marco Chiarandini, University of Southern Denmark, Denmark
 
-
 <!-- Put two empty spaces at the end of each author line except the last for
 proper formatting -->
 
@@ -74,7 +73,6 @@ Danish municipalities of Kerteminde and Middelfart.
 <div style="text-align:center;">
 <img src="images/frontpage_historia.jpg" alt="Book cover" style="max-width:70%;height:auto;">
 </div>
-
 
 ## Task
 
@@ -116,7 +114,7 @@ for salting the requested roads and finish each route must not exceed a given
 amount while the total *travelling distance* of all routes must be minimized. It
 is assumed that the vehicles are "off duty" after the final reload.  hence, the
 path from the last refilling depot to their dwelling place does not count in the time
-duration and in the travelling distance calculation. 
+duration and in the travelling distance calculation.
 
 <!--
 The problem is a generalization of the Capacited Arcs Routing
@@ -126,7 +124,7 @@ U-turn avoidance.
 
 In the following we specify the problem more formally.
 
-We represent the road network by a _mixed graph_ ${G}=(V, E \cup {A})$.  The set
+We represent the road network by a *mixed graph* ${G}=(V, E \cup {A})$.  The set
 of nodes $V$ includes the set of road intersections, the set of refilling
 depots, $D$, and the set of dwelling places to the vehicles, $H$.  The set $E$
 is the set of edges that can be traversed in both directions and it includes the
@@ -134,18 +132,18 @@ set $E_R$ of edges that must be salted (it is sufficient to salt them in only
 one direction). The set of arcs $A$ represents links that can be traversed only
 in one direction and it includes the set $A_R$ of arcs required to be salted.
 
-We call _trip_ the sequence of edges and arcs visited by a vehicle that departs
+We call *trip* the sequence of edges and arcs visited by a vehicle that departs
 from a dwelling place or from a depot and arrives at a dwelling place or at a
-depot. A _route_ is a sequence of trips that departs from a dwelling place. A
+depot. A *route* is a sequence of trips that departs from a dwelling place. A
 U-turn occurs at a node $v$ when a vehicle visits a node $u$ immediately before
 and immediately after $v$, i.e., the vehicle traverses an arc in the opposite
 direction of the one it has just traversed.  We denote by $T$ the maximum
-allowed time duration for a route.  The _load_ of a vehicle is the amount of
-salt it carries, which is initially equal to its _capacity_.  The _residual
-load_ is the amount of salt that the vehicle has after having salted required
-roads.  The _refill load_ is the amount of salt that a depot can provide to a
-vehicle when it visits it.  The _residual capacity_ of a vehicle is the
-difference between its capacity and its residual load.  The _residual capacity_
+allowed time duration for a route.  The *load* of a vehicle is the amount of
+salt it carries, which is initially equal to its *capacity*.  The *residual
+load* is the amount of salt that the vehicle has after having salted required
+roads.  The *refill load* is the amount of salt that a depot can provide to a
+vehicle when it visits it.  The *residual capacity* of a vehicle is the
+difference between its capacity and its residual load.  The *residual capacity*
 must be non-negative at any point in the route.
 
 We denote by $Z$, indexed by $z$, the set of vehicles, by $K$, indexed by $k$,
@@ -190,7 +188,7 @@ See a description and details:
 
 Using a simplified syntaxm, the `json` files contain data organized as follows:
 
-```json 
+```json
     "name",
     "max_time",
     "nodes": [{"label", "position": ["x", "y"]}]
@@ -275,20 +273,18 @@ Here, we present one of them:
 block; margin: 0 auto; text-align: center" }
 -->
 
-
-
 <div style="text-align: center;">
 <img src="data/gualandi/map.png" alt="Gualandi instance">
 </div>
 
 Another small example is:
 
-
 <div style="text-align: center;">
 <img src="data/belben/map.png" alt="Belenguer Benavent instance">
 </div>
 
 ### Solution
+
 <!--
 Provide a feasible solution to the example instance in the described format
 (including its evaluation measure).
@@ -318,7 +314,7 @@ is feasible and has total length 60.
 <!--
 ### Explanation
 -->
-<!-- Optionally, provide a --> 
+<!-- Optionally, provide a -->
 <!--
 Descriptive and/or visual explanation of the solution (and
 its evaluation measure value) for the instance.
@@ -341,7 +337,7 @@ relevant. -->
 
 - Jens Kristian Fonnesbach, "[Spar Millioner på
   Vintertjeneste. Håndbog for Saltning af Veje med Fast Belægning](https://historia.dk/shop/13-business/90-fonnesbech-spar-millioner-paa-vintertjeneste-2017/)",
-  2017, Historia. 
+  2017, Historia.
 
 - Belenguer, José M.; Benavent, Enrique "A cutting plane algorithm for the
   capacitated arc routing problem" Computers & operations research , 04/2003,

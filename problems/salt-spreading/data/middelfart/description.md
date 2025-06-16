@@ -1,7 +1,15 @@
+<!--
+SPDX-FileCopyrightText: 2024 Marco Chiarandini <marco@imada.sdu.dk>
 
-The instance bears the same characteristics as the Kerteminde instance. 
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
 
-Statistics:
+# Middelfart Instance
+
+The instance bears the same characteristics as the Kerteminde instance. See the
+description under that instance for details.
+
+## Instance Statistics
 
 - $|V|$=784, $|A|$=56, $|A_R|$=62, $|E_R|$= 1004
 - 40.280 total sum of lengths of the deadhead arcs available
@@ -15,4 +23,3 @@ Statistics:
 <div style="text-align: center;">
 <img src="./mds.png" alt="Middelfart instance">
 </div>
-

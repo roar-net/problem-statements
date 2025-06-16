@@ -1,5 +1,12 @@
+<!--
+SPDX-FileCopyrightText: 2024 Marco Chiarandini <marco@imada.sdu.dk>
 
-### The Spreadsheets
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+
+# Kerteminde Instance
+
+## The Spreadsheets
 
 Each node (column `Knude punkt`) represents a road intersection and at each
 node it is given a set of edges (roads) departing from that node (the adjacency
@@ -30,7 +37,7 @@ vehicles, therefore they start with a full cargo hold of salt and fuel
 tanks. The path from the depot to dwelling place does not count in the traveling
 time and distance. -->
 
-Statistics:
+## Instance Statistics
 
 - $|V|$=193, $|A|$=10, $|A_R|$=33, $|E_R|$= 233
 - 265.602 total sum of lengths of the arcs and edges to salt
@@ -53,23 +60,16 @@ have no geographical correspondence. They give rise to the following plot:
 <img src="./mds.png" alt="Kerteminde instance">
 </div>
 
-### Solutions
+## Solutions
 
 <div style="text-align:center;">
 <img src="./v1t1.png" alt="Vehicle 1 trip 1" style="max-width:70%;height:auto;">
 </div>
 
-
 <div style="text-align:center;">
 <img src="./v2t1.png" alt="Vehicle 2 trip 1" style="max-width:70%;height:auto;">
 </div>
 
-
 <div style="text-align:center;">
 <img src="./v2t2.png" alt="Vehicle 2 trip 1" style="max-width:70%;height:auto;">
 </div>
-
-
-
-
-
