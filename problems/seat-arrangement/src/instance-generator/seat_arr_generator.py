@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Andreia P. Guerreiro <andreia.guerreiro@tecnico.ulisboa.pt>
+#
+# SPDX-License-Identifier: Apache-2.0
+
 import random
 import sys, argparse
 import numpy as np

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 Andreia P. Guerreiro <andreia.guerreiro@tecnico.ulisboa.pt>
+
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 # Generator for the Seating Arrangement Problem
 
 Run for details on how to run the generator:
