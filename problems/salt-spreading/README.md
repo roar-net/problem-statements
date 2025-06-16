@@ -276,13 +276,13 @@ block; margin: 0 auto; text-align: center" }
 -->
 
 <div style="text-align: center;">
-<img src="data/gualandi/map.png" alt="Gualandi instance">
+<img src="data/gualandi/Gualandi.png" alt="Gualandi instance">
 </div>
 
 Another small example is:
 
 <div style="text-align: center;">
-<img src="data/belben/map.png" alt="Belenguer Benavent instance">
+<img src="data/belben/BelBen.png" alt="Belenguer Benavent instance">
 </div>
 
 ### Solution
