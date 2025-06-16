@@ -15,6 +15,6 @@ Files: problems/autocarrier-loading/data/*.json
 Copyright: 2025 Tommaso Urli <tommaso@satalia.com>
 License: CC-BY-SA-4.0
 
-Files: problems/salt-spreading/data/*.json
+Files: problems/salt-spreading
 Copyright: 2024 Marco Chiarandini <marco@imada.sdu.dk>
 License: CC-BY-SA-4.0
