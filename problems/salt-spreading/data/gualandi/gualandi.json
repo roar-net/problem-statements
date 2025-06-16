@@ -1,6 +1,6 @@
 {
     "name": "Gualandi",
-    "max_time": null,
+    "max_time": 100000,
     "nodes": [
         {
             "label": "0",

@@ -1,0 +1,14 @@
+[
+  {"vehicle":"1",
+  "route":[
+    {"arc":["0","1"],"salted":false},
+    {"arc":["1","2"],"salted":true},
+    {"arc":["2","3"],"salted":false},
+    {"arc":["3","4"],"salted":true},
+    {"arc":["4","7"],"salted":false},
+    {"arc":["5","6"],"salted":false},
+    {"arc":["6","5"],"salted":true},
+    {"arc":["5","7"],"salted":false}
+  ]
+  }
+]

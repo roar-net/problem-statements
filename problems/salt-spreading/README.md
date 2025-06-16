@@ -210,37 +210,14 @@ available in the `support` folder. See also a small example for the instance
 
 <!-- Describe the format of a solution file. -->
 
-The solution file is also in json format. It contains an array of elements
+The solution file must also be a json file and there are two formats.
+
+The first format contains an array of elements
 corresponding to routes. Each element is a dictionary containing the identifier
 of the vehicle and the route expressed as the sequence of visited nodes. The
-schema is:
+json schema is available at [schema_solution_nodes.json](support/schema_solution_nodes.json).
 
-```text
-{
-    "$schema": "http://json-schema.org/schema#",
-    "type": "array",
-    "items": {
-        "type": "object",
-        "properties": {
-            "id": {
-                "type": "string"
-            },
-            "route": {
-                "type": "array",
-                "items": {
-                    "type": "string"
-                }
-            }
-        },
-        "required": [
-            "id",
-            "route"
-        ]
-    }
-}
-```
-
-while an example is:
+An example is:
 
 ```json
 [
@@ -255,6 +232,31 @@ while an example is:
 ]
 ```
 
+The second format contains a list of dictionaries one for each vehicle.
+Vehicles' dictionaries contain the ide of the vehicle and the route made of
+trips specified by the arcs that must be traversed and by whether salt must be
+spread or not. The json schema is available at
+[schema_solution_arcs.json](support/schema_solution_arcs.json).
+
+```json
+[
+    {
+        "vehicle":"1",
+        "route":[
+            {"arc":["1","3"],"salted":false},{"arc":["3","6"],"salted":false},{"arc":["6","7"],"salted":true},{"arc":["7","4"],"salted":false},{"arc":["4","1"],"salted":false}
+        ]
+    },
+    {
+        "vehicle":"2",
+        "route": [
+            {"arc":["1","3"],"salted":false},{"arc":["3","2"],"salted":false},{"arc":["2","1"],"salted":true},{"arc":["1","3"],"salted":true},{"arc":["3","2"],"salted":false},{"arc":["2","1"],"salted":false},{"arc":["1","4"],"salted":true},{"arc":["4","5"],"salted":false},{"arc":["5","1"],"salted":true},{"arc":["1","3"],"salted":false},{"arc":["3","2"],"salted":true},{"arc":["2","1"],"salted":false},{"arc":["1","4"],"salted":false},{"arc":["4","3"],"salted":true},{"arc":["3","1"],"salted":false},{"arc":["1","4"],"salted":false},{"arc":["4","7"],"salted":false},{"arc":["7","6"],"salted":false},{"arc":["6","3"],"salted":true},{"arc":["3","4"],"salted":false},{"arc":["4","5"],"salted":true},{"arc":["5","1"],"salted":false}
+        ]
+    }
+]
+```
+
+Note that nodes are identified by label strings.
+
 ## Example
 
 ### Instance
@@ -262,6 +264,7 @@ while an example is:
 <!-- Provide a small example instance in the described format. -->
 
 There are two small instances that can be used as examples.
+Here, we present one of them:
 
 <!--
 ![gualandi](images/gualandi.png){ width="515" height="385" style="display:
@@ -269,14 +272,17 @@ block; margin: 0 auto; text-align: center" }
 -->
 
 
-<div style="text-align: center;">
-<img src="data/belben/map.png" alt="Belenguer Benavent instance">
-</div>
 
 <div style="text-align: center;">
 <img src="data/gualandi/map.png" alt="Gualandi instance">
 </div>
 
+Another small example is:
+
+
+<div style="text-align: center;">
+<img src="data/belben/map.png" alt="Belenguer Benavent instance">
+</div>
 
 ### Solution
 <!--
@@ -284,15 +290,35 @@ Provide a feasible solution to the example instance in the described format
 (including its evaluation measure).
 -->
 
-To be added
+For the first of the two examples, the solution:
 
+```json
+[
+  {"vehicle":"1",
+  "route":[
+    {"arc":["0","1"],"salted":false},
+    {"arc":["1","2"],"salted":true},
+    {"arc":["2","3"],"salted":false},
+    {"arc":["3","4"],"salted":true},
+    {"arc":["4","7"],"salted":false},
+    {"arc":["5","6"],"salted":false},
+    {"arc":["6","5"],"salted":true},
+    {"arc":["5","7"],"salted":false}
+  ]
+  }
+]
+```
 
+is feasible and has total length 60.
+
+<!--
 ### Explanation
-
+-->
 <!-- Optionally, provide a --> 
-
+<!--
 Descriptive and/or visual explanation of the solution (and
 its evaluation measure value) for the instance.
+-->
 
 ## Acknowledgements
 

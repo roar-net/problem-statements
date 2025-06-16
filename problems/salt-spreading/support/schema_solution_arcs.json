@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "vehicle": {
+        "type": "string"
+      },
+      "route": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "arc": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            },
+            "salted": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "arc",
+            "salted"
+          ]
+        }
+      }
+    },
+    "required": [
+      "route",
+      "vehicle"
+    ]
+  }
+}
