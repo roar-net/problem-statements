@@ -1,0 +1,146 @@
+{
+    "route": [
+        {
+            "load": [
+                "v1",
+                "v2"
+            ]
+        },
+        {
+            "unload": [
+                "v1"
+            ],
+            "load": [
+                "v3",
+                "v4"
+            ]
+        },
+        {
+            "unload": [
+                "v2",
+                "v4"
+            ],
+            "load": [
+                "v5",
+                "v6",
+                "v7"
+            ]
+        },
+        {
+            "unload": [
+                "v3",
+                "v6",
+                "v5"
+            ],
+            "load": [
+                "v8"
+            ]
+        },
+        {
+            "unload": [
+                "v7",
+                "v8"
+            ],
+            "load": [
+                "v9",
+                "v10",
+                "v11",
+                "v12"
+            ]
+        },
+        {
+            "unload": [
+                "v11"
+            ],
+            "load": [
+                "v13"
+            ]
+        },
+        {
+            "unload": [
+                "v9",
+                "v10",
+                "v12",
+                "v13"
+            ]
+        }
+    ],
+    "vehicles": {
+        "v1": {
+            "dimension": 1150
+        },
+        "v2": {
+            "dimension": 2000
+        },
+        "v3": {
+            "dimension": 1950
+        },
+        "v4": {
+            "dimension": 1850
+        },
+        "v5": {
+            "dimension": 1550
+        },
+        "v6": {
+            "dimension": 1450
+        },
+        "v7": {
+            "dimension": 1650
+        },
+        "v8": {
+            "dimension": 2000
+        },
+        "v9": {
+            "dimension": 1650
+        },
+        "v10": {
+            "dimension": 900
+        },
+        "v11": {
+            "dimension": 1650
+        },
+        "v12": {
+            "dimension": 1450
+        },
+        "v13": {
+            "dimension": 1100
+        }
+    },
+    "transporter": {
+        "total_capacity": 11000,
+        "decks": {
+            "d1": {
+                "capacity": 3000,
+                "access_via": [
+                    [
+                        "d2",
+                        "d4"
+                    ],
+                    [
+                        "d3",
+                        "d4"
+                    ]
+                ]
+            },
+            "d2": {
+                "capacity": 3000,
+                "access_via": [
+                    [
+                        "d4"
+                    ]
+                ]
+            },
+            "d3": {
+                "capacity": 1000,
+                "access_via": [
+                    [
+                        "d4"
+                    ]
+                ]
+            },
+            "d4": {
+                "capacity": 4000
+            }
+        }
+    }
+}

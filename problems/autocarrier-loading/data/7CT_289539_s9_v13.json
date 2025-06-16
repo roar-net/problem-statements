@@ -1,0 +1,136 @@
+{
+    "route": [
+        {
+            "load": [
+                "v1",
+                "v2",
+                "v3"
+            ]
+        },
+        {
+            "unload": [
+                "v3",
+                "v2"
+            ],
+            "load": [
+                "v4",
+                "v5"
+            ]
+        },
+        {
+            "load": [
+                "v6"
+            ]
+        },
+        {
+            "unload": [
+                "v4",
+                "v6",
+                "v1"
+            ]
+        },
+        {
+            "unload": [
+                "v5"
+            ],
+            "load": [
+                "v7",
+                "v8",
+                "v9",
+                "v10",
+                "v11"
+            ]
+        },
+        {
+            "load": []
+        },
+        {
+            "load": []
+        },
+        {
+            "unload": [
+                "v7",
+                "v10",
+                "v11",
+                "v8"
+            ],
+            "load": [
+                "v12",
+                "v13"
+            ]
+        },
+        {
+            "unload": [
+                "v9",
+                "v12",
+                "v13"
+            ]
+        }
+    ],
+    "vehicles": {
+        "v1": {
+            "dimension": 1000
+        },
+        "v2": {
+            "dimension": 1650
+        },
+        "v3": {
+            "dimension": 1550
+        },
+        "v4": {
+            "dimension": 1000
+        },
+        "v5": {
+            "dimension": 1500
+        },
+        "v6": {
+            "dimension": 1850
+        },
+        "v7": {
+            "dimension": 1550
+        },
+        "v8": {
+            "dimension": 800
+        },
+        "v9": {
+            "dimension": 1850
+        },
+        "v10": {
+            "dimension": 1450
+        },
+        "v11": {
+            "dimension": 1100
+        },
+        "v12": {
+            "dimension": 1050
+        },
+        "v13": {
+            "dimension": 1500
+        }
+    },
+    "transporter": {
+        "total_capacity": 7000,
+        "decks": {
+            "d1": {
+                "capacity": 3000,
+                "access_via": [
+                    [
+                        "d2",
+                        "d3"
+                    ]
+                ]
+            },
+            "d2": {
+                "capacity": 1000,
+                "access_via": [
+                    [
+                        "d3"
+                    ]
+                ]
+            },
+            "d3": {
+                "capacity": 3000
+            }
+        }
+    }
+}

@@ -1,0 +1,214 @@
+{
+    "route": [
+        {
+            "load": [
+                "v1",
+                "v2",
+                "v3",
+                "v4"
+            ]
+        },
+        {
+            "unload": [
+                "v2",
+                "v3",
+                "v4"
+            ],
+            "load": [
+                "v5",
+                "v6",
+                "v7",
+                "v8",
+                "v9"
+            ]
+        },
+        {
+            "unload": [
+                "v5",
+                "v7",
+                "v6",
+                "v1",
+                "v9",
+                "v8"
+            ],
+            "load": [
+                "v10",
+                "v11",
+                "v12",
+                "v13",
+                "v14"
+            ]
+        },
+        {
+            "unload": [
+                "v11"
+            ],
+            "load": [
+                "v15"
+            ]
+        },
+        {
+            "unload": [
+                "v14",
+                "v15",
+                "v12",
+                "v10"
+            ]
+        },
+        {
+            "load": [
+                "v16",
+                "v17",
+                "v18",
+                "v19",
+                "v20"
+            ]
+        },
+        {
+            "unload": [
+                "v17",
+                "v18",
+                "v13",
+                "v20"
+            ],
+            "load": [
+                "v21",
+                "v22",
+                "v23",
+                "v24"
+            ]
+        },
+        {
+            "unload": [
+                "v19",
+                "v21"
+            ],
+            "load": [
+                "v25"
+            ]
+        },
+        {
+            "unload": [
+                "v16",
+                "v22",
+                "v23",
+                "v24",
+                "v25"
+            ]
+        }
+    ],
+    "vehicles": {
+        "v1": {
+            "dimension": 1250
+        },
+        "v2": {
+            "dimension": 1250
+        },
+        "v3": {
+            "dimension": 1250
+        },
+        "v4": {
+            "dimension": 1800
+        },
+        "v5": {
+            "dimension": 1300
+        },
+        "v6": {
+            "dimension": 1200
+        },
+        "v7": {
+            "dimension": 1450
+        },
+        "v8": {
+            "dimension": 1950
+        },
+        "v9": {
+            "dimension": 1900
+        },
+        "v10": {
+            "dimension": 1500
+        },
+        "v11": {
+            "dimension": 1200
+        },
+        "v12": {
+            "dimension": 1950
+        },
+        "v13": {
+            "dimension": 1350
+        },
+        "v14": {
+            "dimension": 1750
+        },
+        "v15": {
+            "dimension": 1350
+        },
+        "v16": {
+            "dimension": 1650
+        },
+        "v17": {
+            "dimension": 950
+        },
+        "v18": {
+            "dimension": 800
+        },
+        "v19": {
+            "dimension": 1000
+        },
+        "v20": {
+            "dimension": 1000
+        },
+        "v21": {
+            "dimension": 1500
+        },
+        "v22": {
+            "dimension": 950
+        },
+        "v23": {
+            "dimension": 1600
+        },
+        "v24": {
+            "dimension": 1050
+        },
+        "v25": {
+            "dimension": 1150
+        }
+    },
+    "transporter": {
+        "total_capacity": 11000,
+        "decks": {
+            "d1": {
+                "capacity": 3000,
+                "access_via": [
+                    [
+                        "d2",
+                        "d4"
+                    ],
+                    [
+                        "d3",
+                        "d4"
+                    ]
+                ]
+            },
+            "d2": {
+                "capacity": 3000,
+                "access_via": [
+                    [
+                        "d4"
+                    ]
+                ]
+            },
+            "d3": {
+                "capacity": 1000,
+                "access_via": [
+                    [
+                        "d4"
+                    ]
+                ]
+            },
+            "d4": {
+                "capacity": 4000
+            }
+        }
+    }
+}
