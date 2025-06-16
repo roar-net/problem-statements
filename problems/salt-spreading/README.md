@@ -186,9 +186,10 @@ See a description and details:
 - [Kerteminde](data/kerteminde/description.md)
 - [Middelfart](data/middelfart/description.md)
 
-Using a simplified syntaxm, the `json` files contain data organized as follows:
+Using a simplified syntax, the `json` files contain data organized as follows:
 
 ```json
+{
     "name",
     "max_time",
     "nodes": [{"label", "position": ["x", "y"]}]
@@ -198,6 +199,7 @@ Using a simplified syntaxm, the `json` files contain data organized as follows:
     "A_R": [{"arc": ["from", "to"], "dem", "len", "time"}],
     "E_R": [{"edge": ["from", "to"], "dem", "len", "time"}],
     "U": [{"label"}]
+}
 ```
 
 Note that the instance does not contain an object for the edge set $E$ as every
