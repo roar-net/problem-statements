@@ -292,7 +292,7 @@ Provide a feasible solution to the example instance in the described format
 (including its evaluation measure).
 -->
 
-For the first of the two examples, the solution:
+For the first of the two examples, a candidate solution is:
 
 ```json
 [
