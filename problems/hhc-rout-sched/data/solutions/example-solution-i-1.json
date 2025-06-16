@@ -1,0 +1,88 @@
+{
+  "cost": {
+    "objective": 644,
+    "violations": 0
+  },
+  "cost_components": {
+    "max_idle_time": 543,
+    "total_tardiness": 0,
+    "travel_time": 101
+  },
+  "global_ordering": [
+    "p1",
+    "p3",
+    "p0",
+    "p4",
+    "p2"
+  ],
+  "routes": [
+    {
+      "caregiver_id": "c1",
+      "locations": [
+        {
+          "arrival_time": 11,
+          "departure_time": 150,
+          "end_time": 150,
+          "patient": "p0",
+          "service": "s1",
+          "start_time": 105
+        }
+      ]
+    },
+    {
+      "caregiver_id": "c2",
+      "locations": [
+        {
+          "arrival_time": 7,
+          "departure_time": 375,
+          "end_time": 375,
+          "patient": "p4",
+          "service": "s3",
+          "start_time": 315
+        }
+      ]
+    },
+    {
+      "caregiver_id": "c3",
+      "locations": [
+        {
+          "arrival_time": 12,
+          "departure_time": 390,
+          "end_time": 390,
+          "patient": "p1",
+          "service": "s0",
+          "start_time": 345
+        },
+        {
+          "arrival_time": 401,
+          "departure_time": 431,
+          "end_time": 431,
+          "patient": "p3",
+          "service": "s0",
+          "start_time": 401
+        },
+        {
+          "arrival_time": 439,
+          "departure_time": 469,
+          "end_time": 469,
+          "patient": "p4",
+          "service": "s0",
+          "start_time": 439
+        }
+      ]
+    },
+    {
+      "caregiver_id": "c4",
+      "locations": [
+        {
+          "arrival_time": 14,
+          "departure_time": 75,
+          "end_time": 75,
+          "patient": "p2",
+          "service": "s2",
+          "start_time": 45
+        }
+      ]
+    }
+  ]
+}

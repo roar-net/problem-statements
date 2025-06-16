@@ -1,0 +1,41 @@
+\documentclass[crop,tikz]{standalone}
+
+% https://tex.stackexchange.com/questions/32127/standalone-tikz-pictures
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,arrows.meta}
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+
+\begin{document}
+
+\tikzstyle{vertex}=[draw,circle,minimum size=20pt,inner sep=0pt]
+\tikzstyle{selected vertex} = [vertex, fill=red!24]
+\tikzstyle{edge} = [draw,thick,-]
+\tikzstyle{weight} = [font=\small,color=black]
+\tikzstyle{selected edge} = [draw,line width=5pt,-,red!50]
+\tikzstyle{selected arc} = [draw,line width=5pt,-,black!20]
+\tikzset{>={Latex[length=3mm,width=2mm]}}
+
+\begin{tikzpicture}[scale=0.4, auto,swap]
+    % First we draw the vertices
+    \foreach \pos/\name in {{(0,12)/0}, {(4,8)/1}, {(12,8)/2},
+                            {(4,3)/3}, {(12,3)/4}, {(17,12)/5},
+                            {(17,17)/6}, {(20,3)/7}}
+        \node[vertex] (\name) at \pos {$\name$};
+    % Connect vertices with edges and draw weights
+    \foreach \source/ \dest in {0/1, 1/2, 2/4, 2/3, 1/3, 3/4,
+      2/5, 5/7, 4/7, 5/7, 5/6}
+    \path[edge] (\source) -- node[weight] {} (\dest);
+    \begin{pgfonlayer}{background}
+    %background for required edges
+      \foreach \source / \dest /\weight in {3/4/-20,6/5/-30}
+      \draw[->,selected arc] (\source.center) -- node[weight] {$\weight$} (\dest.center);
+      \foreach \source / \dest / \weight in {1/2/-30}
+      \path[selected edge] (\source.center) -- node[weight] {$\weight$} (\dest.center);
+    \end{pgfonlayer}
+\end{tikzpicture}
+
+\end{document}

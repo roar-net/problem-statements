@@ -1,0 +1,414 @@
+{
+  "metadata": {
+    "time_window_met": "at_service_start",
+    "cost_components": {
+      "travel_time": 1,
+      "total_tardiness": 1,
+      "max_idle_time": 1
+    },
+    "name": "school/instance-Cuneo-r_5-p_5-dp_5-apt_same_as_departure-h600-twm_at_service_start-rs_42-inc_0.0-opt_0.0-dtw_0.0-pcgr_0.0-sc_(2, 2)-sp_0.7",
+    "origin": "generated",
+    "horizon": 600,
+    "generator_info": {
+      "city": "Cuneo",
+      "radius": 5.0,
+      "patients": 5,
+      "departing_points": 5,
+      "arrival_points": 0,
+      "arrival_point_type": "same_as_departure",
+      "sync_rates": [
+        0.7,
+        0.2,
+        0.1,
+        0.0
+      ],
+      "incompatibility": 0.0,
+      "service_classes": [
+        2,
+        2
+      ],
+      "optional_rate": 0.0,
+      "double_time_window_rate": 0.0,
+      "preferred_caregiver_rate": 0.0,
+      "no_intersect_administrative": false,
+      "patient_config": {
+        "time_windows": [
+          30,
+          60,
+          90,
+          120
+        ],
+        "treatment_durations": [
+          15,
+          30,
+          45,
+          60
+        ],
+        "treatment_duration_biases": [
+          0.1,
+          0.35,
+          0.35,
+          0.2
+        ],
+        "sequential_distances": [
+          0,
+          15,
+          30,
+          45,
+          60,
+          75,
+          90
+        ],
+        "time_window_granularity": 15
+      },
+      "caregiver_config": {
+        "shift_durations": [
+          600
+        ],
+        "shift_granularity": 30
+      },
+      "random_seed": 42
+    }
+  },
+  "distances": [
+    [
+      0,
+      17,
+      17,
+      8,
+      11,
+      11,
+      11,
+      17,
+      8,
+      12
+    ],
+    [
+      17,
+      0,
+      2,
+      13,
+      11,
+      11,
+      12,
+      0,
+      13,
+      7
+    ],
+    [
+      18,
+      2,
+      0,
+      16,
+      13,
+      13,
+      13,
+      2,
+      16,
+      9
+    ],
+    [
+      9,
+      14,
+      15,
+      0,
+      10,
+      10,
+      11,
+      14,
+      0,
+      8
+    ],
+    [
+      11,
+      12,
+      13,
+      10,
+      0,
+      0,
+      4,
+      12,
+      10,
+      10
+    ],
+    [
+      11,
+      12,
+      13,
+      10,
+      0,
+      0,
+      4,
+      12,
+      10,
+      10
+    ],
+    [
+      11,
+      12,
+      13,
+      11,
+      4,
+      4,
+      0,
+      12,
+      11,
+      10
+    ],
+    [
+      17,
+      0,
+      2,
+      13,
+      11,
+      11,
+      12,
+      0,
+      13,
+      7
+    ],
+    [
+      9,
+      14,
+      15,
+      0,
+      10,
+      10,
+      11,
+      14,
+      0,
+      8
+    ],
+    [
+      12,
+      7,
+      9,
+      8,
+      10,
+      10,
+      10,
+      7,
+      8,
+      0
+    ]
+  ],
+  "terminal_points": [
+    {
+      "id": "d0",
+      "distance_matrix_index": 0,
+      "location": [
+        7.510665887443382,
+        44.4515306913347
+      ]
+    },
+    {
+      "id": "d1",
+      "distance_matrix_index": 1,
+      "location": [
+        7.583945189196948,
+        44.49836286907799
+      ]
+    },
+    {
+      "id": "d2",
+      "distance_matrix_index": 2,
+      "location": [
+        7.584329474246332,
+        44.489351042667934
+      ]
+    },
+    
+    {
+      "id": "d3",
+      "distance_matrix_index": 3,
+      "location": [
+        7.509478682920628,
+        44.478565744259285
+      ]
+    },
+    {
+      "id": "d4",
+      "distance_matrix_index": 4,
+      "location": [
+        7.536905586595426,
+        44.42509160214148
+      ]
+    }
+  ],
+  "caregivers": [
+    {
+      "id": "c1",
+      "abilities": [
+        "s1"
+      ],
+      "departing_point": "d0",
+      "arrival_point": "d0",
+      "working_shift": {
+        "start": 0,
+        "end": 600
+      }
+    },
+    {
+      "id": "c2",
+      "abilities": [
+        "s3"
+      ],
+      "departing_point": "d1",
+      "arrival_point": "d1",
+      "working_shift": {
+        "start": 0,
+        "end": 600
+      }
+    },
+    {
+      "id": "c3",
+      "abilities": [
+        "s0",
+        "s1"
+      ],
+      "departing_point": "d1",
+      "arrival_point": "d1",
+      "working_shift": {
+        "start": 0,
+        "end": 600
+      }
+    },
+    {
+      "id": "c4",
+      "abilities": [
+        "s2",
+        "s3"
+      ],
+      "departing_point": "d3",
+      "arrival_point": "d3",
+      "working_shift": {
+        "start": 0,
+        "end": 600
+      }
+    }
+  ],
+  "patients": [
+    {
+      "id": "p0",
+      "required_services": [
+        {
+          "service": "s1",
+          "duration": 45
+        }
+      ],
+      "distance_matrix_index": 5,
+      "time_windows": [
+        {
+          "start": 105,
+          "end": 345
+        }
+      ],
+      "location": [
+        7.536905586595426,
+        44.42509160214148
+      ]
+    },
+    {
+      "id": "p1",
+      "required_services": [
+        {
+          "service": "s0",
+          "duration": 45
+        }
+      ],
+      "distance_matrix_index": 6,
+      "time_windows": [
+        {
+          "start": 345,
+          "end": 465
+        }
+      ],
+      "location": [
+        7.54982170979869,
+        44.416375441465874
+      ]
+    },
+    {
+      "id": "p2",
+      "required_services": [
+        {
+          "service": "s2",
+          "duration": 30
+        }
+      ],
+      "distance_matrix_index": 7,
+      "time_windows": [
+        {
+          "start": 45,
+          "end": 225
+        }
+      ],
+      "location": [
+        7.583945189196948,
+        44.49836286907799
+      ]
+    },
+    {
+      "id": "p3",
+      "required_services": [
+        {
+          "service": "s0",
+          "duration": 30
+        }
+      ],
+      "distance_matrix_index": 8,
+      "time_windows": [
+        {
+          "start": 300,
+          "end": 480
+        }
+      ],
+      "location": [
+        7.509478682920628,
+        44.478565744259285
+      ]
+    },
+    {
+      "id": "p4",
+      "required_services": [
+        {
+          "service": "s3",
+          "duration": 60
+        }
+      ],
+      "distance_matrix_index": 9,
+      "time_windows": [
+        {
+          "start": 315,
+          "end": 495
+        }
+      ],
+      "location": [
+        7.546705515708374,
+        44.488470971940984
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "s0",
+      "type": "t0",
+      "default_duration": 30
+    },
+    {
+      "id": "s1",
+      "type": "t0",
+      "default_duration": 45
+    },
+    {
+      "id": "s2",
+      "type": "t1",
+      "default_duration": 30
+    },
+    {
+      "id": "s3",
+      "type": "t1",
+      "default_duration": 60
+    }
+  ]
+}

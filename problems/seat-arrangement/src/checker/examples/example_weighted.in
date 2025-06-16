@@ -1,0 +1,14 @@
+# 7 guests, 2 tables, 4 labels, 0 disagreements, 2 to 5 guests per table
+7 2 4 0 2 5
+# Label weight (Labels: C, S, H, W)
+10 2 1 1
+# Labels associated to each guest
+0
+2 3
+0 1
+0 2
+0
+0 3
+1
+# Disagreements
+

@@ -1,0 +1,368 @@
+{
+  "metadata": {
+    "time_window_met": "at_service_start",
+    "cost_components": {
+      "travel_time": 1,
+      "total_tardiness": 1,
+      "max_idle_time": 1
+    },
+    "name": "school/instance-Schwandorf-r_10-p_5-dp_3-apt_same_as_departure-h600-twm_at_service_start-rs_42-inc_0.0-opt_0.0-dtw_0.0-pcgr_0.0-sc_(4, 4)-sp_0.7",
+    "origin": "generated",
+    "horizon": 600,
+    "generator_info": {
+      "city": "Schwandorf",
+      "radius": 10.0,
+      "patients": 5,
+      "departing_points": 3,
+      "arrival_points": 0,
+      "arrival_point_type": "same_as_departure",
+      "sync_rates": [
+        0.7,
+        0.16,
+        0.14,
+        0.0
+      ],
+      "incompatibility": 0.0,
+      "service_classes": [
+        4,
+        4
+      ],
+      "optional_rate": 0.0,
+      "double_time_window_rate": 0.0,
+      "preferred_caregiver_rate": 0.0,
+      "no_intersect_administrative": false,
+      "patient_config": {
+        "time_windows": [
+          30,
+          60,
+          90,
+          120
+        ],
+        "treatment_durations": [
+          15,
+          30,
+          45,
+          60
+        ],
+        "treatment_duration_biases": [
+          0.1,
+          0.35,
+          0.35,
+          0.2
+        ],
+        "sequential_distances": [
+          0,
+          15,
+          30,
+          45,
+          60,
+          75,
+          90
+        ],
+        "time_window_granularity": 15
+      },
+      "caregiver_config": {
+        "shift_durations": [
+          600
+        ],
+        "shift_granularity": 30
+      },
+      "random_seed": 42
+    }
+  },
+  "distances": [
+    [
+      0,
+      11,
+      11,
+      6,
+      12,
+      12,
+      11,
+      10
+    ],
+    [
+      12,
+      0,
+      12,
+      11,
+      17,
+      17,
+      16,
+      3
+    ],
+    [
+      11,
+      12,
+      0,
+      7,
+      11,
+      11,
+      13,
+      11
+    ],
+    [
+      7,
+      12,
+      7,
+      0,
+      10,
+      10,
+      11,
+      10
+    ],
+    [
+      13,
+      17,
+      10,
+      10,
+      0,
+      0,
+      7,
+      16
+    ],
+    [
+      13,
+      17,
+      10,
+      10,
+      0,
+      0,
+      7,
+      16
+    ],
+    [
+      11,
+      16,
+      12,
+      12,
+      7,
+      7,
+      0,
+      15
+    ],
+    [
+      10,
+      3,
+      10,
+      9,
+      15,
+      15,
+      14,
+      0
+    ]
+  ],
+  "terminal_points": [
+    {
+      "id": "d0",
+      "distance_matrix_index": 0,
+      "location": [
+        12.179720902470397,
+        49.313344894252545
+      ]
+    },
+    {
+      "id": "d1",
+      "distance_matrix_index": 1,
+      "location": [
+        12.142028639852885,
+        49.39503789837146
+      ]
+    },
+    {
+      "id": "d2",
+      "distance_matrix_index": 2,
+      "location": [
+        12.111770504998136,
+        49.3326345183347
+      ]
+    }
+  ],
+  "caregivers": [
+    {
+      "id": "c1",
+      "abilities": [
+        "s3",
+        "s1",
+        "s0"
+      ],
+      "departing_point": "d0",
+      "arrival_point": "d0",
+      "working_shift": {
+        "start": 0,
+        "end": 600
+      }
+    },
+    {
+      "id": "c2",
+      "abilities": [
+        "s4"
+      ],
+      "departing_point": "d0",
+      "arrival_point": "d0",
+      "working_shift": {
+        "start": 0,
+        "end": 600
+      }
+    },
+    {
+      "id": "c3",
+      "abilities": [
+        "s7",
+        "s6",
+        "s5",
+        "s4"
+      ],
+      "departing_point": "d2",
+      "arrival_point": "d2",
+      "working_shift": {
+        "start": 0,
+        "end": 600
+      }
+    }
+  ],
+  "patients": [
+    {
+      "id": "p0",
+      "required_services": [
+        {
+          "service": "s3",
+          "duration": 45
+        }
+      ],
+      "distance_matrix_index": 3,
+      "time_windows": [
+        {
+          "start": 105,
+          "end": 345
+        }
+      ],
+      "location": [
+        12.13887842198018,
+        49.323125762885795
+      ]
+    },
+    {
+      "id": "p1",
+      "required_services": [
+        {
+          "service": "s0",
+          "duration": 45
+        }
+      ],
+      "distance_matrix_index": 4,
+      "time_windows": [
+        {
+          "start": 345,
+          "end": 465
+        }
+      ],
+      "location": [
+        12.082355458516513,
+        49.28820040289024
+      ]
+    },
+    {
+      "id": "p2",
+      "required_services": [
+        {
+          "service": "s4",
+          "duration": 30
+        }
+      ],
+      "distance_matrix_index": 5,
+      "time_windows": [
+        {
+          "start": 45,
+          "end": 225
+        }
+      ],
+      "location": [
+        12.082355458516513,
+        49.28820040289024
+      ]
+    },
+    {
+      "id": "p3",
+      "required_services": [
+        {
+          "service": "s1",
+          "duration": 30
+        }
+      ],
+      "distance_matrix_index": 6,
+      "time_windows": [
+        {
+          "start": 300,
+          "end": 480
+        }
+      ],
+      "location": [
+        12.067478670456808,
+        49.26148532060171
+      ]
+    },
+    {
+      "id": "p4",
+      "required_services": [
+        {
+          "service": "s7",
+          "duration": 45
+        }
+      ],
+      "distance_matrix_index": 7,
+      "time_windows": [
+        {
+          "start": 30,
+          "end": 270
+        }
+      ],
+      "location": [
+        12.14163422423197,
+        49.38604898881036
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "s0",
+      "type": "t0",
+      "default_duration": 45
+    },
+    {
+      "id": "s1",
+      "type": "t0",
+      "default_duration": 30
+    },
+    {
+      "id": "s2",
+      "type": "t0",
+      "default_duration": 45
+    },
+    {
+      "id": "s3",
+      "type": "t0",
+      "default_duration": 45
+    },
+    {
+      "id": "s4",
+      "type": "t1",
+      "default_duration": 30
+    },
+    {
+      "id": "s5",
+      "type": "t1",
+      "default_duration": 30
+    },
+    {
+      "id": "s6",
+      "type": "t1",
+      "default_duration": 45
+    },
+    {
+      "id": "s7",
+      "type": "t1",
+      "default_duration": 45
+    }
+  ]
+}

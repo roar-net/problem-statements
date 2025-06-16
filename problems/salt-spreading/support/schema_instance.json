@@ -1,0 +1,181 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "max_time": {
+      "type": "number"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "position": {
+            "type": "array",
+            "items": {
+              "type": ["null","number"]
+            }
+          }
+        },
+        "required": [
+          "label",
+          "position"
+        ]
+      }
+    },
+    "vehicles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "home": {
+            "type": "string"
+          },
+          "capacity": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "capacity",
+          "home",
+          "id"
+        ]
+      }
+    },
+    "depots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "refill": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "label",
+          "refill"
+        ]
+      }
+    },
+    "A": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "arc": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "len": {
+            "type": "number"
+          },
+          "time": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "arc",
+          "len",
+          "time"
+        ]
+      }
+    },
+    "A_R": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "arc": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dem": {
+            "type": "number"
+          },
+          "len": {
+            "type": "number"
+          },
+          "time": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "arc",
+          "dem",
+          "len",
+          "time"
+        ]
+      }
+    },
+    "E_R": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "edge": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dem": {
+            "type": "number"
+          },
+          "len": {
+            "type": "number"
+          },
+          "time": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "dem",
+          "edge",
+          "len",
+          "time"
+        ]
+      }
+    },
+    "U": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "label"
+        ]
+      }
+    }
+  },
+  "required": [
+    "A",
+    "A_R",
+    "E_R",
+    "U",
+    "depots",
+    "max_time",
+    "name",
+    "nodes",
+    "vehicles"
+  ]
+}

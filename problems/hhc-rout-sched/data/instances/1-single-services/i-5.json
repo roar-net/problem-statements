@@ -1,0 +1,561 @@
+{
+  "metadata": {
+    "time_window_met": "at_service_start",
+    "cost_components": {
+      "travel_time": 1,
+      "total_tardiness": 1,
+      "max_idle_time": 1
+    },
+    "name": "school/instance-Pescara-r_5-p_10-dp_2-apt_same_as_departure-h600-twm_at_service_start-rs_42-inc_0.0-opt_0.0-dtw_0.0-pcgr_0.0-sc_(4, 4)-sp_0.5",
+    "origin": "generated",
+    "horizon": 600,
+    "generator_info": {
+      "city": "Pescara",
+      "radius": 5.0,
+      "patients": 10,
+      "departing_points": 2,
+      "arrival_points": 0,
+      "arrival_point_type": "same_as_departure",
+      "sync_rates": [
+        0.5,
+        0.12,
+        0.38,
+        0.0
+      ],
+      "incompatibility": 0.0,
+      "service_classes": [
+        4,
+        4
+      ],
+      "optional_rate": 0.0,
+      "double_time_window_rate": 0.0,
+      "preferred_caregiver_rate": 0.0,
+      "no_intersect_administrative": false,
+      "patient_config": {
+        "time_windows": [
+          30,
+          60,
+          90,
+          120
+        ],
+        "treatment_durations": [
+          15,
+          30,
+          45,
+          60
+        ],
+        "treatment_duration_biases": [
+          0.1,
+          0.35,
+          0.35,
+          0.2
+        ],
+        "sequential_distances": [
+          0,
+          15,
+          30,
+          45,
+          60,
+          75,
+          90
+        ],
+        "time_window_granularity": 15
+      },
+      "caregiver_config": {
+        "shift_durations": [
+          600
+        ],
+        "shift_granularity": 30
+      },
+      "random_seed": 42
+    }
+  },
+  "distances": [
+    [
+      0,
+      14,
+      19,
+      7,
+      19,
+      19,
+      8,
+      21,
+      7,
+      21,
+      23,
+      14
+    ],
+    [
+      14,
+      0,
+      10,
+      11,
+      22,
+      22,
+      20,
+      8,
+      11,
+      13,
+      24,
+      0
+    ],
+    [
+      19,
+      10,
+      0,
+      20,
+      33,
+      33,
+      25,
+      4,
+      20,
+      5,
+      34,
+      10
+    ],
+    [
+      7,
+      12,
+      20,
+      0,
+      20,
+      20,
+      13,
+      19,
+      0,
+      23,
+      24,
+      12
+    ],
+    [
+      19,
+      22,
+      33,
+      20,
+      0,
+      0,
+      21,
+      30,
+      20,
+      35,
+      10,
+      22
+    ],
+    [
+      19,
+      22,
+      33,
+      20,
+      0,
+      0,
+      21,
+      30,
+      20,
+      35,
+      10,
+      22
+    ],
+    [
+      8,
+      21,
+      26,
+      14,
+      21,
+      21,
+      0,
+      28,
+      14,
+      28,
+      21,
+      21
+    ],
+    [
+      21,
+      8,
+      4,
+      19,
+      30,
+      30,
+      27,
+      0,
+      19,
+      7,
+      31,
+      8
+    ],
+    [
+      7,
+      12,
+      20,
+      0,
+      20,
+      20,
+      13,
+      19,
+      0,
+      23,
+      24,
+      12
+    ],
+    [
+      21,
+      13,
+      5,
+      23,
+      35,
+      35,
+      28,
+      7,
+      23,
+      0,
+      37,
+      13
+    ],
+    [
+      24,
+      24,
+      34,
+      24,
+      11,
+      11,
+      21,
+      32,
+      24,
+      37,
+      0,
+      24
+    ],
+    [
+      14,
+      0,
+      10,
+      11,
+      22,
+      22,
+      20,
+      8,
+      11,
+      13,
+      24,
+      0
+    ]
+  ],
+  "terminal_points": [
+    {
+      "id": "d0",
+      "distance_matrix_index": 0,
+      "location": [
+        13.924010654514033,
+        42.30225767503809
+      ]
+    },
+    {
+      "id": "d1",
+      "distance_matrix_index": 1,
+      "location": [
+        13.99944207581357,
+        42.34450539708682
+      ]
+    }
+  ],
+  "caregivers": [
+    {
+      "id": "c1",
+      "abilities": [
+        "s0"
+      ],
+      "departing_point": "d0",
+      "arrival_point": "d0",
+      "working_shift": {
+        "start": 0,
+        "end": 600
+      }
+    },
+    {
+      "id": "c2",
+      "abilities": [
+        "s1",
+        "s0",
+        "s3",
+        "s2"
+      ],
+      "departing_point": "d0",
+      "arrival_point": "d0",
+      "working_shift": {
+        "start": 0,
+        "end": 600
+      }
+    },
+    {
+      "id": "c3",
+      "abilities": [
+        "s4",
+        "s6",
+        "s7"
+      ],
+      "departing_point": "d0",
+      "arrival_point": "d0",
+      "working_shift": {
+        "start": 0,
+        "end": 600
+      }
+    },
+    {
+      "id": "c4",
+      "abilities": [
+        "s5",
+        "s4"
+      ],
+      "departing_point": "d1",
+      "arrival_point": "d1",
+      "working_shift": {
+        "start": 0,
+        "end": 600
+      }
+    }
+  ],
+  "patients": [
+    {
+      "id": "p0",
+      "required_services": [
+        {
+          "service": "s5",
+          "duration": 45
+        }
+      ],
+      "distance_matrix_index": 2,
+      "time_windows": [
+        {
+          "start": 465,
+          "end": 525
+        }
+      ],
+      "location": [
+        13.926357858919367,
+        42.33833458297306
+      ]
+    },
+    {
+      "id": "p1",
+      "required_services": [
+        {
+          "service": "s0",
+          "duration": 60
+        }
+      ],
+      "distance_matrix_index": 3,
+      "time_windows": [
+        {
+          "start": 285,
+          "end": 465
+        }
+      ],
+      "location": [
+        13.961416777094266,
+        42.318879420430385
+      ]
+    },
+    {
+      "id": "p2",
+      "required_services": [
+        {
+          "service": "s0",
+          "duration": 45
+        }
+      ],
+      "distance_matrix_index": 4,
+      "time_windows": [
+        {
+          "start": 225,
+          "end": 285
+        }
+      ],
+      "location": [
+        13.995259847902513,
+        42.281373989732224
+      ]
+    },
+    {
+      "id": "p3",
+      "required_services": [
+        {
+          "service": "s4",
+          "duration": 45
+        }
+      ],
+      "distance_matrix_index": 5,
+      "time_windows": [
+        {
+          "start": 75,
+          "end": 255
+        }
+      ],
+      "location": [
+        13.995259847902513,
+        42.281373989732224
+      ]
+    },
+    {
+      "id": "p4",
+      "required_services": [
+        {
+          "service": "s3",
+          "duration": 45
+        }
+      ],
+      "distance_matrix_index": 6,
+      "time_windows": [
+        {
+          "start": 165,
+          "end": 225
+        }
+      ],
+      "location": [
+        13.910183707954733,
+        42.275668164724365
+      ]
+    },
+    {
+      "id": "p5",
+      "required_services": [
+        {
+          "service": "s7",
+          "duration": 30
+        }
+      ],
+      "distance_matrix_index": 7,
+      "time_windows": [
+        {
+          "start": 345,
+          "end": 465
+        }
+      ],
+      "location": [
+        13.951111536933052,
+        42.34640999269181
+      ]
+    },
+    {
+      "id": "p6",
+      "required_services": [
+        {
+          "service": "s3",
+          "duration": 60
+        }
+      ],
+      "distance_matrix_index": 8,
+      "time_windows": [
+        {
+          "start": 195,
+          "end": 375
+        }
+      ],
+      "location": [
+        13.961416777094266,
+        42.318879420430385
+      ]
+    },
+    {
+      "id": "p7",
+      "required_services": [
+        {
+          "service": "s3",
+          "duration": 60
+        }
+      ],
+      "distance_matrix_index": 9,
+      "time_windows": [
+        {
+          "start": 105,
+          "end": 285
+        }
+      ],
+      "location": [
+        13.902194499561174,
+        42.33927225847106
+      ]
+    },
+    {
+      "id": "p8",
+      "required_services": [
+        {
+          "service": "s7",
+          "duration": 30
+        }
+      ],
+      "distance_matrix_index": 10,
+      "time_windows": [
+        {
+          "start": 375,
+          "end": 555
+        }
+      ],
+      "location": [
+        13.982000868905622,
+        42.263813311338936
+      ]
+    },
+    {
+      "id": "p9",
+      "required_services": [
+        {
+          "service": "s6",
+          "duration": 60
+        }
+      ],
+      "distance_matrix_index": 11,
+      "time_windows": [
+        {
+          "start": 255,
+          "end": 375
+        }
+      ],
+      "location": [
+        13.99944207581357,
+        42.34450539708682
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "s0",
+      "type": "t0",
+      "default_duration": 60
+    },
+    {
+      "id": "s1",
+      "type": "t0",
+      "default_duration": 30
+    },
+    {
+      "id": "s2",
+      "type": "t0",
+      "default_duration": 45
+    },
+    {
+      "id": "s3",
+      "type": "t0",
+      "default_duration": 60
+    },
+    {
+      "id": "s4",
+      "type": "t1",
+      "default_duration": 45
+    },
+    {
+      "id": "s5",
+      "type": "t1",
+      "default_duration": 45
+    },
+    {
+      "id": "s6",
+      "type": "t1",
+      "default_duration": 60
+    },
+    {
+      "id": "s7",
+      "type": "t1",
+      "default_duration": 30
+    }
+  ]
+}
