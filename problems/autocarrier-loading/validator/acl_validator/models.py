@@ -53,7 +53,7 @@ class AutocarrierLoadingProblem(BaseModel):
         return values
 
 class CurrentLoad(BaseModel):    
-    decks: Dict[str, Vehicle]
+    decks: Dict[str, List[Vehicle]]
     vehicles: Dict[str, Deck]
 
 class DeckLoad(BaseModel):
@@ -71,9 +71,11 @@ def suitable_unload_path(current_load: CurrentLoad, unloading : List[str], path 
     :return: True if the vehicle can be unloaded from the deck without moving any other vehicle, False otherwise.
     """
     for step in path:
-        if current_load.decks.get(step) and current_load.decks[step].id not in unloading:
-            # If the deck is occupied, and the vehicle is not among the unloading ones, we cannot unload the vehicle
-            return False
+        if current_load.decks.get(step):
+            # Check that all vehicles in the deck are in the unloading list
+            if any(vehicle.id not in unloading for vehicle in current_load.decks[step]):
+                # If any vehicle in the deck is not being unloaded, we cannot unload the vehicle
+                return False
     # If all steps in the path are clear, we can unload the vehicle
     return True
 
@@ -87,9 +89,11 @@ def suitable_load_path(current_load: CurrentLoad, loading : List[str], path : Li
     :return: True if the vehicle can be loaded onto the deck, False otherwise.
     """
     for step in path:
-        if current_load.decks.get(step) and current_load.decks[step].id not in loading:
-            # If the deck was previously occupied, we cannot load the vehicle
-            return False
+        if current_load.decks.get(step):
+            # Check that all vehicles in the deck are in the loading list
+            if any(vehicle.id not in loading for vehicle in current_load.decks[step]):
+                # If any vehicle in the deck is not being loaded, we cannot load the vehicle
+                return False
     # If all steps in the path are clear, we can load the vehicle
     return True
 
@@ -98,14 +102,26 @@ class AutocarrierLoadingSolution(BaseModel):
     assigned_decks: List[DeckLoad]
     deck_start_index : int = 0
 
+    def deck_of_vehicle(self, vehicle_id : str) -> Deck:
+        """
+        Get the deck of each vehicle in the assigned decks.
+        """
+        for deck_load in self.assigned_decks:
+            if deck_load.vehicle == vehicle_id:
+                deck = self.instance.transporter.decks.get(deck_load.deck)
+                if not deck:
+                    raise ValueError(f"Deck {deck_load.deck} not found in the instance transporter decks.")
+                return deck
+        raise ValueError(f"Vehicle {vehicle_id} not found in the assigned decks.")
+
     @property
     def route_leg_loads(self) -> List[CurrentLoad]:
         """
         Calculate the current load at each stop in the route.
         This method processes the route operations to determine the load on each deck at each stop.
         :return: A list of CurrentLoad objects representing the load at each stop."""
-        if hasattr(self, '_route_leg_loads'):
-            return self._route_leg_loads or []
+        # if hasattr(self, '_route_leg_loads'):
+        #     return self._route_leg_loads or []
         self._route_leg_loads = []      
         current_load = CurrentLoad(decks={}, vehicles={})
         for stop, operation in enumerate(self.instance.route):
@@ -115,28 +131,30 @@ class AutocarrierLoadingSolution(BaseModel):
                 # if the deck is not found, raise an error or handle it
                 if unload not in current_load.vehicles:
                     raise ValueError(f"Unload operation for vehicle {unload}, which has not been found in current load at stop {stop} in the route.")
-                vehicle = current_load.vehicles[unload]
-                deck = current_load.decks.get(vehicle.deck)
+                deck = current_load.vehicles[unload]
+                vehicle = current_load.decks.get(deck.id)
+                print(f"Unloading vehicle {unload} from deck {deck.id} {vehicle.id}, {current_load.decks}.")
                 # check unloading path
-                if not all(suitable_unload_path(current_load, [unload], path) for path in deck.access_via or []):
-                    raise ValueError(f"Vehicle {unload} cannot be unloaded from deck {vehicle.deck} at stop {stop} due to all occupied paths.")
+                if not all(suitable_unload_path(current_load, operation.unload, path) for path in deck.access_via or []):
+                    raise ValueError(f"Vehicle {unload} cannot be unloaded from deck {deck.id} at stop {stop} due to all occupied paths.")
                 # remove the vehicle from the current load                    
                 del current_load.vehicles[unload]
-                del current_load.decks[vehicle.id]
-
+                del current_load.decks[deck.id]
             
             for load in operation.load or []:
-                vehicle = self.instance.vehicles.get(load)
+                vehicle = self.instance.vehicles.get(load)                
                 if not vehicle:
-                    raise ValueError(f"Load operation for vehicle {load} not found in the instance vehicles.")
-                if current_load.decks.get(load.deck):
-                    raise ValueError(f"Vehicle {current_load.get(load.deck)} is already loaded on deck {load.deck} at stop {stop}.")
+                    raise ValueError(f"Load operation for vehicle {load} not found in the instance vehicles.")                
+                deck = self.deck_of_vehicle(vehicle.id)
+                if current_load.decks.get(deck.id):
+                    raise ValueError(f"Vehicle {current_load.decks.get(deck.id)} is already loaded on deck {deck.id} at stop {stop}, while trying to load vehicle {vehicle.id}.")
                 # check loading path
-                if not all(suitable_load_path(current_load, [load.vehicle], path) for path in vehicle.access_via or []):
-                    raise ValueError(f"Vehicle {load.vehicle} cannot be loaded onto deck {load.deck} at stop {stop} due to all occupied paths.")
+                if not all(suitable_load_path(current_load, operation.load, path) for path in deck.access_via or []):
+                    raise ValueError(f"Vehicle {vehicle.id} cannot be loaded onto deck {deck.id} at stop {stop} due to all occupied paths.")
                 # add the vehicle to the current load
-                current_load.decks[load.deck] = vehicle
-                current_load.vehicles[load.vehicle] = load.deck
+                current_load.decks[deck.id] = vehicle
+                current_load.vehicles[vehicle.id] = deck
+            # After processing the operations, append the current load to the route leg loads
             self._route_leg_loads.append(current_load)
         return self._route_leg_loads
 

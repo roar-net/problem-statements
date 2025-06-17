@@ -105,11 +105,21 @@ The instance format is a JSON object with three main components:
 
 ## Solution file
 
-The solution format for the basic version of the problem is a JSON array of objects representing deck assignments for each vehicle:
+The solution format for the basic version of the problem is a JSON array of objects representing deck assignments:
 
 ```json
-[ {"vehicle": vehicle_id, "deck": deck_id}, ... ]
+[
+    {"vehicle": "v1", "deck": "d1"},
+    {"vehicle": "v2", "deck": "d2"},
+    {"vehicle": "v3", "deck": "d3"},
+    {"vehicle": "v4", "deck": "d1"},
+    {"vehicle": "v5", "deck": "d3"},
+    {"vehicle": "v6", "deck": "d1"},
+    {"vehicle": "v7", "deck": "d2"},
+    {"vehicle": "v8", "deck": "d3"}
+]
 ```
+
 <!-- 
 For the extended version of the problem, the solution file will contain an array of objects, each representing a stop in the route with the following structure:
 
@@ -196,7 +206,7 @@ For the extended version of the problem, the solution file will contain an array
     {"vehicle": "v5", "deck": "d3"},
     {"vehicle": "v6", "deck": "d1"},
     {"vehicle": "v7", "deck": "d2"},
-    {"vehicle": "v8", "deck": "d1"}
+    {"vehicle": "v8", "deck": "d3"}
 ]
 ```
 
@@ -229,8 +239,6 @@ For the **hard constraint variant**, the traversal cost would be:
 - Vehicles on d3 (v3,v5,v8): 3 × 0 = 0 traversals (direct access)
 - **Total cost: 8 traversals**
 
-
-
 ## Acknowledgements
 
 This problem statement is based upon work from COST Action Randomised Optimisation Algorithms Research Network (ROAR-NET), CA22137, which is supported by COST (European Cooperation in Science and Technology).
@@ -238,4 +246,3 @@ This problem statement is based upon work from COST Action Randomised Optimisati
 ## References
 
 The problem formulation and constraints are inspired by practical scenarios faced by automotive logistics companies. The specific instances are illustrative and do not represent real-world data. The problem has been adapted from the work of Tommaso Urli (Satalia) and Manuel López-Ibáñez (University of Manchester), with contributions from Luca Di Gaspero (Università degli Studi di Udine).
-

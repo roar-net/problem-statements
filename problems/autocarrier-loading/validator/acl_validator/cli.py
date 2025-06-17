@@ -40,11 +40,13 @@ def validate_solution(instance_file : TextIO, solution_file : TextIO) -> None:
     except Exception as e:
         click.secho(f"🤦 Error validating instance: {e}", file=sys.stderr, fg="red", bold=True)
         sys.exit(1)
-    try:
-        solution = AutocarrierLoadingSolution(instance=instance, assigned_decks=solution)
-    except Exception as e:
-        click.secho(f"🤦 Error validating solution: {e}", file=sys.stderr, fg="red", bold=True)
-        sys.exit(1)
+#    try:
+    solution = AutocarrierLoadingSolution(instance=instance, assigned_decks=solution)
+#    except Exception as e:
+#        click.secho(f"🤦 Error validating solution: {e}", file=sys.stderr, fg="red", bold=True)
+#        sys.exit(1)
+
+    print(solution.route_leg_loads)
 
     # Here you would implement the actual validation logic
     click.secho("✅  ACL Solution is valid.", fg="green", bold=True)
