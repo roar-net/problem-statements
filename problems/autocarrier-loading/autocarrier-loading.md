@@ -105,16 +105,12 @@ The instance format is a JSON object with three main components:
 
 ## Solution file
 
-The solution format for the basic version of the problem is a JSON array of integers representing deck assignments:
+The solution format for the basic version of the problem is a JSON array of objects representing deck assignments for each vehicle:
 
 ```json
-[deck_number1, deck_number2, deck_number3, ...]
+[ {"vehicle": vehicle_id, "deck": deck_id}, ... ]
 ```
-
-- The i-th element (0-indexed) represents the deck assignment for the i-th vehicle when vehicles are ordered by their keys in lexicographic order
-- Deck numbers are integers starting from 1, corresponding to deck IDs "d1", "d2", "d3", etc.
-- Example: if vehicles are {v1, v2, v3} and decks are {d1, d2, d3}, then [2, 1, 3] means v1→d2, v2→d1, v3→d3
-
+<!-- 
 For the extended version of the problem, the solution file will contain an array of objects, each representing a stop in the route with the following structure:
 
 ```json
@@ -138,6 +134,8 @@ For the extended version of the problem, the solution file will contain an array
 ```
 
 ## Example
+
+-->
 
 ### Instance
 
@@ -190,7 +188,16 @@ For the extended version of the problem, the solution file will contain an array
 ### Solution
 
 ```json
-[1, 2, 3, 1, 3, 1, 2, 3]
+[
+    {"vehicle": "v1", "deck": "d1"},
+    {"vehicle": "v2", "deck": "d2"},
+    {"vehicle": "v3", "deck": "d3"},
+    {"vehicle": "v4", "deck": "d1"},
+    {"vehicle": "v5", "deck": "d3"},
+    {"vehicle": "v6", "deck": "d1"},
+    {"vehicle": "v7", "deck": "d2"},
+    {"vehicle": "v8", "deck": "d1"}
+]
 ```
 
 This solution assigns (in vehicle order v1, v2, ..., v8):

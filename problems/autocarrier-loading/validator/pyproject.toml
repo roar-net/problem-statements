@@ -1,0 +1,20 @@
+[project]
+name = "acl-validator"
+version = "0.1.0"
+description = "A tool for validating solutions to the Auto Carrier Loading problem."
+authors = [
+    { name = "Luca Di Gaspero", email = "luca.digaspero@uniud.it" },
+]
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+dependencies = [
+    "click>=8.2.1",
+    "pydantic>=2.11.7",
+]
+
+[tool.uv]
+package = true
+
+[project.scripts]
+acl-validator = "acl_validator.cli:cli"
