@@ -19,8 +19,7 @@ def cli() -> None:
 @cli.command()
 @click.argument('instance_file', type=click.File('r'))
 @click.argument('solution_file', type=click.File('r'))
-@click.option('--deck-start', type=int, default=0, help='Starting index for deck numbering.')
-def validate_solution(instance_file : TextIO, solution_file : TextIO, deck_start : int) -> None:
+def validate_solution(instance_file : TextIO, solution_file : TextIO) -> None:
     """
     Validate the ACL solution against the instance file.
     """
@@ -42,7 +41,7 @@ def validate_solution(instance_file : TextIO, solution_file : TextIO, deck_start
         click.secho(f"🤦 Error validating instance: {e}", file=sys.stderr, fg="red", bold=True)
         sys.exit(1)
     try:
-        solution = AutocarrierLoadingSolution(instance=instance, assigned_decks=solution, deck_start_index=deck_start)
+        solution = AutocarrierLoadingSolution(instance=instance, assigned_decks=solution)
     except Exception as e:
         click.secho(f"🤦 Error validating solution: {e}", file=sys.stderr, fg="red", bold=True)
         sys.exit(1)
