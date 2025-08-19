@@ -30,7 +30,7 @@ For a set of vertices $S \subseteq V$, we denote by
 $G_S=(S,E(S))$ the subgraph induced by $S$ in $G$.
 
 Given $G$ and a positive integer $k \leq |V|$, the DKS problem consists of finding a subgraph $G_S$ induced by $S \subseteq V$ such that   
-$$|E(S)|=\max \{|E(S^\prime)| : S^\prime \subseteq V, |S^\prime|=k\}$$
+$$|E(S)|=\max \left\{|E(S^\prime)| : S^\prime \subseteq V, |S^\prime|=k\right\}$$
 
 Note that $G$ may be unconnected.
 
