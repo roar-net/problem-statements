@@ -1,5 +1,11 @@
-%%MatrixMarket matrix example
-9 9 14
+%%MatrixMarket matrix coordinate pattern symmetric
+%-------------------------------------------------------------------------------
+% Example dataset created by Daniela Scherer dos Santos
+% Date: 2025-08-19
+% Description: Simple undirected graph with 9 nodes and 14 edges.
+% Format: MatrixMarket (coordinate, pattern, symmetric)
+%-------------------------------------------------------------------------------
+9 14
 1 2
 1 3
 1 4
