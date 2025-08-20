@@ -38,17 +38,18 @@ Note that $G$ may be unconnected.
 
 ## Instance data file
 
-Each instance file represents an **undirected simple graph** in a format commonly used for real-life graphs (e.g. Matrix Market '.mtx' files). Its structure is as follows:
+Each instance file represents an **undirected simple graph** in a format commonly used for real-life graphs (e.g. Matrix Market '.mtx' files) and also specifies the value of $k$. Its structure is as follows:
 
 #### Comments
 - Lines starting with '%' are **comments**.
-- They often contain metdata, descriptions, or source information about the graph.
+- They often contain metadata, descriptions, or source information about the graph.
 - These lines should be ignored when reading the graph.
 
 #### Header
-The first non-comment line contains two integers:
-- **First number:** Total number of vertices in the graph.
-- **Second number:** Total number of edges in the graph.
+The first non-comment line contains three integers:
+- **First number:** The value of $k$.
+- **Second number:** Total number of vertices in the graph.
+- **Third number:** Total number of edges in the graph.
 
 #### Edges
 Each of the following lines represents an edge between two vertices. For example `1 2` indicates an edge between vertex 1 and vertex 2. Vertices are numbered consecutively from 1 to $|V|$.
@@ -67,7 +68,7 @@ The solution file describes the subgraph identified by the applied approach to s
 
 ```
 %%MatrixMarket matrix example
-9 14
+3 9 14
 1 2
 1 3
 1 4
