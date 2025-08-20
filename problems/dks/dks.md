@@ -68,7 +68,7 @@ The solution file describes the subgraph identified by the applied approach to s
 
 ```
 %%MatrixMarket matrix example
-3 9 14
+3 9 13
 1 2
 1 3
 1 4
