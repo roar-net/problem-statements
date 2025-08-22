@@ -49,10 +49,11 @@ $$
 dens(G_S) = \frac{2 \cdot |E(S)|}{|S| \cdot (|S|-1)}
 $$
 
+
 Given $G$, 
 the MOQC problem asks for a quasi-clique $G_S$ induced by $S \subseteq V$ such that   
 
-$$S \in \argmax_{S^\prime \subseteq V} \lbrace \left(dens(G_{S^\prime}),  |S^\prime| \right) \rbrace$$
+$$S \in \underset{S^\prime \subseteq V}{\operatorname{argmax}} \lbrace \left(dens(G_{S^\prime}),  |S^\prime| \right) \rbrace$$
 
 Note that $G$ can be unconnected.
 
