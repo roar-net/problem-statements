@@ -1,7 +1,7 @@
 %-------------------------------------------------------------------------------
 % Example instance created by Daniela Scherer dos Santos
 % Date: 2025-08-19
-% Description: Simple undirected graph with 9 nodes and 14 edges.
+% Description: Simple undirected graph with 9 nodes and 13 edges.
 % Parameter k: 3
 % Format: Matrix Market
 %-------------------------------------------------------------------------------
