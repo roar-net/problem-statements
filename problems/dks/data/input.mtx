@@ -1,5 +1,10 @@
 %-------------------------------------------------------------------------------
-% Example instance created by Daniela Scherer dos Santos
+% Example instance 
+%
+% SPDX-FileCopyrightText: 2025 Daniela Scherer dos Santos <dssantos@dei.uc.pt>
+%
+% SPDX-License-Identifier: CC-BY-4.0
+%
 % Date: 2025-08-19
 % Description: Simple undirected graph with 9 nodes and 13 edges.
 % Parameter k: 3

@@ -35,38 +35,41 @@ $$|E(S)|=\max \lbrace|E(S^\prime)| : S^\prime \subseteq V, |S^\prime|=k\rbrace$$
 
 Note that $G$ may be unconnected.
 
-
 ## Instance data file
 
 Each instance file represents an **undirected simple graph** in a format commonly used for real-life graphs (e.g. Matrix Market '.mtx' files) and also specifies the value of $k$. Its structure is as follows:
 
-#### Comments
-- Lines starting with '%' are **comments**.
-- They often contain metadata, descriptions, or source information about the graph.
-- These lines should be ignored when reading the graph.
+### Comments
 
-#### Header
+* Lines starting with '%' are **comments**.
+* They often contain metadata, descriptions, or source information about the graph.
+* These lines should be ignored when reading the graph.
+
+### Header
+
 The first non-comment line contains three integers:
-- **First number:** The value of $k$.
-- **Second number:** Total number of vertices in the graph.
-- **Third number:** Total number of edges in the graph.
 
-#### Edges
+* **First number:** The value of $k$.
+* **Second number:** Total number of vertices in the graph.
+* **Third number:** Total number of edges in the graph.
+
+### Edges
+
 Each of the following lines represents an edge between two vertices. For example `1 2` indicates an edge between vertex 1 and vertex 2. Vertices are numbered consecutively from 1 to $|V|$.
 
 ## Solution file
 
 The solution file describes the subgraph identified by the applied approach to solve the DKS problem. Its format is as follows:
 
-- **First line:** An integer representing the number of vertices in the subgraph, which must equal the specified value of $k$.
-- **Second line:** An integer representing the number of edges in the subgraph. This is the evaluation measure for the DKS problem.
-- **Third line:** A list of vertex identifiers (integers) that belong to the subgraph. Each vertex should appear exactly once.
+* **First line:** An integer representing the number of vertices in the subgraph, which must equal the specified value of $k$.
+* **Second line:** An integer representing the number of edges in the subgraph. This is the evaluation measure for the DKS problem.
+* **Third line:** A list of vertex identifiers (integers) that belong to the subgraph. Each vertex should appear exactly once.
 
 ## Example
 
 ### Instance
 
-```
+```text
 %%MatrixMarket matrix example
 3 9 13
 1 2
@@ -83,6 +86,7 @@ The solution file describes the subgraph identified by the applied approach to s
 7 8
 8 9
 ```
+
 ### Solution
 
 ```
@@ -118,17 +122,13 @@ In addition, the next figure illustrates an **optimal solution** for the instanc
 
 <img src="images/optimal.png" alt="Optimal Solution" width="300"/>
 
-
-    
 ## Acknowledgements
 
 This problem statement is based upon work from COST Action Randomised
 Optimisation Algorithms Research Network (ROAR-NET), CA22137, is supported by
 COST (European Cooperation in Science and Technology).
 
-
 ## References
-
 
 [1] Corneil, D.G., Perl, Y., 1984. Clustering and domination in perfect graphs. *Discrete Applied Mathematics* 9, 27–39. [https://doi.org/10.1016/0166-218X(84)90088-X](https://doi.org/10.1016/0166-218X(84)90088-X)  
 
