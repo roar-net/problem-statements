@@ -1,3 +1,12 @@
+%-------------------------------------------------------------------------------
+% Example output 
+%
+% SPDX-FileCopyrightText: 2025 Daniela Scherer dos Santos <dssantos@dei.uc.pt>
+%
+% SPDX-License-Identifier: CC-BY-4.0
+%
+% Date: 2025-08-19
+%-------------------------------------------------------------------------------
 5
 7
 1 2 3 4 6

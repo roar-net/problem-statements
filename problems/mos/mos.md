@@ -4,7 +4,6 @@ SPDX-FileCopyrightText: 2025 Daniela Scherer dos Santos <dssantos@dei.uc.pt>
 SPDX-License-Identifier: CC-BY-4.0 
 -->
 
-
 # Multiobjective Subgraph Problem
 
 Daniela Scherer dos Santos and Luís Paquete, University of Coimbra, CISUC/LASI, DEI, Coimbra, Portugal  
@@ -13,14 +12,11 @@ Copyright 2025 Daniela Scherer dos Santos and Luís Paquete
 
 This document is licensed under CC-BY-4.0.
 
-
 ## Introduction
 
 Given a graph $G$, the **Multiobjective Subgraph (MOS)** problem [1] consists of finding the set of efficient subgraphs in $G$. A subgraph is considered efficient if there is no other feasible subgraph with at least as many edges and at most as many vertices, with at least one strict inequality.
 
 The motivation for solving the MOS problem stems from its close relation to the Multiobjective Quasi-clique (MOQC) [1] problem, which can be effectively addressed through MOS. The MOQC seeks a quasi-clique with maximum density and number of vertices and has many real-world applications.
-
-
 
 ## Task
 
@@ -39,32 +35,34 @@ $$S \in \underset{S^\prime \subseteq V}{\arg\max}  \lbrace \left(|E(S^\prime|), 
 
 Note that $G$ can be unconnected.
 
-
 ## Instance data file
 
 Each instance file represents an **undirected simple graph** in a format commonly used for real-life graphs (e.g. Matrix Market '.mtx' files). Its structure is as follows:
 
-#### Comments
-- Lines starting with '%' are **comments**.
-- They often contain metadata, descriptions, or source information about the graph.
-- These lines should be ignored when reading the graph.
+### Comments
 
-#### Header
+* Lines starting with '%' are **comments**.
+* They often contain metadata, descriptions, or source information about the graph.
+* These lines should be ignored when reading the graph.
+
+### Header
 
 The first non-comment line contains two integers:
-- **First number:** Total number of vertices in the graph.
-- **Second number:** Total number of edges in the graph. 
 
-#### Edges
+* **First number:** Total number of vertices in the graph.
+* **Second number:** Total number of edges in the graph. 
+
+### Edges
+
 Each of the following lines represents an edge between two vertices. For example `1 2` indicates an edge between vertex 1 and vertex 2. Vertices are numbered consecutively from 1 to $|V|$.
 
 ## Solution file
 
 The solution file describes the subgraph identified by the applied approach to solve the MOS problem. Its format is as follows:
 
-- **First line:** An integer representing the number of vertices in the subgraph. 
-- **Second line:** An integer representing the number of edges in subgraph.
-- **Third line:** A list of vertex identifiers (integers) that belong to the subgraph. Each vertex should appear exactly once.
+* **First line:** An integer representing the number of vertices in the subgraph. 
+* **Second line:** An integer representing the number of edges in subgraph.
+* **Third line:** A list of vertex identifiers (integers) that belong to the subgraph. Each vertex should appear exactly once.
 
 In case the approach for solving the problem returns a set of solutions, each solution should be reported in a single file.
 
@@ -72,7 +70,7 @@ In case the approach for solving the problem returns a set of solutions, each so
 
 ### Instance
 
-```
+```text
 %%MatrixMarket matrix example
 9 13
 1 2
@@ -89,6 +87,7 @@ In case the approach for solving the problem returns a set of solutions, each so
 7 8
 8 9
 ```
+
 ### Solution
 
 ```
@@ -117,15 +116,12 @@ Notice that the MOS problem does not impose any constraint on the connectedness 
 The following figure shows such an example for the same input instance. It contains 5 vertices and 6 edges.
 
 <img src="images/disconnected_MOS.png" alt="Disconnected Feasible Solution" width="300"/>
-
-
     
 ## Acknowledgements
 
 This problem statement is based upon work from COST Action Randomised
 Optimisation Algorithms Research Network (ROAR-NET), CA22137, is supported by
 COST (European Cooperation in Science and Technology).
-
 
 ## References
 
