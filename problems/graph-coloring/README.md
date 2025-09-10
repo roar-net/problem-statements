@@ -19,7 +19,7 @@ not licensed under CC-BY-4.0 -->
 # Graph Coloring (vertex coloring)
 
 **Ondřej Liška¹, Patrik Olszar², David Sedlák²**\
-¹ Brno University of Technology, Faculty of Mechanical Engineering, Czech Republic  
+¹ Brno University of Technology, Faculty of Mechanical Engineering, Czech Republic
 ² Brno University of Technology, Faculty of Information Technology, Czech Republic
 
 Copyright 2025 Ondřej Liška, Patrik Olszar, David Sedlák
@@ -28,7 +28,7 @@ This document is licensed under CC-BY-4.0.
 
 ## Introduction
 
-The Graph Coloring problem is a classic challenge in graph theory and combinatorial optimisation.  
+The Graph Coloring problem is a classic challenge in graph theory and combinatorial optimisation.
 Its objective is to assign colors to the vertices of an undirected graph such that no two adjacent vertices share the same color, and the total number of used colors is minimized.
 
 This problem arises in a variety of real-world scenarios, such as scheduling, register allocation in compilers, and frequency assignment in wireless networks. Due to its NP-hard nature, it is also widely used as a benchmark for exact and heuristic optimisation methods.
@@ -56,11 +56,11 @@ such that:
 
 - For every edge `{u, v} ∈ E`, the colors are different:
 
-    c(u) ≠ c(v)
+  c(u) ≠ c(v)
 
 - The total number of colors used is minimised:
 
-    min( max_{v ∈ V} c(v) + 1 )
+  min( max\_{v ∈ V} c(v) + 1 )
 
 ---
 
@@ -127,7 +127,7 @@ A simple graph with 5 vertices and 6 edges, in edge list format:
 
 Visual representation of the graph:
 
-![Uncolored Graph](images/graph_uncolored_example.png)
+![Uncolored Graph](images/0-SmallExample.col.png)
 
 ### Solution
 
@@ -141,17 +141,17 @@ A feasible 3-coloring of the graph:
 4 1
 ```
 
-This uses 3 colors:  
--Color 0 (e.g. red) for vertices 0 and 2  
--Color 1 (e.g. green) for vertices 1 and 4  
+This uses 3 colors:
+-Color 0 (e.g. red) for vertices 0 and 2
+-Color 1 (e.g. green) for vertices 1 and 4
 -Color 2 (e.g. blue) for vertex 3
 
 ### Explanation
 
-The following image shows a valid coloring of the graph where no adjacent vertices share the same color.  
+The following image shows a valid coloring of the graph where no adjacent vertices share the same color.
 This solution uses 3 distinct colors.
 
-![Colored Graph](images/graph_coloring_example.png)
+![Colored Graph](images/0-SmallExample.sol.png)
 
 ## Acknowledgements
 
@@ -164,5 +164,5 @@ relevant. -->
 
 ## References
 
-- Garey, M. R., & Johnson, D. S. (1979). *Computers and Intractability: A Guide to the Theory of NP-Completeness*. W. H. Freeman.
-- Jensen, T. R., & Toft, B. (1995). *Graph Coloring Problems*. Wiley-Interscience.
+- Garey, M. R., & Johnson, D. S. (1979). _Computers and Intractability: A Guide to the Theory of NP-Completeness_. W. H. Freeman.
+- Jensen, T. R., & Toft, B. (1995). _Graph Coloring Problems_. Wiley-Interscience.
