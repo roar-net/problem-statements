@@ -2,9 +2,11 @@ import networkx as nx
 
 
 class IOParser:
+    """Parser for DIMACS formatted graph files and solution files."""
 
     @staticmethod
     def parse2nx(file_path: str) -> nx.Graph:
+        """Parse a DIMACS formatted file into a NetworkX graph."""
         edges = []
         num_vertices = 0
         num_edges = 0
@@ -36,6 +38,7 @@ class IOParser:
 
     @staticmethod
     def parse_solution(file_path: str) -> dict[int, int]:
+        """Parse a solution file into a dictionary mapping vertices to colors."""
         with open(file_path, "r") as f:
             coloring = {}
             for line in f:
@@ -48,6 +51,3 @@ class IOParser:
             raise ValueError("No solution found in the file")
 
         return coloring
-
-
-# DimacsParser.parse2nx("./data/1-FullIns_3/1-FullIns_3.col")
