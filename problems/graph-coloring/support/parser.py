@@ -51,3 +51,17 @@ class IOParser:
             raise ValueError("No solution found in the file")
 
         return coloring
+
+
+# from pathlib import Path
+
+# file = Path("data/1-Insertions_4/1-Insertions_4.col")
+# G = IOParser.parse2nx(str(file))
+# d = nx.coloring.greedy_color(G, strategy="largest_first")
+
+# output = {k: v for k, v in d.items()}
+# # save to file in the format vertex color
+# with open(file.with_suffix(".sol"), "w") as f:
+#     for k, v in output.items():
+#         f.write(f"{k} {v}\n")
+# print(output)
