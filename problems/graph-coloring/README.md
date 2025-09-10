@@ -16,14 +16,13 @@ not licensed under CC-BY-4.0 -->
 
 <!-- Remove the section below before submitting -->
 
-
 # Graph Coloring (vertex coloring)
 
 **Ondřej Liška¹, Patrik Olszar², David Sedlák²**\
 ¹ Brno University of Technology, Faculty of Mechanical Engineering, Czech Republic  
 ² Brno University of Technology, Faculty of Information Technology, Czech Republic
 
-Copyright 2024 Ondřej Liška, Patrik Olszar, David Sedlák
+Copyright 2025 Ondřej Liška, Patrik Olszar, David Sedlák
 
 This document is licensed under CC-BY-4.0.
 
@@ -33,7 +32,6 @@ The Graph Coloring problem is a classic challenge in graph theory and combinator
 Its objective is to assign colors to the vertices of an undirected graph such that no two adjacent vertices share the same color, and the total number of used colors is minimized.
 
 This problem arises in a variety of real-world scenarios, such as scheduling, register allocation in compilers, and frequency assignment in wireless networks. Due to its NP-hard nature, it is also widely used as a benchmark for exact and heuristic optimisation methods.
-
 
 ## Task
 
@@ -80,14 +78,13 @@ A solution is **valid** if all adjacency constraints are satisfied, and the numb
 
 ## Instance data file
 
-The input format is based on the standard [DIMACS `.col` format] - more instances can be found there: (https://github.com/dynaroars/npbench/tree/master/instances/coloring/graph_color)
+The input format is based on the standard [DIMACS `.col` format] - more instances can be found there: (<https://github.com/dynaroars/npbench/tree/master/instances/coloring/graph_color>)
 
 - Lines starting with `c` are comments
 - The `p` line has the form: `p edge <number_of_vertices> <number_of_edges>`
 - Each edge is defined on a line: `e <u> <v>` (1-based vertex indices)
 
 > In the `support` folder, you can find a method that transforms the input from this format into a matrix.
-
 
 ## Solution file
 
@@ -145,9 +142,9 @@ A feasible 3-coloring of the graph:
 ```
 
 This uses 3 colors:  
-- Color 0 (e.g. red) for vertices 0 and 2  
-- Color 1 (e.g. green) for vertices 1 and 4  
-- Color 2 (e.g. blue) for vertex 3
+-Color 0 (e.g. red) for vertices 0 and 2  
+-Color 1 (e.g. green) for vertices 1 and 4  
+-Color 2 (e.g. blue) for vertex 3
 
 ### Explanation
 
