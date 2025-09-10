@@ -1,10 +1,10 @@
 import networkx as nx
 
 
-class DimacsParser:
+class IOParser:
 
     @staticmethod
-    def parse2nx(file_path):
+    def parse2nx(file_path: str) -> nx.Graph:
         edges = []
         num_vertices = 0
         num_edges = 0
@@ -12,7 +12,7 @@ class DimacsParser:
         with open(file_path, "r") as f:
             for line in f:
                 if not line.strip():
-                    continue
+                    continue  # Skip empty lines
                 splitted = line.split()
                 if splitted[0] == "e":
                     edges.append((int(splitted[1]), int(splitted[2])))
@@ -33,6 +33,21 @@ class DimacsParser:
             raise ValueError("Number of edges does not match the specified count")
 
         return g
+
+    @staticmethod
+    def parse_solution(file_path: str) -> dict[int, int]:
+        with open(file_path, "r") as f:
+            coloring = {}
+            for line in f:
+                if not line.strip():
+                    continue  # Skip empty lines
+                splitted = line.split()
+                coloring[int(splitted[0])] = int(splitted[1])
+
+        if not coloring:
+            raise ValueError("No solution found in the file")
+
+        return coloring
 
 
 # DimacsParser.parse2nx("./data/1-FullIns_3/1-FullIns_3.col")
