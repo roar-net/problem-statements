@@ -16,7 +16,7 @@ not licensed under CC-BY-4.0 -->
 # Graph Coloring (vertex coloring)
 
 **Ondřej Liška¹, Patrik Olszar², David Sedlák²**\
-¹ Brno University of Technology, Faculty of Mechanical Engineering, Czech Republic
+¹ Brno University of Technology, Faculty of Mechanical Engineering, Czech Republic\
 ² Brno University of Technology, Faculty of Information Technology, Czech Republic
 
 Copyright 2025 Ondřej Liška, Patrik Olszar, David Sedlák
