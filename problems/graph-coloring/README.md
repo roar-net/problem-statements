@@ -1,11 +1,10 @@
 <!--
-SPDX-FileCopyrightText: 2024 Alexandre Jesus <me@adbjesus.com>
+SPDX-FileCopyrightText: 2025 Ondřej Liška <ondrej.liska@vut.cz>
+SPDX-FileCopyrightText: 2025 Patrik Olszar <xolsza00@stud.fit.vut.cz>
+SPDX-FileCopyrightText: 2025 David Sedlák <isedlak@fit.vut.cz>
 
 SPDX-License-Identifier: CC-BY-4.0
 -->
-
-<!-- Replace the comment above with your licence information for your problem
-statement. Consider all copyright holders and contributors. -->
 
 <!-- According to the copyright and licensing policy of ROAR-NET original
 problem statements contributed to this repository shall be licensed under the
@@ -13,8 +12,6 @@ CC-BY-4.0 licence. In some cases CC-BY-SA-4.0 might be accepted, e.g., if the
 problem is based upon an existing problem licensed under those terms. Please
 provide a clear justification when opening the pull request if the problem is
 not licensed under CC-BY-4.0 -->
-
-<!-- Remove the section below before submitting -->
 
 # Graph Coloring (vertex coloring)
 
