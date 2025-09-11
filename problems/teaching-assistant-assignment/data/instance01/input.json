@@ -1,0 +1,88 @@
+{
+    "name": "Teaching Assistant Assignment Problem Example",
+    "sessionOccurrences": [
+        {
+            "name": "SO_A",
+            "date_start": "2025-09-10 08:00:00",
+            "date_end": "2025-09-10 10:00:00",
+            "number_of_tas": 1,
+            "hours_paid_per_occurrence": 2,
+            "week": 1
+        },
+        {
+            "name": "SO_B",
+            "date_start": "2025-09-10 10:00:00",
+            "date_end": "2025-09-10 12:00:00",
+            "number_of_tas": 1,
+            "hours_paid_per_occurrence": 2,
+            "week": 1
+        },{
+            "name": "SO_C",
+            "date_start": "2025-09-11 08:00:00",
+            "date_end": "2025-09-11 10:00:00",
+            "number_of_tas": 1,
+            "hours_paid_per_occurrence": 2,
+            "week": 1
+        },{
+            "name": "SO_D",
+            "date_start": "2025-09-11 08:00:00",
+            "date_end": "2025-09-11 10:00:00",
+            "number_of_tas": 1,
+            "hours_paid_per_occurrence": 2,
+            "week": 1
+        }
+    ],
+    "tas": [
+        {
+            "name": "TA_X",
+            "qualifications": {
+                "SO_C" : 2,
+                "SO_D" : 2
+            },
+            "max_hours_per_week": 10,
+            "max_hours_per_year": 312
+        },
+        {
+            "name": "TA_A",
+            "qualifications": {
+                "SO_A" : 1,
+                "SO_B" : 2
+            },
+            "max_hours_per_week": 10,
+            "max_hours_per_year": 312
+        },
+        {
+            "name": "TA_B",
+            "qualifications": {
+                "SO_A" : 2,
+                "SO_B" : 1
+            },
+            "max_hours_per_week": 10,
+            "max_hours_per_year": 312
+        },
+        {
+            "name": "TA_C",
+            "qualifications": {
+            },
+            "max_hours_per_week": 10,
+            "max_hours_per_year": 312
+        },
+        {
+            "name": "TA_D",
+            "qualifications": {
+                "SO_A" : 1,
+                "SO_B" : 1
+            },
+            "max_hours_per_week": 10,
+            "max_hours_per_year": 312
+        },
+        {
+            "name": "TA_E",
+            "qualifications": {
+                "SO_D" : 1
+            },
+            "max_hours_per_week": 10,
+            "max_hours_per_year": 312
+        }
+    ]
+}
