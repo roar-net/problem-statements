@@ -4,6 +4,8 @@ SPDX-FileCopyrightText: 2025 Daniela Scherer dos Santos <dssantos@dei.uc.pt>
 SPDX-License-Identifier: CC-BY-4.0 
 -->
 
+<!-- markdownlint-disable MD033 -->
+
 # Multiobjective Quasi-clique Problem
 
 Daniela Scherer dos Santos and Luís Paquete, University of Coimbra, CISUC/LASI, DEI, Coimbra, Portugal  
@@ -26,23 +28,19 @@ The problem is NP-hard [3] with many relevant applications fields such as social
 
 ## Task
 
-Given a graph, the goal is to identify a set of feasible quasi-cliques that approximates the set of efficient quasi-cliques as closely as possible. 
+Given a graph, the goal is to identify a set of feasible quasi-cliques that approximates the set of efficient quasi-cliques as closely as possible.
 
 ## Detailed description
 
-Consider an undirected and simple graph $G = (V,E)$, where 
-$V$ and $E$ are the vertex and edge sets of $G$, respectively. 
-For a set of vertices $S \subseteq V$, we denote by $G_S=(S,E(S))$ the subgraph (quasi-clique) induced by $S$ in $G$.
-The density of $G_S$, denoted by $dens(G_S)$, is the ratio between the number of edges in $G_S$ and the number of edges in a complete graph with 
-$|S|$ vertices, that is, 
+Consider an undirected and simple graph $G = (V,E)$, where $V$ and $E$ are the vertex and edge sets of $G$, respectively. For a set of vertices $S \subseteq V$, we denote by $G_S=(S,E(S))$ the subgraph (quasi-clique) induced by $S$ in $G$.
+The density of $G_S$, denoted by $dens(G_S)$, is the ratio between the number of edges in $G_S$ and the number of edges in a complete graph with $|S|$ vertices, that is,
 
 $$
 dens(G_S) = \frac{2 \cdot |E(S)|}{|S| \cdot (|S|-1)}
 $$
 
 
-Given $G$, 
-the MOQC problem asks for a quasi-clique $G_S$ induced by $S \subseteq V$ such that   
+Given $G$, the MOQC problem asks for a quasi-clique $G_S$ induced by $S \subseteq V$ such that  
 
 $$S \in \underset{S^\prime \subseteq V}{\arg\max} \lbrace \left(dens(G_{S^\prime}),  |S^\prime| \right) \rbrace$$
 
@@ -54,16 +52,16 @@ Each instance file represents an **undirected simple graph** in a format commonl
 
 ### Comments
 
-* Lines starting with '%' are **comments**.
-* They often contain metadata, descriptions, or source information about the graph.
-* These lines should be ignored when reading the graph.
+- Lines starting with '%' are **comments**.
+- They often contain metadata, descriptions, or source information about the graph.
+- These lines should be ignored when reading the graph.
 
 ### Header
 
 The first non-comment line contains two integers:
 
-* **First number:** Total number of vertices in the graph.
-* **Second number:** Total number of edges in the graph. 
+- **First number:** Total number of vertices in the graph.
+- **Second number:** Total number of edges in the graph.
 
 ### Edges
 
@@ -73,10 +71,10 @@ Each of the following lines represents an edge between two vertices. For example
 
 The solution file describes the quasi-clique identified by the applied approach to solve the MOQC problem. Its format is as follows:
 
-* **First line:** An integer representing the number of vertices in the quasi-clique. 
-* **Second line:** An integer representing the number of edges in the quasi-clique.
-* **Third line:** A real number representing the quasi-clique density.
-* **Fourth line:** A list of vertex identifiers (integers) that belong to the quasi-clique. Each vertex should appear exactly once.
+- **First line:** An integer representing the number of vertices in the quasi-clique.
+- **Second line:** An integer representing the number of edges in the quasi-clique.
+- **Third line:** A real number representing the quasi-clique density.
+- **Fourth line:** A list of vertex identifiers (integers) that belong to the quasi-clique. Each vertex should appear exactly once.
 
 In case the approach for solving the problem returns a set of solutions, each solution should be reported in a single file.
 
@@ -104,7 +102,7 @@ In case the approach for solving the problem returns a set of solutions, each so
 
 ### Solution
 
-```
+```text
 5
 7
 0.70
@@ -131,7 +129,7 @@ Notice that the MOQC problem does not impose any constraint on the connectedness
 The following figure shows such an example for the same input instance. It contains 5 vertices, 6 edges, and $dens=0.60$.
 
 <img src="images/disconnected_MOQC.png" alt="Disconnected Feasible Solution" width="300"/>
-    
+
 ## Acknowledgements
 
 This problem statement is based upon work from COST Action Randomised
@@ -141,11 +139,9 @@ COST (European Cooperation in Science and Technology).
 ## References
 
 [1] Abello, J., Pardalos, P.M., Resende, M.G.C., 1999. On Maximum Clique Problems in Very Large Graphs. American
-Mathematical Society, USA. p. 119–130.   
+Mathematical Society, USA. p. 119–130.  
 
-[2] Corneil, D.G., Perl, Y., 1984. Clustering and domination in perfect graphs. *Discrete Applied Mathematics* 9, 27–39. [https://doi.org/10.1016/0166-218X(84)90088-X](https://doi.org/10.1016/0166-218X(84)90088-X) 
+[2] Corneil, D.G., Perl, Y., 1984. Clustering and domination in perfect graphs. *Discrete Applied Mathematics* 9, 27–39. [https://doi.org/10.1016/0166-218X(84)90088-X](https://doi.org/10.1016/0166-218X(84)90088-X).
 
 [3] Daniela Scherer dos Santos, Kathrin Klamroth, Pedro Martins, and Luís Paquete.
-2024. Solving the Multiobjective Quasi-clique Problem. European Journal of
-Operational Research (2024). [https://doi.org/10.1016/j.ejor.2024.12.018](https://doi.org/10.1016/j.ejor.2024.12.018) 
-
+2024. Solving the Multiobjective Quasi-clique Problem. European Journal of Operational Research (2024). [https://doi.org/10.1016/j.ejor.2024.12.018](https://doi.org/10.1016/j.ejor.2024.12.018).
