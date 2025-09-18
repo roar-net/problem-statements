@@ -4,6 +4,8 @@ SPDX-FileCopyrightText: 2025 Daniela Scherer dos Santos <dssantos@dei.uc.pt>
 SPDX-License-Identifier: CC-BY-4.0 
 -->
 
+<!-- markdownlint-disable MD033 -->
+
 # Densest k-Subgraph Problem
 
 Daniela Scherer dos Santos and Luís Paquete, University of Coimbra, CISUC/LASI, DEI, Coimbra, Portugal  
@@ -14,7 +16,7 @@ This document is licensed under CC-BY-4.0.
 
 ## Introduction
 
-The Densest k-Subgraph Problem (DKS) [1] is a combinatorial optimization problem that aims to identify a group of exactly $k$ vertices in a graph such that the induced subgraph contains the maximum number of edges. 
+The Densest k-Subgraph Problem (DKS) [1] is a combinatorial optimization problem that aims to identify a group of exactly $k$ vertices in a graph such that the induced subgraph contains the maximum number of edges.
 
 The problem is NP-hard [2] and has been studied in both theoretical and applied contexts. Applications include detecting dense communities in social networks and identifying protein complexes in biological networks.
 
@@ -24,12 +26,9 @@ Given a graph and a vertex cardinality $k$, the goal is to identify a subgraph w
 
 ## Detailed description
 
-Consider an undirected and simple graph $G = (V,E)$, where 
-$V$ and $E$ are the vertex and edge sets of $G$, respectively. 
-For a set of vertices $S \subseteq V$, we denote by 
-$G_S=(S,E(S))$ the subgraph induced by $S$ in $G$.
+Consider an undirected and simple graph $G = (V,E)$, where $V$ and $E$ are the vertex and edge sets of $G$, respectively. For a set of vertices $S \subseteq V$, we denote by $G_S=(S,E(S))$ the subgraph induced by $S$ in $G$.
 
-Given $G$ and a positive integer $k \leq |V|$, the DKS problem consists of finding a subgraph $G_S$ induced by $S \subseteq V$ such that   
+Given $G$ and a positive integer $k \leq |V|$, the DKS problem consists of finding a subgraph $G_S$ induced by $S \subseteq V$ such that
 
 $$|E(S)|=\max \lbrace|E(S^\prime)| : S^\prime \subseteq V, |S^\prime|=k\rbrace$$
 
@@ -49,9 +48,9 @@ Each instance file represents an **undirected simple graph** in a format commonl
 
 The first non-comment line contains three integers:
 
-* **First number:** The value of $k$.
-* **Second number:** Total number of vertices in the graph.
-* **Third number:** Total number of edges in the graph.
+* **First number** The value of $k$.
+* **Second number** Total number of vertices in the graph.
+* **Third number** Total number of edges in the graph.
 
 ### Edges
 
@@ -89,7 +88,7 @@ The solution file describes the subgraph identified by the applied approach to s
 
 ### Solution
 
-```
+```text
 3
 2
 7 8 9
@@ -130,7 +129,6 @@ COST (European Cooperation in Science and Technology).
 
 ## References
 
-[1] Corneil, D.G., Perl, Y., 1984. Clustering and domination in perfect graphs. *Discrete Applied Mathematics* 9, 27–39. [https://doi.org/10.1016/0166-218X(84)90088-X](https://doi.org/10.1016/0166-218X(84)90088-X)  
+[1] Corneil, D.G., Perl, Y., 1984. Clustering and domination in perfect graphs. *Discrete Applied Mathematics* 9, 27–39. [https://doi.org/10.1016/0166-218X(84)90088-X](https://doi.org/10.1016/0166-218X(84)90088-X).  
 
-[2] Feige, U., Kortsarz, G., Peleg, D., 2001. The dense k-subgraph problem. *Algorithmica* 29, 410–421. [https://doi.org/10.1007/s004530010050](https://doi.org/10.1007/s004530010050)  
-
+[2] Feige, U., Kortsarz, G., Peleg, D., 2001. The dense k-subgraph problem. *Algorithmica* 29, 410–421. [https://doi.org/10.1007/s004530010050](https://doi.org/10.1007/s004530010050).
