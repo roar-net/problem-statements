@@ -40,17 +40,17 @@ Each instance file represents an **undirected simple graph** in a format commonl
 
 ### Comments
 
-* Lines starting with '%' are **comments**.
-* They often contain metadata, descriptions, or source information about the graph.
-* These lines should be ignored when reading the graph.
+- Lines starting with '%' are **comments**.
+- They often contain metadata, descriptions, or source information about the graph.
+- These lines should be ignored when reading the graph.
 
 ### Header
 
 The first non-comment line contains three integers:
 
-* **First number** The value of $k$.
-* **Second number** Total number of vertices in the graph.
-* **Third number** Total number of edges in the graph.
+- **First number**: The value of $k$.
+- **Second number**: Total number of vertices in the graph.
+- **Third number**: Total number of edges in the graph.
 
 ### Edges
 
@@ -60,9 +60,9 @@ Each of the following lines represents an edge between two vertices. For example
 
 The solution file describes the subgraph identified by the applied approach to solve the DKS problem. Its format is as follows:
 
-* **First line:** An integer representing the number of vertices in the subgraph, which must equal the specified value of $k$.
-* **Second line:** An integer representing the number of edges in the subgraph. This is the evaluation measure for the DKS problem.
-* **Third line:** A list of vertex identifiers (integers) that belong to the subgraph. Each vertex should appear exactly once.
+- **First line**: An integer representing the number of vertices in the subgraph, which must equal the specified value of $k$.
+- **Second line**: An integer representing the number of edges in the subgraph. This is the evaluation measure for the DKS problem.
+- **Third line**: A list of vertex identifiers (integers) that belong to the subgraph. Each vertex should appear exactly once.
 
 ## Example
 
