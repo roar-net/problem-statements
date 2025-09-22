@@ -68,7 +68,9 @@ In addition, __CYCLE__ can be mentionned to specify that initial and final hybri
 
 ## Solution file
 
-The solution file is a CSV file made of headers [ $\eta_i, \pi_i, \left( C_{v, \eta} | v \in V, \eta \in \mathbb{S} \right), \eta_f, \pi_f, fit$ ] with $h_i = (\eta_i, \pi_i)$, $h_f = (\eta_f, \pi_f)$ and $fit$ being the evaluation performance (fitness score), and the decision(s) vector(s) found, following [this section](#decision-vector).
+The solution file is a CSV file made of headers $[\eta_i, \pi_i, \left( C_{v, \eta} | v \in V, \eta \in \mathbb{S} \right), \eta_f, \pi_f, fit]$ 
+with $h_i = (\eta_i, \pi_i)$, $h_f = (\eta_f, \pi_f)$ and $fit$ being the evaluation performance (fitness score), 
+and the decision(s) vector(s) found, following [this section](#decision-vector).
 
 ## Example
 
@@ -91,12 +93,12 @@ An initial level of concentration (PRE), $h_i = \left( (\eta_{v_1},\eta_{v_2})^T
 
 Multiple triples of constraints:
 
-   1. the time spent by the trajectory inside the discrete state $\eta = (0, 0)$ is approximately 5 hours ($\Delta t = 5.0$). Within this state, the celerity should move towards the next discrete state of $v_1$ ($v_1+$) so as to increase the concentration level of gene $v_1$ until it reaches the right border without touching either the top or the bottom border ( $noslide(v_2)$ ) and then jump into the neighbour state $\eta = (1,0)$.
-   2. In this new discrete state $\eta = (1, 0)$, the trajectory evolves for 7 hours ($\Delta t = 7.0$) in the direction of $\eta_{v_2}=1$ ($v_2+$) but, this time, the trajectory reaches the right border, which corresponds to the maximum admissible concentration of $v_1$ ( $slide^+(v_1)$ ).
-   3. In $\eta = (1, 1)$, the celerities must generate trajectory that spends 8 hours, does not slide and goes in the direction of $v1-$ leading to the state $(0,1)$.
-   4. Finally the trajectory spends 4 hours, slides on bottom of v1 and goes in the direction of $v2-$.
+1. the time spent by the trajectory inside the discrete state $\eta = (0, 0)$ is approximately 5 hours ($\Delta t = 5.0$). Within this state, the celerity should move towards the next discrete state of $v_1$ ($v_1+$) so as to increase the concentration level of gene $v_1$ until it reaches the right border without touching either the top or the bottom border ( $noslide(v_2)$ ) and then jump into the neighbour state $\eta = (1,0)$.
+2. In this new discrete state $\eta = (1, 0)$, the trajectory evolves for 7 hours ($\Delta t = 7.0$) in the direction of $\eta_{v_2}=1$ ($v_2+$) but, this time, the trajectory reaches the right border, which corresponds to the maximum admissible concentration of $v_1$ ( $slide^+(v_1)$ ).
+3. In $\eta = (1, 1)$, the celerities must generate trajectory that spends 8 hours, does not slide and goes in the direction of $v1-$ leading to the state $(0,1)$.
+4. Finally the trajectory spends 4 hours, slides on bottom of v1 and goes in the direction of $v2-$.
 
-POST is empty since CYCLIC has been added before the `END`, meaning that `PRE` equals `POST`.
+`POST` is empty since CYCLIC has been added before the `END`, meaning that `PRE` equals `POST`.
 
 ```rs {"id":"01HXV3TZ7YA6X4HSC8EXD9NQD1"}
 VAR
