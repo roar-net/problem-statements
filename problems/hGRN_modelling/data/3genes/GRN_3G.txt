@@ -1,0 +1,24 @@
+VAR
+
+P = 0 .. 1;
+BC = 0 .. 1;
+R = 0 .. 1;
+
+REG
+
+m1 [!(P>=1)] => BC;
+m2 [BC>=1] => P;
+m3 [BC>=1] => R;
+m4 [!(R>=1)] => BC;
+m5 [!(R>=1)] => P;
+
+HYBRID HOARE
+
+    PRE : {eta(P)=1,eta(BC)=0,eta(R)=0;pi(P)=1.0,pi(BC)=0.0,pi(R)=1.0}
+    TRACE : (6.12,slide-(R),P-);(3.44,True,BC+);(2.44,slide+(BC) and slide-(P),R+);(6.12,slide+(R),P+);(3.44,True,BC-);(2.44,slide-(BC) and slide+(P),R-);
+    POST : {}
+
+
+CYCLIC
+
+END
