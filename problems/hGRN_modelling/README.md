@@ -94,13 +94,13 @@ An initial level of concentration (PRE), $h_i = \left( (\eta_{v_1},\eta_{v_2})^T
 Multiple triples of constraints:
 
 1. the time spent by the trajectory inside the discrete state $\eta = (0, 0)$ is approximately 5 hours ($\Delta t = 5.0$). Within this state, the celerity should move towards the next discrete state of $v_1$ ($v_1+$) so as to increase the concentration level of gene $v_1$ until it reaches the right border without touching either the top or the bottom border ( $noslide(v_2)$ ) and then jump into the neighbour state $\eta = (1,0)$.
-2. In this new discrete state $\eta = (1, 0)$, the trajectory evolves for 7 hours ($\Delta t = 7.0$) in the direction of $\eta_{v_2}=1$ ($v_2+$) but, this time, the trajectory reaches the right border, which corresponds to the maximum admissible concentration of $v_1$ ($slide^+(v_1)$).
-3. In $\eta = (1, 1)$, the celerities must generate trajectory that spends 8 hours, does not slide and goes in the direction of $v1-$ leading to the state $(0,1)$.
-4. Finally the trajectory spends 4 hours, slides on bottom of v1 and goes in the direction of $v2-$.
+1. In this new discrete state $\eta = (1, 0)$, the trajectory evolves for 7 hours ($\Delta t = 7.0$) in the direction of $\eta_{v_2}=1$ ($v_2+$) but, this time, the trajectory reaches the right border, which corresponds to the maximum admissible concentration of $v_1$ ($slide^+(v_1)$).
+1. In $\eta = (1, 1)$, the celerities must generate trajectory that spends 8 hours, does not slide and goes in the direction of $v1-$ leading to the state $(0,1)$.
+1. Finally the trajectory spends 4 hours, slides on bottom of v1 and goes in the direction of $v2-$.
 
 `POST` is empty since CYCLIC has been added before the `END`, meaning that `PRE` equals `POST`.
 
-```rs {"id":"01HXV3TZ7YA6X4HSC8EXD9NQD1"}
+```rs
 VAR
 
 v1 = 0 .. 1;
@@ -128,7 +128,7 @@ CSV header: $[\eta_i, \pi_i, C_{v_1, (0,0)}, C_{v_2, (0,0)}, C_{v_1, (1,0)}, C_{
 
 Solution:
 
-```csv {"id":"01HXVGX6Y05V0Q10XD1QAD74A4"}
+```json 
 [0, 0, 0.0, 1.0, 0.2000034, -0.20005287, 1.78216951, 0.14285681, -0.1249933, 0.12501972, -0.52991188, -0.249994, 0, 0, 0.0, 1.0, 0.0010849]
 ```
 
