@@ -1,0 +1,9 @@
+NAME : Teaching Assistant Assignment Problem Example
+TYPE : TA
+#SessionOccurrences : 4
+#TeachingAssistants : 6
+SO_B -> TA_A 
+SO_C -> TA_X 
+SO_A -> TA_D 
+SO_D -> TA_E 
+EOF
