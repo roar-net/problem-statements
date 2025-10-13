@@ -199,9 +199,10 @@ model 1, 2, and 3, and the four units of model 4 are to be assembled.
 
 This problem statement is based upon work from COST Action Randomised
 Optimisation Algorithms Research Network (ROAR-NET), CA22137, supported by
-COST (European Cooperation in Science and Technology). This work is financed
-through national funds by FCT - Fundação para a Ciência e a Tecnologia, I.P.,
-in the framework of the Project UIDB/00326/2025 and UIDP/00326/2025.
+COST (European Cooperation in Science and Technology). This work is funded by
+national funds through FCT – Foundation for Science and Technology, I.P.,
+within the scope of the research unit UID/00326 – Centre for Informatics and
+Systems of the University of Coimbra.
 
 ## References
 
