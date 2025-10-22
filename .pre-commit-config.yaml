@@ -4,10 +4,10 @@
 
 repos:
 -   repo: https://github.com/fsfe/reuse-tool
-    rev: v3.0.2
+    rev: v6.1.2
     hooks:
     - id: reuse
--   repo: https://github.com/markdownlint/markdownlint
-    rev: v0.13.0
+-   repo: https://github.com/DavidAnson/markdownlint-cli2 
+    rev: v0.18.1
     hooks:
-    - id: markdownlint
+    - id: markdownlint-cli2

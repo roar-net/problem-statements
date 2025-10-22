@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 
-name: markdownlint (mdl) check
+name: markdownlint-cli2 check
 
 on: [push, pull_request]
 
@@ -11,5 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Run markdownlint (mdl)
-      uses: actionshub/markdownlint@main
+    - name: Run markdownlint-cli2
+      uses: DavidAnson/markdownlint-cli2-action@v20

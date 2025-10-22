@@ -1,0 +1,16 @@
+version = 1
+SPDX-PackageName = "problem-statements"
+SPDX-PackageSupplier = "Alexandre Jesus <me@adbjesus.com>"
+SPDX-PackageDownloadLocation = "https://github.com/roar-net/problem-statements"
+
+[[annotations]]
+path = "templates/problem/data/**/**.txt"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2024 Alexandre Jesus <me@adbjesus.com>"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = "problems/service-placement/data/**.txt"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2024 Noé Godinho <noe@dei.uc.pt>"
+SPDX-License-Identifier = "CC0-1.0"

@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2025 Alexandre Jesus <me@adbjesus.com>
+#
+# SPDX-License-Identifier: CC0-1.0
+
+default: true
+
+MD013: false
+
+MD033:
+  allowed_elements:
+    - img
+    - br

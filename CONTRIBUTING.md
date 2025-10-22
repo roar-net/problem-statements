@@ -14,8 +14,8 @@ arise.
 
 We use GitHub to track and discuss all project issues. If you identify any kind
 of issue or bug in the project (for example a mistake in a problem statement or
-bug in some code), or have ideas for improvements please feel free to open a new
-issue [here](https://github.com/roar-net/problem-statements/issues).
+bug in some code), or have ideas for improvements please feel free to [open a new
+issue](https://github.com/roar-net/problem-statements/issues).
 
 ## Contributions
 
@@ -23,7 +23,7 @@ We follow a [forking
 workflow](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project)
 for contributions to this repository. The main steps are:
 
-1. Fork the project (https://github.com/roar-net/problem-statements/fork)
+1. [Fork the project](https://github.com/roar-net/problem-statements/fork)
 1. Create a feature branch
 1. Stage, commit, and push your changes
 1. Create a [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
@@ -68,11 +68,13 @@ way. Furthremore, we use the [REUSE Tool](https://github.com/fsfe/reuse-tool/)
 to automatically check that all files have the required copyright and licence
 information.
 
-Note that this repository is governed under the Copyright and Licensing Policy
-of ROAR-NET which can be found [here](https://roar-net.eu/copyright_policy). In
-particular, original problem statements and support materials are expected to be
-licensed under the CC-BY-4.0 or Apache 2.0 licences as appropriate. Exceptions
-for non-original or derivative work shall be analysed on a case-by-case basis
-taking into account the goals of the COST Action. One general exception in this
-repository is that sample data files may be licensed under CC0-1.0 if you wish
-for ease of use. Contributions not abiding to this policy may be rejected.
+Note that this repository is governed under the [Copyright and
+Licensing Policy of
+ROAR-NET](https://roar-net.eu/copyright_policy). In particular,
+original problem statements and support materials are expected to be
+licensed under the CC-BY-4.0 or Apache 2.0 licences as
+appropriate. Exceptions for non-original or derivative work shall be
+analysed on a case-by-case basis taking into account the goals of the
+COST Action. One general exception in this repository is that sample
+data files may be licensed under CC0-1.0 if you wish for ease of
+use. Contributions not abiding to this policy may be rejected.
