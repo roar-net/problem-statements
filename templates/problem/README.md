@@ -15,9 +15,7 @@ provide a clear justification when opening the pull request if the problem is
 not licensed under CC-BY-4.0 -->
 
 <!-- Remove the section below before submitting -->
-
-# Problem template
-
+<!-- markdownlint-disable -->
 
 This folder provides a template for problem statements.
 
@@ -36,6 +34,7 @@ Template follows below.
 
 ---
 
+<!-- markdownlint-enable -->
 <!-- Remove the section above before submitting -->
 
 # Problem Name – Title

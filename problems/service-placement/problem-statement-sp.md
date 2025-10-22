@@ -14,10 +14,10 @@ This document is licensed under CC-BY-4.0.
 
 ## Introduction
 
-One of the main problems in communications is the routing problem, where the goal is to find a path between two devices that minimises a given metric. Usually, that metric is latency or number of hops. 
+One of the main problems in communications is the routing problem, where the goal is to find a path between two devices that minimises a given metric. Usually, that metric is latency or number of hops.
 However, this problem is restrictive as it does not account for bandwidth or device usage constraints.
 
-The service placement problem was proposed to tackle these issues. The goal is to optimise a set of requests in a network, where each request is composed by source and destination, bandwidth requirements and a set of services to offload, with CPU and RAM requirements. This problem is NP-complete, making it hard to solve in realistic scenarios. Thus, efficient techniques to obtain (near-)optimal solutions are necessary. 
+The service placement problem was proposed to tackle these issues. The goal is to optimise a set of requests in a network, where each request is composed by source and destination, bandwidth requirements and a set of services to offload, with CPU and RAM requirements. This problem is NP-complete, making it hard to solve in realistic scenarios. Thus, efficient techniques to obtain (near-)optimal solutions are necessary.
 
 ## Task
 
@@ -55,7 +55,7 @@ where $U_{ir}$ is 1 if node $i$ corresponds to a source node, -1 if $i$ correspo
 Each instance file contains a graph, the requests, and their services requirements.
 
 The first line contains an integer denoting the number of nodes $N$.
-Each of the following $N$ lines gives the information for a node. In particular, for each node there are 4 comma separated numbers (the first 3 are integers, the last is a floating point number), denoting the ID of the node, the total CPU (in MIPS), the total RAM (in Mb), and the service processing time (in s), respectively. 
+Each of the following $N$ lines gives the information for a node. In particular, for each node there are 4 comma separated numbers (the first 3 are integers, the last is a floating point number), denoting the ID of the node, the total CPU (in MIPS), the total RAM (in Mb), and the service processing time (in s), respectively.
 
 After the nodes, there is a line with a single integer denoting the number of edges.
 Each edge contains the connected nodes, the bandwidth (in Mbps), and the latency (in s).
@@ -85,7 +85,7 @@ The number of requests and services for each request in the solution file must m
 
 ### Instance
 
-```
+```text
 6
 0,1000,512,0.1
 1,1000,512,0.1
@@ -113,7 +113,7 @@ The number of requests and services for each request in the solution file must m
 
 ### Solution
 
-```
+```text
 0,1,4,5
 0
 0,1,3,5
@@ -129,7 +129,7 @@ The presented graph contains 6 nodes, each with a total of 1000 MIPS, 512 Mb of 
 7 edges are considered, with 1000 Mb of bandwidth (except edge 1-3, with 100 Mb), and 0.1s or 0.2s latency.
 The following image shows the network topology of the example instance. ![Example graph instance](images/base_graph.png)
 
-This instance aims to optimise two requests. Both requests have the node 0 as the source and node 5 as the destination. 
+This instance aims to optimise two requests. Both requests have the node 0 as the source and node 5 as the destination.
 The first requires a value of 500 Mb of bandwidth and needs to offload 1 service, which requires 100 MIPS and 100 Mb of RAM.
 The second requires a value of 100 Mb of bandwidth and needs to offload 2 services, each requiring 100 MIPS and 100 Mb of RAM.
 
@@ -137,7 +137,7 @@ Regarding the solution, the first line contains the path 0,1,4,5 of request 1, f
 Afterwards, the path 0,1,3,5 for request 2 is shown, followed by the nodes where both services of request 1 are offloaded (both use node 0).
 Since the number of services is small and the processing time is the same for all nodes, the offloaded services can use the same node without worsening the objective function value.
 
-To evaluate the solution, several verifications are made. Each request path and services' nodes must be valid, and the problem constraints must be ensured. If any of these verifications are not valid, $\infty$ will be returned. Otherwise, the presented value will be the sum of latency and processing time of each node/link. 
+To evaluate the solution, several verifications are made. Each request path and services' nodes must be valid, and the problem constraints must be ensured. If any of these verifications are not valid, $\infty$ will be returned. Otherwise, the presented value will be the sum of latency and processing time of each node/link.
 
 ## Acknowledgements
 

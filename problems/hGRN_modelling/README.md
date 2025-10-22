@@ -68,8 +68,8 @@ In addition, __CYCLE__ can be mentionned to specify that initial and final hybri
 
 ## Solution file
 
-The solution file is a CSV file made of headers $[\eta_i, \pi_i, \left( C_{v, \eta} | v \in V, \eta \in \mathbb{S} \right), \eta_f, \pi_f, fit]$ 
-with $h_i = (\eta_i, \pi_i)$, $h_f = (\eta_f, \pi_f)$ and $fit$ being the evaluation performance (fitness score), 
+The solution file is a CSV file made of headers $[\eta_i, \pi_i, \left( C_{v, \eta} | v \in V, \eta \in \mathbb{S} \right), \eta_f, \pi_f, fit]$
+with $h_i = (\eta_i, \pi_i)$, $h_f = (\eta_f, \pi_f)$ and $fit$ being the evaluation performance (fitness score),
 and the decision(s) vector(s) found, following [this section](#decision-vector).
 
 ## Example
@@ -128,7 +128,7 @@ CSV header: $[\eta_i, \pi_i, C_{v_1, (0,0)}, C_{v_2, (0,0)}, C_{v_1, (1,0)}, C_{
 
 Solution:
 
-```json 
+```json
 [0, 0, 0.0, 1.0, 0.2000034, -0.20005287, 1.78216951, 0.14285681, -0.1249933, 0.12501972, -0.52991188, -0.249994, 0, 0, 0.0, 1.0, 0.0010849]
 ```
 
