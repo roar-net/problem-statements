@@ -10,3 +10,11 @@ License: CC0-1.0
 Files: problems/service-placement/data/*.txt
 Copyright: 2024 Noé Godinho <noe@dei.uc.pt>
 License: CC0-1.0
+
+Files: problems/waste-collection/data/*.txt
+Copyright: 2026 Carlos M. Fonseca <cmfonsec@dei.uc.pt>
+License: CC0-1.0
+
+Files: problems/clique-partitioning/images/*.png
+Copyright: 2026 Andreia P. Guerreiro <andreia.guerreiro@tecnico.ulisboa.pt>
+License: CC-BY-4.0
